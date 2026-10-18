@@ -17,6 +17,7 @@ ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 CHAT_ID = os.environ.get("CHAT_ID", "")
 BANKROLL = float(os.environ.get("BANKROLL", "1000"))   # tu banca en €
+ENVIAR_RESUMEN = os.environ.get("RESUMEN", "").lower() == "true"   # mensaje de prueba aunque no haya avisos
 
 ZONA = ZoneInfo("Europe/Madrid")
 ESTADO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "estado.json")
@@ -212,6 +213,7 @@ def analizar():
     limite = ahora + timedelta(hours=HORAS_VENTANA)
     simples, candidatas = [], []
     restantes = "Desconocido"
+    n_analizados, mejor_global = 0, None   # para el resumen opcional
 
     for dep in deportes_hoy():
         if restantes != "Desconocido" and float(restantes) < CREDITOS_MINIMOS:
@@ -235,9 +237,12 @@ def analizar():
             fecha = dt.astimezone(ZONA).strftime("%d/%m %H:%M")
             partido = f"{p['home_team']} vs {p['away_team']}"
             mejor_pata = None
+            n_analizados += 1
             for sel, cuota in cuotas_w.items():
                 pr = prob[sel]
                 edge = (pr * cuota - 1.0) * 100.0
+                if mejor_global is None or edge > mejor_global[0]:
+                    mejor_global = (edge, partido, nombre_sel(sel), cuota)
                 datos = {"id": p["id"], "partido": partido, "liga": dep["nombre"], "fecha": fecha,
                          "sel": nombre_sel(sel), "cuota": cuota, "prob": pr, "edge": edge}
                 if CUOTA_MIN <= cuota <= CUOTA_MAX and edge >= UMBRAL_SIMPLE:
@@ -289,7 +294,18 @@ def analizar():
     guardar_estado(estado)
 
     if not (bloques_simples or bloques_combis):
-        print("Sin novedades; no se envía mensaje.")
+        if ENVIAR_RESUMEN:
+            texto = ("🤖 <b>RADAR WINAMAX · PRUEBA</b>\n\n"
+                     "✅ Telegram funciona. No hay apuestas con valor ahora mismo.\n"
+                     f"📊 Partidos analizados con Winamax: <b>{n_analizados}</b>")
+            if mejor_global:
+                e_, part, sel, cuota = mejor_global
+                texto += (f"\n🔎 Opción más cercana: <b>{esc(sel)}</b> en {esc(part)} "
+                          f"@{cuota} ({e_:+.1f}%; umbral +{UMBRAL_SIMPLE}%)")
+            texto += f"\n\n🔋 <i>Créditos restantes: {restantes}</i>"
+            enviar_telegram(texto)
+        else:
+            print("Sin novedades; no se envía mensaje.")
         return
 
     partes = ["🤖 <b>RADAR WINAMAX</b>"]
