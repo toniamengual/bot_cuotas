@@ -21,6 +21,9 @@ ENVIAR_RESUMEN = os.environ.get("RESUMEN", "").lower() == "true"   # mensaje de 
 
 ZONA = ZoneInfo("Europe/Madrid")
 ESTADO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "estado.json")
+APUESTAS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "apuestas.json")
+ESPERA_RESULTADO_H = 3       # horas tras el inicio antes de buscar el resultado
+DIAS_ANULAR = 4              # si no hay resultado tras estos días, la apuesta se anula
 
 # Simples
 UMBRAL_SIMPLE = 2.5          # % mínimo de ventaja para avisar
@@ -197,6 +200,140 @@ def es_nuevo(estado, ident):
 
 
 # ==========================================
+# 4b. SEGUIMIENTO DE APUESTAS SUGERIDAS (guardar, comprobar resultado, balance)
+# Se asume que apuestas exactamente el stake sugerido a la cuota avisada.
+# ==========================================
+def cargar_json(ruta, defecto):
+    try:
+        with open(ruta, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return defecto
+
+
+def guardar_json(ruta, datos):
+    with open(ruta, "w", encoding="utf-8") as f:
+        json.dump(datos, f, indent=1, ensure_ascii=False)
+
+
+def nueva_apuesta(tipo, cuota, prob, edge, stake, patas):
+    campos = ("id", "sport", "partido", "sel", "raw", "cuota", "prob", "commence")
+    return {"tipo": tipo, "ts": datetime.now(timezone.utc).timestamp(), "cuota": cuota,
+            "prob": prob, "edge": edge, "stake": stake, "estado": "pendiente", "beneficio": None,
+            "patas": [{**{k: p[k] for k in campos}, "resultado": None, "cierre_prob": None} for p in patas]}
+
+
+def actualizar_cierre(apuestas, event_id, prob):
+    """Mientras el partido no empieza, guarda la última probabilidad justa (aprox. línea de cierre)."""
+    ahora = datetime.now(timezone.utc).timestamp()
+    for b in apuestas:
+        if b["estado"] != "pendiente":
+            continue
+        for leg in b["patas"]:
+            if leg["id"] == event_id and leg["resultado"] is None and leg["commence"] > ahora:
+                leg["cierre_prob"] = prob.get(leg["raw"])
+
+
+def obtener_resultados(sport_key):
+    url = f"https://api.the-odds-api.com/v4/sports/{sport_key}/scores/"
+    try:
+        res = requests.get(url, params={"apiKey": ODDS_API_KEY, "daysFrom": 3}, timeout=20)
+        if res.status_code == 200:
+            return {e["id"]: e for e in res.json()}, res.headers.get("x-requests-remaining")
+        print(f"Aviso resultados {sport_key}: HTTP {res.status_code} {res.text[:200]}")
+    except requests.RequestException as e:
+        print(f"Error resultados {sport_key}: {e}")
+    return {}, None
+
+
+def ganador(ev):
+    """Devuelve el nombre del ganador, 'Draw' si empatan, o None si el partido no ha terminado."""
+    if not ev or not ev.get("completed"):
+        return None
+    marcador = {}
+    for s in ev.get("scores") or []:
+        try:
+            marcador[s["name"]] = float(s["score"])
+        except (KeyError, TypeError, ValueError):
+            return None
+    h, a = ev.get("home_team"), ev.get("away_team")
+    if h not in marcador or a not in marcador:
+        return None
+    if marcador[h] == marcador[a]:
+        return "Draw"
+    return h if marcador[h] > marcador[a] else a
+
+
+def liquidar(apuestas, ahora):
+    """Comprueba resultados de apuestas pendientes. Devuelve (apuestas cerradas ahora, créditos restantes)."""
+    ts = ahora.timestamp()
+    pendientes = [b for b in apuestas if b["estado"] == "pendiente"]
+    deportes = {leg["sport"] for b in pendientes for leg in b["patas"]
+                if leg["resultado"] is None and ts > leg["commence"] + ESPERA_RESULTADO_H * 3600}
+    resultados, restantes = {}, None
+    for dep in deportes:
+        resultados[dep], rest = obtener_resultados(dep)
+        restantes = rest or restantes
+
+    cerradas = []
+    for b in pendientes:
+        for leg in b["patas"]:
+            if leg["resultado"] is not None:
+                continue
+            w = ganador(resultados.get(leg["sport"], {}).get(leg["id"]))
+            if w is not None:
+                leg["resultado"] = "won" if w == leg["raw"] else "lost"
+            elif ts > leg["commence"] + DIAS_ANULAR * 86400:
+                leg["resultado"] = "void"       # no se pudo comprobar: se anula
+        res = [leg["resultado"] for leg in b["patas"]]
+        if "lost" in res:
+            b["estado"], b["beneficio"] = "perdida", -b["stake"]
+        elif None not in res:
+            ganadas = [leg for leg in b["patas"] if leg["resultado"] == "won"]
+            if ganadas:
+                c = 1.0
+                for leg in ganadas:
+                    c *= leg["cuota"]
+                b["estado"], b["beneficio"] = "ganada", round(b["stake"] * (c - 1.0), 2)
+            else:
+                b["estado"], b["beneficio"] = "anulada", 0.0
+        else:
+            continue
+        cerradas.append(b)
+    return cerradas, restantes
+
+
+def fmt_cerrada(b):
+    icono = {"ganada": "✅", "perdida": "❌", "anulada": "➖"}[b["estado"]]
+    patas = " + ".join(f"{esc(l['partido'])} → <b>{esc(l['sel'])}</b>" for l in b["patas"])
+    return (f"{icono} {patas} @{b['cuota']}\n"
+            f"   Resultado: <b>{b['beneficio']:+.2f}€</b> (stake sugerido {b['stake']:.2f}€)")
+
+
+def resumen_balance(apuestas):
+    cerr = [b for b in apuestas if b["estado"] in ("ganada", "perdida")]
+    pend = sum(1 for b in apuestas if b["estado"] == "pendiente")
+    if not cerr:
+        return f"📒 <i>Apuestas pendientes de resultado: {pend}</i>" if pend else ""
+    apostado = sum(b["stake"] for b in cerr)
+    beneficio = sum(b["beneficio"] for b in cerr)
+    esperado = sum(b["stake"] * b["edge"] / 100.0 for b in cerr)
+    ganadas = sum(1 for b in cerr if b["estado"] == "ganada")
+    roi = beneficio / apostado * 100.0 if apostado else 0.0
+    texto = (f"📒 <b>BALANCE DE SUGERENCIAS</b>\n"
+             f"Cerradas: {len(cerr)} (ganadas {ganadas}) · Pendientes: {pend}\n"
+             f"Apostado: {apostado:.2f}€ · Beneficio: <b>{beneficio:+.2f}€</b> (ROI {roi:+.1f}%)\n"
+             f"Beneficio esperado según el modelo: {esperado:+.2f}€")
+    clv = [b["cuota"] * b["patas"][0]["cierre_prob"] - 1.0 for b in cerr
+           if b["tipo"] == "simple" and b["patas"][0]["cierre_prob"]]
+    if clv:
+        texto += f"\nCLV medio ({len(clv)} simples): {sum(clv) / len(clv) * 100:+.1f}%"
+    if len(cerr) < 30:
+        texto += "\n<i>Pocas apuestas aún: el resultado es ruido, no saques conclusiones.</i>"
+    return texto
+
+
+# ==========================================
 # 5. ANÁLISIS
 # ==========================================
 def esc(t):
@@ -214,6 +351,11 @@ def analizar():
     simples, candidatas = [], []
     restantes = "Desconocido"
     n_analizados, mejor_global = 0, None   # para el resumen opcional
+
+    apuestas = cargar_json(APUESTAS_PATH, [])
+    cerradas, restantes_scores = liquidar(apuestas, ahora)
+    if restantes_scores is not None:
+        restantes = restantes_scores
 
     for dep in deportes_hoy():
         if restantes != "Desconocido" and float(restantes) < CREDITOS_MINIMOS:
@@ -233,6 +375,7 @@ def analizar():
             cuotas_w = mejores_cuotas_winamax(casas)
             if not prob or set(cuotas_w) != set(prob):
                 continue
+            actualizar_cierre(apuestas, p["id"], prob)
 
             fecha = dt.astimezone(ZONA).strftime("%d/%m %H:%M")
             partido = f"{p['home_team']} vs {p['away_team']}"
@@ -244,7 +387,8 @@ def analizar():
                 if mejor_global is None or edge > mejor_global[0]:
                     mejor_global = (edge, partido, nombre_sel(sel), cuota)
                 datos = {"id": p["id"], "partido": partido, "liga": dep["nombre"], "fecha": fecha,
-                         "sel": nombre_sel(sel), "cuota": cuota, "prob": pr, "edge": edge}
+                         "sel": nombre_sel(sel), "cuota": cuota, "prob": pr, "edge": edge,
+                         "raw": sel, "sport": dep["key"], "commence": dt.timestamp()}
                 if CUOTA_MIN <= cuota <= CUOTA_MAX and edge >= UMBRAL_SIMPLE:
                     simples.append(datos)
                 if CUOTA_MIN <= cuota <= CUOTA_MAX_PATA and edge >= EDGE_MIN_PATA:
@@ -259,6 +403,8 @@ def analizar():
     for s in simples:
         if not es_nuevo(estado, f"S|{s['id']}|{s['sel']}|{s['cuota']}"):
             continue
+        apuestas.append(nueva_apuesta("simple", s["cuota"], s["prob"], s["edge"],
+                                      kelly_stake(s["prob"], s["cuota"]), [s]))
         aviso = "\n⚠️ <i>Ventaja muy alta: comprueba que la cuota sigue disponible.</i>" if s["edge"] > EDGE_SOSPECHOSO else ""
         bloques_simples.append(
             f"🎯 <b>WINAMAX +{s['edge']:.1f}%</b> · {esc(s['liga'])} · ⏰ {s['fecha']}h\n"
@@ -284,6 +430,8 @@ def analizar():
     for edge, a, b, cuota, pr in combis[:3]:
         if not es_nuevo(estado, f"C|{a['id']}|{a['sel']}|{a['cuota']}|{b['id']}|{b['sel']}|{b['cuota']}"):
             continue
+        apuestas.append(nueva_apuesta("doble", cuota, pr, edge,
+                                      kelly_stake(pr, cuota, KELLY_FRACCION * COMBI_FACTOR), [a, b]))
         bloques_combis.append(
             f"🔗 <b>DOBLE WINAMAX +{edge:.1f}%</b>\n"
             f"1️⃣ {esc(a['partido'])} ({a['fecha']}h) 👉 <b>{esc(a['sel'])}</b> @{a['cuota']}\n"
@@ -292,8 +440,12 @@ def analizar():
             f"💶 Stake sugerido: <b>{kelly_stake(pr, cuota, KELLY_FRACCION * COMBI_FACTOR):.2f}€</b>")
 
     guardar_estado(estado)
+    guardar_json(APUESTAS_PATH, apuestas)
 
-    if not (bloques_simples or bloques_combis):
+    bloques_cerradas = [fmt_cerrada(b) for b in cerradas]
+    balance = resumen_balance(apuestas)
+
+    if not (bloques_simples or bloques_combis or bloques_cerradas):
         if ENVIAR_RESUMEN:
             texto = ("🤖 <b>RADAR WINAMAX · PRUEBA</b>\n\n"
                      "✅ Telegram funciona. No hay apuestas con valor ahora mismo.\n"
@@ -302,6 +454,8 @@ def analizar():
                 e_, part, sel, cuota = mejor_global
                 texto += (f"\n🔎 Opción más cercana: <b>{esc(sel)}</b> en {esc(part)} "
                           f"@{cuota} ({e_:+.1f}%; umbral +{UMBRAL_SIMPLE}%)")
+            if balance:
+                texto += "\n\n" + balance
             texto += f"\n\n🔋 <i>Créditos restantes: {restantes}</i>"
             enviar_telegram(texto)
         else:
@@ -309,6 +463,9 @@ def analizar():
         return
 
     partes = ["🤖 <b>RADAR WINAMAX</b>"]
+    if bloques_cerradas:
+        partes.append("🏁 <b>RESULTADOS DE TUS SUGERENCIAS</b>")
+        partes += bloques_cerradas
     if bloques_simples:
         partes.append("🚨 <b>APUESTAS SIMPLES CON VALOR</b>")
         partes += bloques_simples[:5]
@@ -316,6 +473,8 @@ def analizar():
         partes.append("🔥 <b>COMBINADAS DOBLES CON VALOR</b>\n"
                       "<i>Mismas casa y cuota en las dos patas; más riesgo que una simple.</i>")
         partes += bloques_combis
+    if balance:
+        partes.append(balance)
     partes.append(f"🔋 <i>Créditos restantes: {restantes}</i>")
     enviar_telegram("\n\n".join(partes))
 
