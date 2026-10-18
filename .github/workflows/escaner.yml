@@ -1,0 +1,28 @@
+name: Radar de Apuestas
+
+on:
+  # Esto crea un botón manual para que lo lances cuando quieras desde el móvil o PC
+  workflow_dispatch:
+
+  # Esto lo ejecuta solo los Viernes, Sábados y Domingos a las 11:00 y a las 17:00 (hora española aprox.)
+  schedule:
+    - cron: '0 9,15 * * 5,6,0'
+
+jobs:
+  escanear_cuotas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar librerías necesarias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar el Bot y avisar por Telegram
+        run: python bot_apuestas.py
