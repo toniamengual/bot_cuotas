@@ -5,6 +5,11 @@ on:
     # Horas en UTC (3 ejecuciones al día = ~12 créditos/día, ~360 al mes)
     - cron: "0 8,13,18 * * *"
   workflow_dispatch:
+    inputs:
+      resumen:
+        description: "Enviar mensaje de prueba aunque no haya avisos"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -28,6 +33,7 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
           BANKROLL: ${{ vars.BANKROLL || '1000' }}
+          RESUMEN: ${{ github.event.inputs.resumen }}
 
       - name: Guardar estado (evita avisos repetidos)
         run: |
