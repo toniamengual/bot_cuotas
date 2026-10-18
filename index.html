@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Winamax · Resultados</title>
+<style>
+  :root { --bg:#0f1420; --card:#181f2f; --txt:#e6e9f0; --mut:#8b95ab; --ok:#2ecc71; --ko:#ff5c5c; --pend:#f5b942; --line:#27304a; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--txt); }
+  main { max-width:960px; margin:0 auto; padding:20px 14px 60px; }
+  h1 { font-size:1.4rem; margin:0 0 4px; }
+  .sub { color:var(--mut); font-size:.85rem; margin-bottom:18px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:18px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
+  .card .l { color:var(--mut); font-size:.75rem; text-transform:uppercase; letter-spacing:.04em; }
+  .card .v { font-size:1.35rem; font-weight:700; margin-top:4px; }
+  .pos { color:var(--ok); } .neg { color:var(--ko); }
+  h2 { font-size:1rem; margin:22px 0 8px; }
+  .chart { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px; }
+  svg { width:100%; height:200px; display:block; }
+  .filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  .filters button { background:var(--card); color:var(--txt); border:1px solid var(--line); border-radius:20px; padding:5px 12px; cursor:pointer; font-size:.8rem; }
+  .filters button.on { background:#2b3a62; border-color:#4663b8; }
+  .tablewrap { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+  table { width:100%; border-collapse:collapse; font-size:.85rem; }
+  th, td { padding:9px 10px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--mut); font-weight:600; font-size:.72rem; text-transform:uppercase; }
+  tr:last-child td { border-bottom:none; }
+  .badge { padding:2px 8px; border-radius:10px; font-size:.72rem; font-weight:700; }
+  .b-ganada { background:#17432b; color:var(--ok); } .b-perdida { background:#4a1d1d; color:var(--ko); }
+  .b-pendiente { background:#4a3b14; color:var(--pend); } .b-anulada { background:#2a2f3d; color:var(--mut); }
+  .note { color:var(--mut); font-size:.78rem; margin-top:14px; line-height:1.4; }
+  .empty { padding:30px; text-align:center; color:var(--mut); }
+</style>
+</head>
+<body>
+<main>
+  <h1>🤖 Radar Winamax · Resultados</h1>
+  <div class="sub" id="sub">Cargando…</div>
+  <div class="grid" id="stats"></div>
+
+  <h2>Beneficio acumulado (€)</h2>
+  <div class="chart"><svg id="chart" viewBox="0 0 600 200" preserveAspectRatio="none"></svg></div>
+
+  <h2>Apuestas sugeridas</h2>
+  <div class="filters" id="filters"></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Fecha</th><th>Tipo</th><th>Selección</th><th>Cuota</th><th>Stake</th><th>Valor</th><th>Estado</th><th>Resultado</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+
+  <p class="note">Los resultados suponen que apostaste exactamente el stake sugerido a la cuota avisada.
+  Con pocas apuestas cerradas (menos de unas 30) el beneficio es sobre todo suerte; el CLV es un indicador más fiable.</p>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const eur = n => (n >= 0 ? "+" : "") + n.toFixed(2) + "€";
+const cls = n => n > 0 ? "pos" : n < 0 ? "neg" : "";
+const fechaDe = b => Math.min(...b.patas.map(p => p.commence));
+const fmtFecha = ts => new Date(ts * 1000).toLocaleString("es-ES", {day:"2-digit", month:"2-digit", hour:"2-digit", minute:"2-digit"});
+let bets = [], filtro = "todas";
+
+function card(label, value, c = "") {
+  const d = document.createElement("div"); d.className = "card";
+  const l = document.createElement("div"); l.className = "l"; l.textContent = label;
+  const v = document.createElement("div"); v.className = "v " + c; v.textContent = value;
+  d.append(l, v); return d;
+}
+
+function renderStats() {
+  const cerr = bets.filter(b => b.estado === "ganada" || b.estado === "perdida");
+  const pend = bets.filter(b => b.estado === "pendiente").length;
+  const apostado = cerr.reduce((s, b) => s + b.stake, 0);
+  const benef = cerr.reduce((s, b) => s + b.beneficio, 0);
+  const esperado = cerr.reduce((s, b) => s + b.stake * b.edge / 100, 0);
+  const gan = cerr.filter(b => b.estado === "ganada").length;
+  const clvs = cerr.filter(b => b.tipo === "simple" && b.patas[0].cierre_prob)
+                   .map(b => b.cuota * b.patas[0].cierre_prob - 1);
+  const s = $("stats"); s.replaceChildren();
+  s.append(card("Beneficio", eur(benef), cls(benef)));
+  s.append(card("ROI", apostado ? (benef / apostado * 100).toFixed(1) + "%" : "–", cls(benef)));
+  s.append(card("Esperado (modelo)", eur(esperado), cls(esperado)));
+  s.append(card("Cerradas", `${cerr.length} (${gan} ganadas)`));
+  s.append(card("Pendientes", String(pend)));
+  s.append(card("CLV medio", clvs.length ? (clvs.reduce((a, b) => a + b, 0) / clvs.length * 100).toFixed(1) + "% (" + clvs.length + ")" : "–",
+                clvs.length ? cls(clvs.reduce((a, b) => a + b, 0)) : ""));
+}
+
+function renderChart() {
+  const svg = $("chart"); svg.replaceChildren();
+  const cerr = bets.filter(b => b.estado === "ganada" || b.estado === "perdida").sort((a, b) => fechaDe(a) - fechaDe(b));
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  if (cerr.length < 1) {
+    const t = el("text", {x:300, y:100, "text-anchor":"middle", fill:"#8b95ab", "font-size":14});
+    t.textContent = "Aún no hay apuestas cerradas"; svg.append(t); return;
+  }
+  let acc = 0; const pts = [0];
+  cerr.forEach(b => { acc += b.beneficio; pts.push(acc); });
+  const min = Math.min(...pts, 0), max = Math.max(...pts, 0), rng = (max - min) || 1;
+  const X = i => 10 + i * (580 / Math.max(pts.length - 1, 1));
+  const Y = v => 190 - (v - min) / rng * 180;
+  svg.append(el("line", {x1:10, x2:590, y1:Y(0), y2:Y(0), stroke:"#3a4566", "stroke-dasharray":"4 4"}));
+  svg.append(el("polyline", {points: pts.map((v, i) => `${X(i)},${Y(v)}`).join(" "), fill:"none",
+    stroke: acc >= 0 ? "#2ecc71" : "#ff5c5c", "stroke-width":2.5, "vector-effect":"non-scaling-stroke"}));
+}
+
+function renderTable() {
+  const rows = $("rows"); rows.replaceChildren();
+  const lista = bets.filter(b => filtro === "todas" || b.estado === filtro || b.tipo === filtro)
+                    .sort((a, b) => fechaDe(b) - fechaDe(a));
+  if (!lista.length) {
+    const tr = document.createElement("tr"), td = document.createElement("td");
+    td.colSpan = 8; td.className = "empty"; td.textContent = "Sin apuestas para mostrar."; tr.append(td); rows.append(tr); return;
+  }
+  for (const b of lista) {
+    const tr = document.createElement("tr");
+    const celda = (txt, c) => { const td = document.createElement("td"); td.textContent = txt; if (c) td.className = c; return td; };
+    tr.append(celda(fmtFecha(fechaDe(b))), celda(b.tipo));
+    const sel = document.createElement("td");
+    b.patas.forEach(p => { const d = document.createElement("div"); d.textContent = `${p.partido} → ${p.sel}`; sel.append(d); });
+    tr.append(sel, celda("@" + b.cuota), celda(b.stake.toFixed(2) + "€"), celda("+" + b.edge.toFixed(1) + "%"));
+    const est = document.createElement("td"), bd = document.createElement("span");
+    bd.className = "badge b-" + b.estado; bd.textContent = b.estado; est.append(bd);
+    tr.append(est, b.beneficio == null ? celda("–") : celda(eur(b.beneficio), cls(b.beneficio)));
+    rows.append(tr);
+  }
+}
+
+function renderFilters() {
+  const f = $("filters"); f.replaceChildren();
+  for (const k of ["todas", "pendiente", "ganada", "perdida", "simple", "doble"]) {
+    const b = document.createElement("button"); b.textContent = k; if (k === filtro) b.className = "on";
+    b.onclick = () => { filtro = k; renderFilters(); renderTable(); }; f.append(b);
+  }
+}
+
+fetch("apuestas.json?t=" + Date.now())
+  .then(r => r.ok ? r.json() : [])
+  .catch(() => [])
+  .then(data => {
+    bets = Array.isArray(data) ? data : [];
+    $("sub").textContent = bets.length ? `${bets.length} apuestas sugeridas registradas` : "Aún no hay apuestas registradas.";
+    renderStats(); renderChart(); renderFilters(); renderTable();
+  });
+</script>
+</body>
+</html>
