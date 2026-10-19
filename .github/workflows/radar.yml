@@ -2,8 +2,8 @@ name: Radar Winamax
 
 on:
   schedule:
-    # Horas en UTC (3 ejecuciones al día = ~12 créditos/día, ~360 al mes)
-    - cron: "0 8,13,18 * * *"
+    # Horas en UTC (2 ejecuciones al día: 10:00 y 18:00 en horario de verano España; 09:00 y 17:00 en invierno)
+    - cron: "0 8,16 * * *"
   workflow_dispatch:
     inputs:
       resumen:

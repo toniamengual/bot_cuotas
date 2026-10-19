@@ -69,7 +69,7 @@ INCLUIR_TENIS = True         # añade los torneos de tenis activos (al final de 
 # Control de créditos de la API (cada liga consultada cuesta 1 crédito)
 MAX_LIGAS_EJECUCION = 8      # tope de ligas por ejecución
 RESERVA_FACTOR = 0.85        # usa solo el 85% de los créditos; el resto para buscar resultados
-EJECUCIONES_DIA = 3          # debe coincidir con el cron de radar.yml
+EJECUCIONES_DIA = 2          # debe coincidir con el cron de radar.yml
 DIA_RENOVACION = 1           # día del mes (1-28) en que se renuevan tus créditos
 
 CASAS_SHARP = ["pinnacle", "betfair_ex_eu", "matchbook"]   # referencia de "precio real"
