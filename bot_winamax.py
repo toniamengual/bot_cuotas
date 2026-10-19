@@ -44,7 +44,9 @@ COMBI_FACTOR = 0.5           # en combinadas se apuesta la mitad
 
 HORAS_VENTANA = 72           # solo partidos de las próximas 72 h
 CREDITOS_MINIMOS = 20
-EDGE_SOSPECHOSO = 12.0
+EDGE_SOSPECHOSO = 12.0        # por encima se avisa con una advertencia
+EDGE_DESCARTE = 20.0         # por encima se descarta: casi seguro es un error de datos
+DISCREPANCIA_MAX = 0.05      # una casa de referencia que difiera >5 puntos de Pinnacle se ignora
 
 # Ligas en orden de prioridad. Las que no estén activas o no tengan partidos se saltan sin gastar créditos.
 LIGAS = [
@@ -111,19 +113,30 @@ def cuotas_h2h(casa):
 
 
 def prob_justa(casas):
-    """Probabilidad real de cada resultado: media de las casas de referencia disponibles."""
-    lista = []
+    """Probabilidad real de cada resultado.
+
+    Se ancla en Pinnacle (obligatorio). Betfair Exchange / Matchbook solo se promedian si coinciden
+    con Pinnacle (diferencia máxima DISCREPANCIA_MAX); las líneas poco líquidas dan cuotas absurdas.
+    """
+    por_casa = {}
     for c in casas:
         if c["key"] in CASAS_SHARP:
             cu = cuotas_h2h(c)
             if len(cu) >= 2:
                 nombres = sorted(cu)
-                lista.append(dict(zip(nombres, quitar_margen([cu[n] for n in nombres]))))
-    if not lista:
+                por_casa[c["key"]] = dict(zip(nombres, quitar_margen([cu[n] for n in nombres])))
+    pin = por_casa.get("pinnacle")
+    if not pin:
         return {}
-    nombres = set(lista[0])
-    lista = [d for d in lista if set(d) == nombres]
-    return {n: sum(d[n] for d in lista) / len(lista) for n in nombres}
+    lista = [pin]
+    for clave, d in por_casa.items():
+        if clave == "pinnacle" or set(d) != set(pin):
+            continue
+        if max(abs(d[n] - pin[n]) for n in pin) <= DISCREPANCIA_MAX:
+            lista.append(d)
+        else:
+            print(f"Referencia {clave} descartada: discrepa de Pinnacle")
+    return {n: sum(d[n] for d in lista) / len(lista) for n in pin}
 
 
 def mejores_cuotas_winamax(casas):
@@ -450,6 +463,10 @@ def analizar():
             for sel, cuota in cuotas_w.items():
                 pr = prob[sel]
                 edge = (pr * cuota - 1.0) * 100.0
+                if edge > EDGE_DESCARTE:
+                    print(f"Descartado por ventaja irreal (+{edge:.0f}%): {partido} {sel} @{cuota}, "
+                          f"cuota justa @{1 / pr:.2f}")
+                    continue
                 if mejor_global is None or edge > mejor_global[0]:
                     mejor_global = (edge, partido, nombre_sel(sel), cuota)
                 datos = {"id": p["id"], "partido": partido, "liga": dep["nombre"], "fecha": fecha,
