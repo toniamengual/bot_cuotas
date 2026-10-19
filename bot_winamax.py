@@ -3,8 +3,10 @@ import html
 import json
 import os
 import time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from itertools import combinations
+from urllib.parse import quote
 from zoneinfo import ZoneInfo
 
 import requests
@@ -71,6 +73,10 @@ MAX_LIGAS_EJECUCION = 8      # tope de ligas por ejecución
 RESERVA_FACTOR = 0.85        # usa solo el 85% de los créditos; el resto para buscar resultados
 EJECUCIONES_DIA = 2          # debe coincidir con el cron de radar.yml
 DIA_RENOVACION = 1           # día del mes (1-28) en que se renuevan tus créditos
+
+# Noticias en los avisos (Google News RSS; no gasta créditos)
+INCLUIR_NOTICIAS = True
+NOTICIAS_POR_EQUIPO = 2      # titulares por equipo en las apuestas simples
 
 CASAS_SHARP = ["pinnacle", "betfair_ex_eu", "matchbook"]   # referencia de "precio real"
 CASA_OBJETIVO = "winamax"    # coincide con winamax_fr y winamax_de
@@ -217,6 +223,43 @@ def obtener_cuotas(sport_key):
             print(f"Error {sport_key}: {e}")
         time.sleep(2 * (intento + 1))
     return None, {}
+
+
+_cache_noticias = {}
+
+
+def titulares(equipo, n):
+    """Últimos titulares (≤3 días) de un equipo desde Google News RSS. No gasta créditos de la API."""
+    if not INCLUIR_NOTICIAS:
+        return []
+    if equipo not in _cache_noticias:
+        items = []
+        try:
+            url = ("https://news.google.com/rss/search?q=" + quote(f'"{equipo}" when:3d')
+                   + "&hl=es&gl=ES&ceid=ES:es")
+            res = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+            if res.status_code == 200:
+                for it in ET.fromstring(res.content).iter("item"):
+                    t = (it.findtext("title") or "").strip()
+                    l = (it.findtext("link") or "").strip()
+                    if t and l:
+                        items.append((t, l))
+                    if len(items) >= 5:
+                        break
+        except (requests.RequestException, ET.ParseError) as e:
+            print(f"Noticias {equipo}: {e}")
+        _cache_noticias[equipo] = items
+    return _cache_noticias[equipo][:n]
+
+
+def bloque_noticias(equipos, n):
+    lineas = []
+    for eq in equipos:
+        for t, l in titulares(eq, n):
+            lineas.append(f'   • <a href="{html.escape(l, quote=True)}">{html.escape(t)}</a>')
+    if not lineas:
+        return ""
+    return "\n📰 <i>Últimas noticias (revisa lesiones o cambios):</i>\n" + "\n".join(lineas)
 
 
 def trocear(texto, limite=4000):
@@ -471,7 +514,8 @@ def analizar():
                     mejor_global = (edge, partido, nombre_sel(sel), cuota)
                 datos = {"id": p["id"], "partido": partido, "liga": dep["nombre"], "fecha": fecha,
                          "sel": nombre_sel(sel), "cuota": cuota, "prob": pr, "edge": edge,
-                         "raw": sel, "sport": dep["key"], "commence": dt.timestamp()}
+                         "raw": sel, "sport": dep["key"], "commence": dt.timestamp(),
+                         "local": p["home_team"], "visitante": p["away_team"]}
                 if CUOTA_MIN <= cuota <= CUOTA_MAX and edge >= UMBRAL_SIMPLE:
                     simples.append(datos)
                 if CUOTA_MIN <= cuota <= CUOTA_MAX_PATA and edge >= EDGE_MIN_PATA:
@@ -494,7 +538,8 @@ def analizar():
             f"⚔️ <b>{esc(s['partido'])}</b>\n"
             f"👉 <b>{esc(s['sel'])}</b> a cuota <b>@{s['cuota']}</b> "
             f"(cuota justa @{1 / s['prob']:.2f})\n"
-            f"💶 Stake sugerido: <b>{kelly_stake(s['prob'], s['cuota']):.2f}€</b>{aviso}")
+            f"💶 Stake sugerido: <b>{kelly_stake(s['prob'], s['cuota']):.2f}€</b>{aviso}"
+            + bloque_noticias([s["local"], s["visitante"]], NOTICIAS_POR_EQUIPO))
 
     # --- Combinadas dobles (patas de partidos distintos, ambas en Winamax) ---
     candidatas.sort(key=lambda x: x["edge"], reverse=True)
@@ -520,7 +565,8 @@ def analizar():
             f"1️⃣ {esc(a['partido'])} ({a['fecha']}h) 👉 <b>{esc(a['sel'])}</b> @{a['cuota']}\n"
             f"2️⃣ {esc(b['partido'])} ({b['fecha']}h) 👉 <b>{esc(b['sel'])}</b> @{b['cuota']}\n"
             f"💰 Cuota total <b>@{cuota}</b> · prob. real {pr * 100:.1f}%\n"
-            f"💶 Stake sugerido: <b>{kelly_stake(pr, cuota, KELLY_FRACCION * COMBI_FACTOR):.2f}€</b>")
+            f"💶 Stake sugerido: <b>{kelly_stake(pr, cuota, KELLY_FRACCION * COMBI_FACTOR):.2f}€</b>"
+            + bloque_noticias([a["local"], a["visitante"], b["local"], b["visitante"]], 1))
 
     guardar_estado(estado)
     guardar_json(APUESTAS_PATH, apuestas)
