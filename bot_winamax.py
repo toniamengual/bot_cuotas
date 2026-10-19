@@ -42,9 +42,33 @@ KELLY_FRACCION = 0.25        # se apuesta un cuarto de lo que sugiere Kelly
 STAKE_MAX_PCT = 3.0          # nunca más del 3% de la banca en una apuesta
 COMBI_FACTOR = 0.5           # en combinadas se apuesta la mitad
 
-HORAS_VENTANA = 48           # solo partidos de las próximas 48 h
+HORAS_VENTANA = 72           # solo partidos de las próximas 72 h
 CREDITOS_MINIMOS = 20
 EDGE_SOSPECHOSO = 12.0
+
+# Ligas en orden de prioridad. Las que no estén activas o no tengan partidos se saltan sin gastar créditos.
+LIGAS = [
+    {"key": "soccer_spain_la_liga", "nombre": "⚽ LaLiga"},
+    {"key": "soccer_epl", "nombre": "⚽ Premier League"},
+    {"key": "soccer_uefa_champs_league", "nombre": "🏆 Champions League"},
+    {"key": "soccer_italy_serie_a", "nombre": "⚽ Serie A"},
+    {"key": "soccer_germany_bundesliga", "nombre": "⚽ Bundesliga"},
+    {"key": "soccer_france_ligue_one", "nombre": "⚽ Ligue 1"},
+    {"key": "basketball_euroleague", "nombre": "🏀 Euroliga"},
+    {"key": "basketball_nba", "nombre": "🏀 NBA"},
+    {"key": "soccer_uefa_europa_league", "nombre": "⚽ Europa League"},
+    {"key": "soccer_spain_segunda_division", "nombre": "⚽ Segunda División"},
+    {"key": "soccer_netherlands_eredivisie", "nombre": "⚽ Eredivisie"},
+    {"key": "soccer_portugal_primeira_liga", "nombre": "⚽ Primeira Liga"},
+    {"key": "icehockey_nhl", "nombre": "🏒 NHL"},
+]
+INCLUIR_TENIS = True         # añade los torneos de tenis activos (al final de la prioridad)
+
+# Control de créditos de la API (cada liga consultada cuesta 1 crédito)
+MAX_LIGAS_EJECUCION = 8      # tope de ligas por ejecución
+RESERVA_FACTOR = 0.85        # usa solo el 85% de los créditos; el resto para buscar resultados
+EJECUCIONES_DIA = 3          # debe coincidir con el cron de radar.yml
+DIA_RENOVACION = 1           # día del mes (1-28) en que se renuevan tus créditos
 
 CASAS_SHARP = ["pinnacle", "betfair_ex_eu", "matchbook"]   # referencia de "precio real"
 CASA_OBJETIVO = "winamax"    # coincide con winamax_fr y winamax_de
@@ -116,21 +140,53 @@ def mejores_cuotas_winamax(casas):
 # ==========================================
 # 3. LIGAS DEL DÍA, API Y TELEGRAM
 # ==========================================
-def deportes_hoy():
-    """Elige las ligas según el día para ahorrar créditos de la API."""
-    if datetime.now(ZONA).weekday() in (1, 2, 3):
-        return [
-            {"key": "soccer_uefa_champs_league", "nombre": "🏆 Champions League"},
-            {"key": "basketball_euroleague", "nombre": "🏀 Euroliga"},
-            {"key": "basketball_nba", "nombre": "🏀 NBA"},
-            {"key": "soccer_spain_la_liga", "nombre": "⚽ LaLiga"},
-        ]
-    return [
-        {"key": "soccer_spain_la_liga", "nombre": "⚽ LaLiga"},
-        {"key": "soccer_epl", "nombre": "⚽ Premier League"},
-        {"key": "soccer_italy_serie_a", "nombre": "⚽ Serie A"},
-        {"key": "basketball_euroleague", "nombre": "🏀 Euroliga"},
-    ]
+def api_get(ruta, params=None):
+    """Llamada a The Odds API. Los endpoints /sports y /events NO consumen créditos."""
+    try:
+        res = requests.get(f"https://api.the-odds-api.com/v4{ruta}",
+                           params={"apiKey": ODDS_API_KEY, **(params or {})}, timeout=20)
+        if res.status_code == 200:
+            return res.json()
+        print(f"Aviso {ruta}: HTTP {res.status_code} {res.text[:150]}")
+    except requests.RequestException as e:
+        print(f"Error {ruta}: {e}")
+    return None
+
+
+def dias_hasta_renovacion():
+    """Días que faltan para que se renueven los créditos de la API."""
+    hoy = datetime.now(ZONA).date()
+    y, m = hoy.year, hoy.month
+    if hoy.day >= DIA_RENOVACION:
+        y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+    return max(1, (datetime(y, m, DIA_RENOVACION).date() - hoy).days)
+
+
+def seleccionar_deportes(ahora, limite):
+    """Ligas de la lista que están activas y tienen partidos en la ventana (comprobación gratuita)."""
+    activos = api_get("/sports")
+    candidatos = list(LIGAS)
+    if activos:
+        por_clave = {s["key"]: s for s in activos if s.get("active")}
+        candidatos = [d for d in LIGAS if d["key"] in por_clave]
+        if INCLUIR_TENIS:
+            candidatos += [{"key": s["key"], "nombre": "🎾 " + s["title"]}
+                           for s in por_clave.values() if s.get("group") == "Tennis"]
+    elegidos = []
+    for d in candidatos:
+        eventos = api_get(f"/sports/{d['key']}/events")
+        if eventos is None:           # no se pudo comprobar: se incluye por si acaso
+            elegidos.append(d)
+            continue
+        n = 0
+        for ev in eventos:
+            dt = datetime.fromisoformat(ev["commence_time"].replace("Z", "+00:00"))
+            if ahora < dt <= limite:
+                n += 1
+        if n:
+            elegidos.append(d)
+    print("Ligas con partidos:", ", ".join(d["key"] for d in elegidos) or "ninguna")
+    return elegidos
 
 
 def obtener_cuotas(sport_key):
@@ -357,12 +413,22 @@ def analizar():
     if restantes_scores is not None:
         restantes = restantes_scores
 
-    for dep in deportes_hoy():
+    n_llamadas, presupuesto = 0, None
+    for dep in seleccionar_deportes(ahora, limite):
         if restantes != "Desconocido" and float(restantes) < CREDITOS_MINIMOS:
             print("Quedan pocos créditos; se detiene.")
             break
+        if presupuesto is not None and n_llamadas >= presupuesto:
+            print(f"Presupuesto de {presupuesto} ligas por ejecución alcanzado.")
+            break
         partidos, headers = obtener_cuotas(dep["key"])
+        n_llamadas += 1
         restantes = headers.get("x-requests-remaining", restantes)
+        if presupuesto is None and restantes != "Desconocido":
+            # reparte los créditos que quedan entre las ejecuciones que faltan hasta la renovación
+            ejecuciones = dias_hasta_renovacion() * EJECUCIONES_DIA
+            presupuesto = max(1, min(MAX_LIGAS_EJECUCION,
+                                     int((float(restantes) + n_llamadas) * RESERVA_FACTOR / ejecuciones)))
         if not partidos:
             continue
 
