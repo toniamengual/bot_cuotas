@@ -2,8 +2,9 @@ name: Radar Winamax
 
 on:
   schedule:
-    # Horas en UTC (2 ejecuciones al día: 10:00 y 18:00 en horario de verano España; 09:00 y 17:00 en invierno)
-    - cron: "0 8,16 * * *"
+    # Horas en UTC (2 ejecuciones al día: 10:23 y 18:23 en horario de verano España; 09:23 y 17:23 en invierno).
+    # Se evita el minuto :00 porque GitHub retrasa o se salta más ejecuciones a las horas en punto.
+    - cron: "23 8,16 * * *"
   workflow_dispatch:
     inputs:
       resumen:
