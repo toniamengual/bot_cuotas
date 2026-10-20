@@ -19,6 +19,30 @@
     "prob": 0.21494287067871184,
     "commence": 1792522800.0,
     "resultado": null,
+    "cierre_prob": 0.21648770361385872
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "ts": 1792503624.994202,
+  "cuota": 1.78,
+  "prob": 0.5935543720750226,
+  "edge": 5.6526782293540245,
+  "stake": 18.12,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "2790f03a39ec672cd20a0fb57c24cdab",
+    "sport": "tennis_wta_ningbo_open",
+    "partido": "Alexandra Eala vs Diana Shnaider",
+    "sel": "Diana Shnaider",
+    "raw": "Diana Shnaider",
+    "cuota": 1.78,
+    "prob": 0.5935543720750226,
+    "commence": 1792641600.0,
+    "resultado": null,
     "cierre_prob": null
    }
   ]
