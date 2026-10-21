@@ -1,8 +1,11 @@
 """Radar Winamax: apuestas simples y combinadas dobles con valor, pensado para GitHub Actions."""
+import difflib
 import html
 import json
 import os
+import re
 import time
+import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from itertools import combinations
@@ -376,12 +379,98 @@ def ganador(ev):
     return h if marcador[h] > marcador[a] else a
 
 
+# Resultados vía ESPN (gratis, sin clave ni créditos). Si falla, se usa The Odds API como respaldo.
+ESPN_LIGAS = {
+    "soccer_spain_la_liga": "soccer/esp.1",
+    "soccer_epl": "soccer/eng.1",
+    "soccer_uefa_champs_league": "soccer/uefa.champions",
+    "soccer_uefa_europa_league": "soccer/uefa.europa",
+    "soccer_italy_serie_a": "soccer/ita.1",
+    "soccer_germany_bundesliga": "soccer/ger.1",
+    "soccer_france_ligue_one": "soccer/fra.1",
+    "soccer_spain_segunda_division": "soccer/esp.2",
+    "soccer_netherlands_eredivisie": "soccer/ned.1",
+    "soccer_portugal_primeira_liga": "soccer/por.1",
+    "basketball_nba": "basketball/nba",
+    "icehockey_nhl": "hockey/nhl",
+}
+_espn_cache = {}
+
+
+def _norm(nombre):
+    t = unicodedata.normalize("NFKD", nombre or "").encode("ascii", "ignore").decode().lower()
+    t = re.sub(r"[^a-z0-9 ]", " ", t)
+    return " ".join(w for w in t.split() if w not in ("fc", "cf", "ac", "as", "sc", "de", "the", "club"))
+
+
+def _mismo_equipo(a, b):
+    a, b = _norm(a), _norm(b)
+    if not a or not b:
+        return False
+    if a == b or a in b or b in a:
+        return True
+    return difflib.SequenceMatcher(None, a, b).ratio() >= 0.8
+
+
+def _espn_scoreboard(ruta, dia):
+    clave = (ruta, dia)
+    if clave not in _espn_cache:
+        try:
+            res = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/{ruta}/scoreboard",
+                               params={"dates": dia, "limit": 100}, timeout=20)
+            _espn_cache[clave] = res.json().get("events", []) if res.status_code == 200 else []
+        except (requests.RequestException, ValueError) as e:
+            print(f"Error ESPN {ruta} {dia}: {e}")
+            _espn_cache[clave] = []
+    return _espn_cache[clave]
+
+
+def ganador_espn(leg):
+    """Ganador ('Draw' si empatan) según ESPN, con el nombre tal como lo guarda la apuesta, o None."""
+    ruta = ESPN_LIGAS.get(leg["sport"])
+    if not ruta or " vs " not in leg["partido"]:
+        return None
+    local, visit = leg["partido"].split(" vs ", 1)
+    inicio = datetime.fromtimestamp(leg["commence"], timezone.utc)
+    for delta in (0, 1, -1):
+        dia = (inicio + timedelta(days=delta)).strftime("%Y%m%d")
+        for ev in _espn_scoreboard(ruta, dia):
+            comp = (ev.get("competitions") or [{}])[0]
+            # solo tiempo reglamentario terminado (no prórroga ni penaltis, que The Odds API no cuenta)
+            estado = ev.get("status", {}).get("type", {}).get("name")
+            if estado not in ("STATUS_FULL_TIME", "STATUS_FINAL"):
+                continue
+            equipos = {c.get("homeAway"): c for c in comp.get("competitors", [])}
+            if "home" not in equipos or "away" not in equipos:
+                continue
+            h, a = equipos["home"], equipos["away"]
+            if _mismo_equipo(h["team"]["displayName"], local) and _mismo_equipo(a["team"]["displayName"], visit):
+                try:
+                    sh, sa = float(h["score"]), float(a["score"])
+                except (KeyError, TypeError, ValueError):
+                    return None
+                return "Draw" if sh == sa else (local if sh > sa else visit)
+    return None
+
+
 def liquidar(apuestas, ahora):
     """Comprueba resultados de apuestas pendientes. Devuelve (apuestas cerradas ahora, créditos restantes)."""
     ts = ahora.timestamp()
     pendientes = [b for b in apuestas if b["estado"] == "pendiente"]
+
+    # 1) ESPN primero (gratis)
+    por_espn = {}
+    for b in pendientes:
+        for leg in b["patas"]:
+            if leg["resultado"] is None and ts > leg["commence"] + ESPERA_RESULTADO_H * 3600:
+                w = ganador_espn(leg)
+                if w is not None:
+                    por_espn[(leg["id"], leg["raw"])] = w
+
+    # 2) The Odds API solo para lo que ESPN no resolvió
     deportes = {leg["sport"] for b in pendientes for leg in b["patas"]
-                if leg["resultado"] is None and ts > leg["commence"] + ESPERA_RESULTADO_H * 3600}
+                if leg["resultado"] is None and ts > leg["commence"] + ESPERA_RESULTADO_H * 3600
+                and (leg["id"], leg["raw"]) not in por_espn}
     resultados, restantes = {}, None
     for dep in deportes:
         resultados[dep], rest = obtener_resultados(dep)
@@ -392,7 +481,9 @@ def liquidar(apuestas, ahora):
         for leg in b["patas"]:
             if leg["resultado"] is not None:
                 continue
-            w = ganador(resultados.get(leg["sport"], {}).get(leg["id"]))
+            w = por_espn.get((leg["id"], leg["raw"]))
+            if w is None:
+                w = ganador(resultados.get(leg["sport"], {}).get(leg["id"]))
             if w is not None:
                 leg["resultado"] = "won" if w == leg["raw"] else "lost"
             elif ts > leg["commence"] + DIAS_ANULAR * 86400:
