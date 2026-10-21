@@ -1,1 +1,50 @@
-[]
+[
+ {
+  "tipo": "simple",
+  "ts": 1792435023.932835,
+  "cuota": 4.8,
+  "prob": 0.21494287067871184,
+  "edge": 3.172577925781672,
+  "stake": 2.09,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "46b790335fa98338b7e1ed0b614078fb",
+    "sport": "soccer_uefa_champs_league",
+    "partido": "Paris Saint Germain vs Barcelona",
+    "sel": "Empate",
+    "raw": "Draw",
+    "cuota": 4.8,
+    "prob": 0.21494287067871184,
+    "commence": 1792522800.0,
+    "resultado": null,
+    "cierre_prob": 0.21648770361385872
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "ts": 1792503624.994202,
+  "cuota": 1.78,
+  "prob": 0.5935543720750226,
+  "edge": 5.6526782293540245,
+  "stake": 18.12,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "2790f03a39ec672cd20a0fb57c24cdab",
+    "sport": "tennis_wta_ningbo_open",
+    "partido": "Alexandra Eala vs Diana Shnaider",
+    "sel": "Diana Shnaider",
+    "raw": "Diana Shnaider",
+    "cuota": 1.78,
+    "prob": 0.5935543720750226,
+    "commence": 1792641600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ }
+]
