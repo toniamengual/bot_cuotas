@@ -6,8 +6,8 @@
   "prob": 0.21494287067871184,
   "edge": 3.172577925781672,
   "stake": 2.09,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.09,
   "patas": [
    {
     "id": "46b790335fa98338b7e1ed0b614078fb",
@@ -18,7 +18,7 @@
     "cuota": 4.8,
     "prob": 0.21494287067871184,
     "commence": 1792522800.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.21648770361385872
    }
   ]
