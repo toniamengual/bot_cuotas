@@ -79,10 +79,11 @@ LIGAS = [
 ]
 INCLUIR_TENIS = True         # añade los torneos de tenis activos (al final de la prioridad)
 
-# Control de créditos de la API (cada liga consultada cuesta 1 crédito)
-MAX_LIGAS_EJECUCION = 8      # tope de ligas por ejecución
+# Control de créditos de la API (h2h+totals cuesta 2 créditos por liga; solo h2h en tenis cuesta 1)
+MERCADOS = "h2h,totals"      # mercados a analizar (1X2 + Más/Menos goles o puntos)
+MAX_LIGAS_EJECUCION = 8      # tope base de ligas por ejecución y por clave
 RESERVA_FACTOR = 0.85        # usa solo el 85% de los créditos; el resto para buscar resultados
-EJECUCIONES_DIA = 2          # debe coincidir con el cron de radar.yml
+EJECUCIONES_DIA = 4          # número de ejecuciones diarias en tu cron externo
 DIA_RENOVACION = 1           # día del mes (1-28) en que se renuevan tus créditos
 
 # Noticias en los avisos (Google News RSS; no gasta créditos)
@@ -122,48 +123,68 @@ def kelly_stake(prob, cuota, factor=KELLY_FRACCION):
     return round(BANKROLL * pct / 100.0, 2)
 
 
-def cuotas_h2h(casa):
+def lineas_casa(casa):
+    """Extrae {(mercado, punto): {seleccion: cuota}} de una casa (h2h y totals)."""
+    res = {}
     for m in casa.get("markets", []):
-        if m.get("key") == "h2h":
-            return {o["name"]: o["price"] for o in m["outcomes"]}
-    return {}
+        k = m.get("key")
+        if k == "h2h":
+            cu = {o["name"]: o["price"] for o in m.get("outcomes", [])}
+            if len(cu) >= 2:
+                res[("h2h", None)] = cu
+        elif k == "totals":
+            por_pt = {}
+            for o in m.get("outcomes", []):
+                pt = o.get("point")
+                if pt is not None and o.get("name") in ("Over", "Under"):
+                    por_pt.setdefault(float(pt), {})[o["name"]] = o["price"]
+            for pt, cu in por_pt.items():
+                if len(cu) == 2:
+                    res[("totals", pt)] = cu
+    return res
 
 
 def prob_justa(casas):
-    """Probabilidad real de cada resultado.
+    """Probabilidad real por línea {(mercado, punto): {sel: prob}}.
 
     Se ancla en Pinnacle (obligatorio). Betfair Exchange / Matchbook solo se promedian si coinciden
     con Pinnacle (diferencia máxima DISCREPANCIA_MAX); las líneas poco líquidas dan cuotas absurdas.
     """
-    por_casa = {}
+    por_linea = {}
     for c in casas:
         if c["key"] in CASAS_SHARP:
-            cu = cuotas_h2h(c)
-            if len(cu) >= 2:
+            for linea, cu in lineas_casa(c).items():
                 nombres = sorted(cu)
-                por_casa[c["key"]] = dict(zip(nombres, quitar_margen([cu[n] for n in nombres])))
-    pin = por_casa.get("pinnacle")
-    if not pin:
-        return {}
-    lista = [pin]
-    for clave, d in por_casa.items():
-        if clave == "pinnacle" or set(d) != set(pin):
+                por_linea.setdefault(linea, {})[c["key"]] = dict(
+                    zip(nombres, quitar_margen([cu[n] for n in nombres]))
+                )
+    justas = {}
+    for linea, por_casa in por_linea.items():
+        pin = por_casa.get("pinnacle")
+        if not pin:
             continue
-        if max(abs(d[n] - pin[n]) for n in pin) <= DISCREPANCIA_MAX:
-            lista.append(d)
-        else:
-            print(f"Referencia {clave} descartada: discrepa de Pinnacle")
-    return {n: sum(d[n] for d in lista) / len(lista) for n in pin}
+        lista = [pin]
+        for clave, d in por_casa.items():
+            if clave == "pinnacle" or set(d) != set(pin):
+                continue
+            if max(abs(d[n] - pin[n]) for n in pin) <= DISCREPANCIA_MAX:
+                lista.append(d)
+            else:
+                print(f"Referencia {clave} descartada en {linea}: discrepa de Pinnacle")
+        justas[linea] = {n: sum(d[n] for d in lista) / len(lista) for n in pin}
+    return justas
 
 
 def mejores_cuotas_winamax(casas):
-    """Mejor cuota de cada resultado entre las versiones de Winamax que devuelve la API."""
+    """Mejor cuota de cada línea {(mercado, punto): {sel: cuota}} entre las versiones de Winamax."""
     mejor = {}
     for c in casas:
         if CASA_OBJETIVO in (c["key"] + c["title"]).lower():
-            for sel, cuota in cuotas_h2h(c).items():
-                if sel not in mejor or cuota > mejor[sel]:
-                    mejor[sel] = cuota
+            for linea, cu in lineas_casa(c).items():
+                dest = mejor.setdefault(linea, {})
+                for sel, cuota in cu.items():
+                    if sel not in dest or cuota > dest[sel]:
+                        dest[sel] = cuota
     return mejor
 
 
@@ -235,8 +256,9 @@ def seleccionar_deportes(ahora, limite):
 
 def obtener_cuotas(sport_key):
     url = f"https://api.the-odds-api.com/v4/sports/{sport_key}/odds/"
+    mercados = "h2h" if sport_key.startswith("tennis_") else MERCADOS
     for intento in range(3):
-        params = {"apiKey": ODDS_API_KEY, "regions": "eu", "markets": "h2h", "oddsFormat": "decimal"}
+        params = {"apiKey": ODDS_API_KEY, "regions": "eu", "markets": mercados, "oddsFormat": "decimal"}
         try:
             res = requests.get(url, params=params, timeout=20)
             if res.status_code == 200:
@@ -356,13 +378,13 @@ def guardar_json(ruta, datos):
 
 
 def nueva_apuesta(tipo, cuota, prob, edge, stake, patas):
-    campos = ("id", "sport", "partido", "sel", "raw", "cuota", "prob", "commence")
+    campos = ("id", "sport", "partido", "sel", "raw", "mercado", "punto", "cuota", "prob", "commence")
     return {"tipo": tipo, "ts": datetime.now(timezone.utc).timestamp(), "cuota": cuota,
             "prob": prob, "edge": edge, "stake": stake, "estado": "pendiente", "beneficio": None,
-            "patas": [{**{k: p[k] for k in campos}, "resultado": None, "cierre_prob": None} for p in patas]}
+            "patas": [{**{k: p.get(k) for k in campos}, "resultado": None, "cierre_prob": None} for p in patas]}
 
 
-def actualizar_cierre(apuestas, event_id, prob):
+def actualizar_cierre(apuestas, event_id, prob_por_linea):
     """Mientras el partido no empieza, guarda la última probabilidad justa (aprox. línea de cierre)."""
     ahora = datetime.now(timezone.utc).timestamp()
     for b in apuestas:
@@ -370,7 +392,9 @@ def actualizar_cierre(apuestas, event_id, prob):
             continue
         for leg in b["patas"]:
             if leg["id"] == event_id and leg["resultado"] is None and leg["commence"] > ahora:
-                leg["cierre_prob"] = prob.get(leg["raw"])
+                linea = (leg.get("mercado") or "h2h", leg.get("punto"))
+                if linea in prob_por_linea:
+                    leg["cierre_prob"] = prob_por_linea[linea].get(leg["raw"])
 
 
 def obtener_resultados(sport_key):
@@ -391,8 +415,8 @@ def obtener_resultados(sport_key):
         return {}, None
 
 
-def ganador(ev):
-    """Devuelve el nombre del ganador, 'Draw' si empatan, o None si el partido no ha terminado."""
+def _marcador_odds(ev):
+    """Extrae (sh, sa, home_team, away_team) de un evento completado de The Odds API, o None."""
     if not ev or not ev.get("completed"):
         return None
     marcador = {}
@@ -404,9 +428,19 @@ def ganador(ev):
     h, a = ev.get("home_team"), ev.get("away_team")
     if h not in marcador or a not in marcador:
         return None
-    if marcador[h] == marcador[a]:
-        return "Draw"
-    return h if marcador[h] > marcador[a] else a
+    return marcador[h], marcador[a], h, a
+
+
+def _evaluar_pata(leg, sh, sa, local, visit):
+    """Evalúa si una pata ('h2h' o 'totals') es 'won', 'lost' o 'void'."""
+    if (leg.get("mercado") or "h2h") == "totals" and leg.get("punto") is not None:
+        total = sh + sa
+        pt = float(leg["punto"])
+        if total == pt:
+            return "void"
+        return "won" if (leg["raw"] == "Over") == (total > pt) else "lost"
+    w = "Draw" if sh == sa else (local if sh > sa else visit)
+    return "won" if w == leg["raw"] else "lost"
 
 
 # Resultados vía ESPN (gratis, sin clave ni créditos). Si falla, se usa The Odds API como respaldo.
@@ -455,8 +489,8 @@ def _espn_scoreboard(ruta, dia):
     return _espn_cache[clave]
 
 
-def ganador_espn(leg):
-    """Ganador ('Draw' si empatan) según ESPN, con el nombre tal como lo guarda la apuesta, o None."""
+def _evaluar_espn(leg):
+    """Evalúa la pata ('won', 'lost', 'void') según ESPN, o devuelve None si no la encuentra."""
     ruta = ESPN_LIGAS.get(leg["sport"])
     if not ruta or " vs " not in leg["partido"]:
         return None
@@ -479,8 +513,12 @@ def ganador_espn(leg):
                     sh, sa = float(h["score"]), float(a["score"])
                 except (KeyError, TypeError, ValueError):
                     return None
-                return "Draw" if sh == sa else (local if sh > sa else visit)
+                return _evaluar_pata(leg, sh, sa, local, visit)
     return None
+
+
+def _clave_pata(leg):
+    return (leg["id"], leg.get("mercado") or "h2h", leg.get("punto"), leg["raw"])
 
 
 def liquidar(apuestas, ahora):
@@ -493,14 +531,14 @@ def liquidar(apuestas, ahora):
     for b in pendientes:
         for leg in b["patas"]:
             if leg["resultado"] is None and ts > leg["commence"] + ESPERA_RESULTADO_H * 3600:
-                w = ganador_espn(leg)
-                if w is not None:
-                    por_espn[(leg["id"], leg["raw"])] = w
+                res_espn = _evaluar_espn(leg)
+                if res_espn is not None:
+                    por_espn[_clave_pata(leg)] = res_espn
 
     # 2) The Odds API solo para lo que ESPN no resolvió
     deportes = {leg["sport"] for b in pendientes for leg in b["patas"]
                 if leg["resultado"] is None and ts > leg["commence"] + ESPERA_RESULTADO_H * 3600
-                and (leg["id"], leg["raw"]) not in por_espn}
+                and _clave_pata(leg) not in por_espn}
     resultados, restantes = {}, None
     for dep in deportes:
         resultados[dep], rest = obtener_resultados(dep)
@@ -511,11 +549,13 @@ def liquidar(apuestas, ahora):
         for leg in b["patas"]:
             if leg["resultado"] is not None:
                 continue
-            w = por_espn.get((leg["id"], leg["raw"]))
-            if w is None:
-                w = ganador(resultados.get(leg["sport"], {}).get(leg["id"]))
-            if w is not None:
-                leg["resultado"] = "won" if w == leg["raw"] else "lost"
+            res_leg = por_espn.get(_clave_pata(leg))
+            if res_leg is None:
+                m = _marcador_odds(resultados.get(leg["sport"], {}).get(leg["id"]))
+                if m is not None:
+                    res_leg = _evaluar_pata(leg, *m)
+            if res_leg is not None:
+                leg["resultado"] = res_leg
             elif ts > leg["commence"] + DIAS_ANULAR * 86400:
                 leg["resultado"] = "void"       # no se pudo comprobar: se anula
         res = [leg["resultado"] for leg in b["patas"]]
@@ -573,7 +613,9 @@ def esc(t):
     return html.escape(str(t))
 
 
-def nombre_sel(sel):
+def nombre_sel(sel, punto=None):
+    if punto is not None:
+        return f"{'Más' if sel == 'Over' else 'Menos'} de {punto:g}"
     return "Empate" if sel == "Draw" else sel
 
 
@@ -608,9 +650,10 @@ def analizar():
         if presupuesto is None and restantes != "Desconocido":
             # reparte los créditos (sumando las claves que aún quedan en cola) entre las ejecuciones restantes
             claves_en_cola = max(0, len(ODDS_API_KEYS) - _key_idx - 1)
-            creditos_est = float(restantes) + n_llamadas + claves_en_cola * 500
+            creditos_est = float(restantes) + n_llamadas * 2 + claves_en_cola * 500
             ejecuciones = dias_hasta_renovacion() * EJECUCIONES_DIA
-            presupuesto = max(1, min(max_ligas, int(creditos_est * RESERVA_FACTOR / ejecuciones)))
+            coste_por_liga = 2 if "totals" in MERCADOS else 1
+            presupuesto = max(1, min(max_ligas, int(creditos_est * RESERVA_FACTOR / (ejecuciones * coste_por_liga))))
         if not partidos:
             continue
 
@@ -619,34 +662,39 @@ def analizar():
             if not (ahora < dt <= limite):
                 continue
             casas = p.get("bookmakers", [])
-            prob = prob_justa(casas)
+            justas = prob_justa(casas)
             cuotas_w = mejores_cuotas_winamax(casas)
-            if not prob or set(cuotas_w) != set(prob):
+            lineas_comunes = [lin for lin in justas if lin in cuotas_w and set(cuotas_w[lin]) == set(justas[lin])]
+            if not lineas_comunes:
                 continue
-            actualizar_cierre(apuestas, p["id"], prob)
+            actualizar_cierre(apuestas, p["id"], justas)
 
             fecha = dt.astimezone(ZONA).strftime("%d/%m %H:%M")
             partido = f"{p['home_team']} vs {p['away_team']}"
             mejor_pata = None
             n_analizados += 1
-            for sel, cuota in cuotas_w.items():
-                pr = prob[sel]
-                edge = (pr * cuota - 1.0) * 100.0
-                if edge > EDGE_DESCARTE:
-                    print(f"Descartado por ventaja irreal (+{edge:.0f}%): {partido} {sel} @{cuota}, "
-                          f"cuota justa @{1 / pr:.2f}")
-                    continue
-                if mejor_global is None or edge > mejor_global[0]:
-                    mejor_global = (edge, partido, nombre_sel(sel), cuota)
-                datos = {"id": p["id"], "partido": partido, "liga": dep["nombre"], "fecha": fecha,
-                         "sel": nombre_sel(sel), "cuota": cuota, "prob": pr, "edge": edge,
-                         "raw": sel, "sport": dep["key"], "commence": dt.timestamp(),
-                         "local": p["home_team"], "visitante": p["away_team"]}
-                if CUOTA_MIN <= cuota <= CUOTA_MAX and edge >= UMBRAL_SIMPLE:
-                    simples.append(datos)
-                if CUOTA_MIN <= cuota <= CUOTA_MAX_PATA and edge >= EDGE_MIN_PATA:
-                    if not mejor_pata or edge > mejor_pata["edge"]:
-                        mejor_pata = datos
+            for m_key, punto in lineas_comunes:
+                prob_l = justas[(m_key, punto)]
+                for sel, cuota in cuotas_w[(m_key, punto)].items():
+                    pr = prob_l[sel]
+                    edge = (pr * cuota - 1.0) * 100.0
+                    etiqueta = nombre_sel(sel, punto)
+                    if edge > EDGE_DESCARTE:
+                        print(f"Descartado por ventaja irreal (+{edge:.0f}%): {partido} {etiqueta} @{cuota}, "
+                              f"cuota justa @{1 / pr:.2f}")
+                        continue
+                    if mejor_global is None or edge > mejor_global[0]:
+                        mejor_global = (edge, partido, etiqueta, cuota)
+                    datos = {"id": p["id"], "partido": partido, "liga": dep["nombre"], "fecha": fecha,
+                             "sel": etiqueta, "cuota": cuota, "prob": pr, "edge": edge,
+                             "raw": sel, "mercado": m_key, "punto": punto,
+                             "sport": dep["key"], "commence": dt.timestamp(),
+                             "local": p["home_team"], "visitante": p["away_team"]}
+                    if CUOTA_MIN <= cuota <= CUOTA_MAX and edge >= UMBRAL_SIMPLE:
+                        simples.append(datos)
+                    if CUOTA_MIN <= cuota <= CUOTA_MAX_PATA and edge >= EDGE_MIN_PATA:
+                        if not mejor_pata or edge > mejor_pata["edge"]:
+                            mejor_pata = datos
             if mejor_pata:
                 candidatas.append(mejor_pata)
 
