@@ -54,8 +54,8 @@
   "prob": 0.42891577275324255,
   "edge": 5.084364324544444,
   "stake": 8.77,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 12.72,
   "patas": [
    {
     "id": "8b54f88a9c92ed114b4d0b5ccdd059fd",
@@ -66,7 +66,7 @@
     "cuota": 2.45,
     "prob": 0.42891577275324255,
     "commence": 1792779300.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.47487926432397165
    }
   ]
