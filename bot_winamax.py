@@ -17,8 +17,16 @@ import requests
 # ==========================================
 # 1. CONFIGURACIÓN
 # Las claves NO van aquí: se leen de los "Secrets" de GitHub (o de variables de entorno).
+# Puedes poner varias claves separadas por coma en ODDS_API_KEY o usar ODDS_API_KEY_2, ODDS_API_KEY_3.
 # ==========================================
-ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
+_raw_keys = ",".join(filter(None, [
+    os.environ.get("ODDS_API_KEY", ""),
+    os.environ.get("ODDS_API_KEY_2", ""),
+    os.environ.get("ODDS_API_KEY_3", ""),
+]))
+ODDS_API_KEYS = [k.strip() for k in _raw_keys.split(",") if k.strip()]
+ODDS_API_KEY = ODDS_API_KEYS[0] if ODDS_API_KEYS else ""
+_key_idx = 0
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 CHAT_ID = os.environ.get("CHAT_ID", "")
 BANKROLL = float(os.environ.get("BANKROLL", "1000"))   # tu banca en €
@@ -37,10 +45,10 @@ CUOTA_MAX = 5.00
 
 # Combinadas dobles
 CUOTA_MAX_PATA = 2.85        # cuota máxima de cada pata (favoritos)
-EDGE_MIN_PATA = 0.0          # cada pata debe tener valor igual o mayor que 0
-EDGE_MIN_COMBI = 4.0         # % mínimo de ventaja de la combinada
+EDGE_MIN_PATA = -0.5         # permite patas a precio justo (-0.5%) si la otra pata compensa
+EDGE_MIN_COMBI = 2.0         # % mínimo de ventaja de la combinada doble (antes 4.0%)
 CUOTA_MAX_COMBI = 7.00
-CANDIDATAS = 8
+CANDIDATAS = 10
 
 # Banca
 KELLY_FRACCION = 0.25        # se apuesta un cuarto de lo que sugiere Kelly
@@ -162,17 +170,31 @@ def mejores_cuotas_winamax(casas):
 # ==========================================
 # 3. LIGAS DEL DÍA, API Y TELEGRAM
 # ==========================================
+def _rotar_clave():
+    """Pasa a la siguiente clave de ODDS_API_KEYS si hay más disponibles."""
+    global _key_idx, ODDS_API_KEY
+    if _key_idx + 1 < len(ODDS_API_KEYS):
+        _key_idx += 1
+        ODDS_API_KEY = ODDS_API_KEYS[_key_idx]
+        print(f"Rotando a clave API #{_key_idx + 1} de {len(ODDS_API_KEYS)}")
+        return True
+    return False
+
+
 def api_get(ruta, params=None):
     """Llamada a The Odds API. Los endpoints /sports y /events NO consumen créditos."""
-    try:
-        res = requests.get(f"https://api.the-odds-api.com/v4{ruta}",
-                           params={"apiKey": ODDS_API_KEY, **(params or {})}, timeout=20)
-        if res.status_code == 200:
-            return res.json()
-        print(f"Aviso {ruta}: HTTP {res.status_code} {res.text[:150]}")
-    except requests.RequestException as e:
-        print(f"Error {ruta}: {e}")
-    return None
+    while True:
+        try:
+            res = requests.get(f"https://api.the-odds-api.com/v4{ruta}",
+                               params={"apiKey": ODDS_API_KEY, **(params or {})}, timeout=20)
+            if res.status_code == 200:
+                return res.json()
+            print(f"Aviso {ruta}: HTTP {res.status_code} {res.text[:150]}")
+            if res.status_code in (401, 429) and _rotar_clave():
+                continue
+        except requests.RequestException as e:
+            print(f"Error {ruta}: {e}")
+        return None
 
 
 def dias_hasta_renovacion():
@@ -213,13 +235,15 @@ def seleccionar_deportes(ahora, limite):
 
 def obtener_cuotas(sport_key):
     url = f"https://api.the-odds-api.com/v4/sports/{sport_key}/odds/"
-    params = {"apiKey": ODDS_API_KEY, "regions": "eu", "markets": "h2h", "oddsFormat": "decimal"}
     for intento in range(3):
+        params = {"apiKey": ODDS_API_KEY, "regions": "eu", "markets": "h2h", "oddsFormat": "decimal"}
         try:
             res = requests.get(url, params=params, timeout=20)
             if res.status_code == 200:
                 return res.json(), res.headers
             print(f"Aviso {sport_key}: HTTP {res.status_code} {res.text[:200]}")
+            if res.status_code in (401, 429) and _rotar_clave():
+                continue
             if res.status_code in (401, 422, 429):
                 break
         except requests.RequestException as e:
@@ -351,14 +375,20 @@ def actualizar_cierre(apuestas, event_id, prob):
 
 def obtener_resultados(sport_key):
     url = f"https://api.the-odds-api.com/v4/sports/{sport_key}/scores/"
-    try:
-        res = requests.get(url, params={"apiKey": ODDS_API_KEY, "daysFrom": 3}, timeout=20)
-        if res.status_code == 200:
-            return {e["id"]: e for e in res.json()}, res.headers.get("x-requests-remaining")
-        print(f"Aviso resultados {sport_key}: HTTP {res.status_code} {res.text[:200]}")
-    except requests.RequestException as e:
-        print(f"Error resultados {sport_key}: {e}")
-    return {}, None
+    while True:
+        try:
+            res = requests.get(url, params={"apiKey": ODDS_API_KEY, "daysFrom": 3}, timeout=20)
+            if res.status_code == 200:
+                rest = res.headers.get("x-requests-remaining")
+                if rest is not None and float(rest) < CREDITOS_MINIMOS:
+                    _rotar_clave()
+                return {e["id"]: e for e in res.json()}, rest
+            print(f"Aviso resultados {sport_key}: HTTP {res.status_code} {res.text[:200]}")
+            if res.status_code in (401, 429) and _rotar_clave():
+                continue
+        except requests.RequestException as e:
+            print(f"Error resultados {sport_key}: {e}")
+        return {}, None
 
 
 def ganador(ev):
@@ -561,10 +591,14 @@ def analizar():
         restantes = restantes_scores
 
     n_llamadas, presupuesto = 0, None
+    max_ligas = MAX_LIGAS_EJECUCION * max(1, len(ODDS_API_KEYS))
     for dep in seleccionar_deportes(ahora, limite):
         if restantes != "Desconocido" and float(restantes) < CREDITOS_MINIMOS:
-            print("Quedan pocos créditos; se detiene.")
-            break
+            if _rotar_clave():
+                restantes, presupuesto = "Desconocido", None
+            else:
+                print("Quedan pocos créditos en todas las claves; se detiene.")
+                break
         if presupuesto is not None and n_llamadas >= presupuesto:
             print(f"Presupuesto de {presupuesto} ligas por ejecución alcanzado.")
             break
@@ -572,10 +606,11 @@ def analizar():
         n_llamadas += 1
         restantes = headers.get("x-requests-remaining", restantes)
         if presupuesto is None and restantes != "Desconocido":
-            # reparte los créditos que quedan entre las ejecuciones que faltan hasta la renovación
+            # reparte los créditos (sumando las claves que aún quedan en cola) entre las ejecuciones restantes
+            claves_en_cola = max(0, len(ODDS_API_KEYS) - _key_idx - 1)
+            creditos_est = float(restantes) + n_llamadas + claves_en_cola * 500
             ejecuciones = dias_hasta_renovacion() * EJECUCIONES_DIA
-            presupuesto = max(1, min(MAX_LIGAS_EJECUCION,
-                                     int((float(restantes) + n_llamadas) * RESERVA_FACTOR / ejecuciones)))
+            presupuesto = max(1, min(max_ligas, int(creditos_est * RESERVA_FACTOR / ejecuciones)))
         if not partidos:
             continue
 
@@ -664,6 +699,7 @@ def analizar():
 
     bloques_cerradas = [fmt_cerrada(b) for b in cerradas]
     balance = resumen_balance(apuestas)
+    info_clave = f" (clave {_key_idx + 1}/{len(ODDS_API_KEYS)})" if len(ODDS_API_KEYS) > 1 else ""
 
     if not (bloques_simples or bloques_combis or bloques_cerradas):
         if ENVIAR_RESUMEN:
@@ -676,7 +712,7 @@ def analizar():
                           f"@{cuota} ({e_:+.1f}%; umbral +{UMBRAL_SIMPLE}%)")
             if balance:
                 texto += "\n\n" + balance
-            texto += f"\n\n🔋 <i>Créditos restantes: {restantes}</i>"
+            texto += f"\n\n🔋 <i>Créditos restantes: {restantes}{info_clave}</i>"
             enviar_telegram(texto)
         else:
             print("Sin novedades; no se envía mensaje.")
@@ -695,7 +731,7 @@ def analizar():
         partes += bloques_combis
     if balance:
         partes.append(balance)
-    partes.append(f"🔋 <i>Créditos restantes: {restantes}</i>")
+    partes.append(f"🔋 <i>Créditos restantes: {restantes}{info_clave}</i>")
     enviar_telegram("\n\n".join(partes))
 
 
