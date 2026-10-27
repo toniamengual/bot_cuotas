@@ -118,7 +118,8 @@ function renderTable() {
   for (const b of lista) {
     const tr = document.createElement("tr");
     const celda = (txt, c) => { const td = document.createElement("td"); td.textContent = txt; if (c) td.className = c; return td; };
-    tr.append(celda(fmtFecha(fechaDe(b))), celda(b.tipo));
+    const tipoCasa = b.casa && b.casa !== "Winamax" ? `${b.tipo} (${b.casa})` : b.tipo;
+    tr.append(celda(fmtFecha(fechaDe(b))), celda(tipoCasa));
     const sel = document.createElement("td");
     b.patas.forEach(p => { const d = document.createElement("div"); d.textContent = `${p.partido} → ${p.sel}`; sel.append(d); });
     tr.append(sel, celda("@" + b.cuota), celda(b.stake.toFixed(2) + "€"), celda("+" + b.edge.toFixed(1) + "%"));

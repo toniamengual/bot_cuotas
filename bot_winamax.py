@@ -2,6 +2,7 @@
 import difflib
 import html
 import json
+import math
 import os
 import re
 import time
@@ -38,15 +39,16 @@ APUESTAS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "apuest
 ESPERA_RESULTADO_H = 3       # horas tras el inicio antes de buscar el resultado
 DIAS_ANULAR = 4              # si no hay resultado tras estos días, la apuesta se anula
 
-# Simples
-UMBRAL_SIMPLE = 2.5          # % mínimo de ventaja para avisar
+# Simples y Otras casas españolas
+UMBRAL_SIMPLE = 1.0          # % mínimo de ventaja para avisar en Winamax (antes 2.5%)
+UMBRAL_OTRAS = 2.0           # % mínimo de ventaja para avisar en otras casas de España
 CUOTA_MIN = 1.25
 CUOTA_MAX = 5.00
 
-# Combinadas dobles
+# Combinadas dobles (en Winamax)
 CUOTA_MAX_PATA = 2.85        # cuota máxima de cada pata (favoritos)
-EDGE_MIN_PATA = -0.5         # permite patas a precio justo (-0.5%) si la otra pata compensa
-EDGE_MIN_COMBI = 2.0         # % mínimo de ventaja de la combinada doble (antes 4.0%)
+EDGE_MIN_PATA = -1.0         # permite patas cercanas al precio justo (-1.0%) si la otra pata compensa
+EDGE_MIN_COMBI = 1.0         # % mínimo de ventaja de la combinada doble (antes 2.0%)
 CUOTA_MAX_COMBI = 7.00
 CANDIDATAS = 10
 
@@ -92,6 +94,10 @@ NOTICIAS_POR_EQUIPO = 2      # titulares por equipo en las apuestas simples
 
 CASAS_SHARP = ["pinnacle", "betfair_ex_eu", "matchbook"]   # referencia de "precio real"
 CASA_OBJETIVO = "winamax"    # coincide con winamax_fr y winamax_de
+OTRAS_CASAS_ESPANA = [
+    "williamhill", "william hill", "888sport", "betsson",
+    "bwin", "codere", "sportium", "marathon", "casumo", "leovegas",
+]
 
 
 # ==========================================
@@ -188,6 +194,64 @@ def mejores_cuotas_winamax(casas):
     return mejor
 
 
+def mejores_cuotas_otras_espana(casas):
+    """{(mercado, punto): {sel: (cuota, nombre_casa)}} con la mejor cuota entre las demás casas españolas."""
+    mejor = {}
+    for c in casas:
+        texto = f"{c['key']} {c['title']}".lower()
+        if c["key"] in CASAS_SHARP or CASA_OBJETIVO in texto:
+            continue
+        if not any(k in texto for k in OTRAS_CASAS_ESPANA):
+            continue
+        for linea, cu in lineas_casa(c).items():
+            dest = mejor.setdefault(linea, {})
+            for sel, cuota in cu.items():
+                if sel not in dest or cuota > dest[sel][0]:
+                    dest[sel] = (cuota, c["title"])
+    return mejor
+
+
+def _phi(z):
+    return 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
+
+
+def _inv_phi(p):
+    p = max(1e-6, min(1.0 - 1e-6, p))
+    lo, hi = -6.0, 6.0
+    for _ in range(50):
+        mid = (lo + hi) / 2.0
+        if _phi(mid) < p:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2.0
+
+
+def prob_linea_para_casa(justas, linea, sport_key):
+    """Devuelve {sel: prob} para `linea`. Si es `totals` en baloncesto y Pinnacle tiene otra línea cercana, interpola."""
+    if linea in justas:
+        return justas[linea]
+    m_key, pt_casa = linea
+    if m_key != "totals" or pt_casa is None or not sport_key.startswith("basketball_"):
+        return None
+    # Solo interpolamos líneas de medio punto (.5) para evitar empates/nulos en números enteros
+    if abs((pt_casa * 2) % 2 - 1) > 1e-3:
+        return None
+    candidatas = [( abs(pt_casa - pt_pin), pt_pin, probs )
+                  for (mk, pt_pin), probs in justas.items()
+                  if mk == "totals" and pt_pin is not None and abs((pt_pin * 2) % 2 - 1) < 1e-3]
+    if not candidatas:
+        return None
+    dist, pt_pin, probs_pin = min(candidatas, key=lambda x: x[0])
+    if dist > 3.5 or "Over" not in probs_pin:
+        return None
+    sigma = 13.5 if "nba" in sport_key else 12.0
+    z_pin = _inv_phi(1.0 - probs_pin["Over"])
+    z_casa = z_pin + (pt_casa - pt_pin) / sigma
+    p_over = max(0.01, min(0.99, 1.0 - _phi(z_casa)))
+    return {"Over": p_over, "Under": 1.0 - p_over}
+
+
 # ==========================================
 # 3. LIGAS DEL DÍA, API Y TELEGRAM
 # ==========================================
@@ -202,20 +266,34 @@ def _rotar_clave():
     return False
 
 
+def _sin_creditos(res):
+    """True si la respuesta de la API indica clave agotada o inválida (no simple límite por segundo)."""
+    if res.status_code == 401:
+        return True
+    if res.status_code == 429 and "OUT_OF_USAGE_CREDITS" in (res.text or "").upper():
+        return True
+    rem = res.headers.get("x-requests-remaining")
+    return rem is not None and float(rem) < CREDITOS_MINIMOS
+
+
 def api_get(ruta, params=None):
     """Llamada a The Odds API. Los endpoints /sports y /events NO consumen créditos."""
-    while True:
+    for intento in range(3):
         try:
             res = requests.get(f"https://api.the-odds-api.com/v4{ruta}",
                                params={"apiKey": ODDS_API_KEY, **(params or {})}, timeout=20)
             if res.status_code == 200:
                 return res.json()
             print(f"Aviso {ruta}: HTTP {res.status_code} {res.text[:150]}")
-            if res.status_code in (401, 429) and _rotar_clave():
+            if _sin_creditos(res) and _rotar_clave():
+                continue
+            if res.status_code == 429:
+                time.sleep(1.5 * (intento + 1))
                 continue
         except requests.RequestException as e:
             print(f"Error {ruta}: {e}")
         return None
+    return None
 
 
 def dias_hasta_renovacion():
@@ -239,6 +317,7 @@ def seleccionar_deportes(ahora, limite):
                            for s in por_clave.values() if s.get("group") == "Tennis"]
     elegidos = []
     for d in candidatos:
+        time.sleep(0.12)              # evita el límite de peticiones por segundo (HTTP 429)
         eventos = api_get(f"/sports/{d['key']}/events")
         if eventos is None:           # no se pudo comprobar: se incluye por si acaso
             elegidos.append(d)
@@ -264,9 +343,12 @@ def obtener_cuotas(sport_key):
             if res.status_code == 200:
                 return res.json(), res.headers
             print(f"Aviso {sport_key}: HTTP {res.status_code} {res.text[:200]}")
-            if res.status_code in (401, 429) and _rotar_clave():
+            if _sin_creditos(res) and _rotar_clave():
                 continue
-            if res.status_code in (401, 422, 429):
+            if res.status_code == 429:
+                time.sleep(1.5 * (intento + 1))
+                continue
+            if res.status_code in (401, 422):
                 break
         except requests.RequestException as e:
             print(f"Error {sport_key}: {e}")
@@ -377,14 +459,14 @@ def guardar_json(ruta, datos):
         json.dump(datos, f, indent=1, ensure_ascii=False)
 
 
-def nueva_apuesta(tipo, cuota, prob, edge, stake, patas):
+def nueva_apuesta(tipo, cuota, prob, edge, stake, patas, casa="Winamax"):
     campos = ("id", "sport", "partido", "sel", "raw", "mercado", "punto", "cuota", "prob", "commence")
-    return {"tipo": tipo, "ts": datetime.now(timezone.utc).timestamp(), "cuota": cuota,
+    return {"tipo": tipo, "casa": casa, "ts": datetime.now(timezone.utc).timestamp(), "cuota": cuota,
             "prob": prob, "edge": edge, "stake": stake, "estado": "pendiente", "beneficio": None,
             "patas": [{**{k: p.get(k) for k in campos}, "resultado": None, "cierre_prob": None} for p in patas]}
 
 
-def actualizar_cierre(apuestas, event_id, prob_por_linea):
+def actualizar_cierre(apuestas, event_id, prob_por_linea, sport_key=""):
     """Mientras el partido no empieza, guarda la última probabilidad justa (aprox. línea de cierre)."""
     ahora = datetime.now(timezone.utc).timestamp()
     for b in apuestas:
@@ -393,8 +475,9 @@ def actualizar_cierre(apuestas, event_id, prob_por_linea):
         for leg in b["patas"]:
             if leg["id"] == event_id and leg["resultado"] is None and leg["commence"] > ahora:
                 linea = (leg.get("mercado") or "h2h", leg.get("punto"))
-                if linea in prob_por_linea:
-                    leg["cierre_prob"] = prob_por_linea[linea].get(leg["raw"])
+                pr_l = prob_linea_para_casa(prob_por_linea, linea, sport_key or leg.get("sport", ""))
+                if pr_l:
+                    leg["cierre_prob"] = pr_l.get(leg["raw"])
 
 
 def obtener_resultados(sport_key):
@@ -623,9 +706,9 @@ def analizar():
     estado = cargar_estado()
     ahora = datetime.now(timezone.utc)
     limite = ahora + timedelta(hours=HORAS_VENTANA)
-    simples, candidatas = [], []
+    simples, simples_otras, candidatas = [], [], []
     restantes = "Desconocido"
-    n_analizados, mejor_global = 0, None   # para el resumen opcional
+    n_analizados, mejor_global, mejor_otra = 0, None, None   # para el resumen opcional
 
     apuestas = cargar_json(APUESTAS_PATH, [])
     cerradas, restantes_scores = liquidar(apuestas, ahora)
@@ -663,18 +746,25 @@ def analizar():
                 continue
             casas = p.get("bookmakers", [])
             justas = prob_justa(casas)
-            cuotas_w = mejores_cuotas_winamax(casas)
-            lineas_comunes = [lin for lin in justas if lin in cuotas_w and set(cuotas_w[lin]) == set(justas[lin])]
-            if not lineas_comunes:
+            if not justas:
                 continue
-            actualizar_cierre(apuestas, p["id"], justas)
+            cuotas_w = mejores_cuotas_winamax(casas)
+            cuotas_otras = mejores_cuotas_otras_espana(casas)
+            actualizar_cierre(apuestas, p["id"], justas, dep["key"])
 
             fecha = dt.astimezone(ZONA).strftime("%d/%m %H:%M")
             partido = f"{p['home_team']} vs {p['away_team']}"
             mejor_pata = None
-            n_analizados += 1
-            for m_key, punto in lineas_comunes:
-                prob_l = justas[(m_key, punto)]
+            contado = False
+
+            # 1) Analizar Winamax (con interpolación de puntos en baloncesto si las líneas difieren)
+            for m_key, punto in cuotas_w:
+                prob_l = prob_linea_para_casa(justas, (m_key, punto), dep["key"])
+                if not prob_l or set(cuotas_w[(m_key, punto)]) != set(prob_l):
+                    continue
+                if not contado:
+                    n_analizados += 1
+                    contado = True
                 for sel, cuota in cuotas_w[(m_key, punto)].items():
                     pr = prob_l[sel]
                     edge = (pr * cuota - 1.0) * 100.0
@@ -687,7 +777,7 @@ def analizar():
                         mejor_global = (edge, partido, etiqueta, cuota)
                     datos = {"id": p["id"], "partido": partido, "liga": dep["nombre"], "fecha": fecha,
                              "sel": etiqueta, "cuota": cuota, "prob": pr, "edge": edge,
-                             "raw": sel, "mercado": m_key, "punto": punto,
+                             "raw": sel, "mercado": m_key, "punto": punto, "casa": "Winamax",
                              "sport": dep["key"], "commence": dt.timestamp(),
                              "local": p["home_team"], "visitante": p["away_team"]}
                     if CUOTA_MIN <= cuota <= CUOTA_MAX and edge >= UMBRAL_SIMPLE:
@@ -697,6 +787,30 @@ def analizar():
                             mejor_pata = datos
             if mejor_pata:
                 candidatas.append(mejor_pata)
+
+            # 2) Analizar el resto de casas españolas (gratis en la misma consulta)
+            for m_key, punto in cuotas_otras:
+                prob_l = prob_linea_para_casa(justas, (m_key, punto), dep["key"])
+                if not prob_l:
+                    continue
+                for sel, (cuota, nom_casa) in cuotas_otras[(m_key, punto)].items():
+                    if sel not in prob_l or not (CUOTA_MIN <= cuota <= CUOTA_MAX):
+                        continue
+                    pr = prob_l[sel]
+                    edge = (pr * cuota - 1.0) * 100.0
+                    if edge > EDGE_DESCARTE:
+                        continue
+                    etiqueta = nombre_sel(sel, punto)
+                    if mejor_otra is None or edge > mejor_otra[0]:
+                        mejor_otra = (edge, nom_casa, partido, etiqueta, cuota)
+                    if edge >= UMBRAL_OTRAS:
+                        simples_otras.append({
+                            "id": p["id"], "partido": partido, "liga": dep["nombre"], "fecha": fecha,
+                            "sel": etiqueta, "cuota": cuota, "prob": pr, "edge": edge,
+                            "raw": sel, "mercado": m_key, "punto": punto, "casa": nom_casa,
+                            "sport": dep["key"], "commence": dt.timestamp(),
+                            "local": p["home_team"], "visitante": p["away_team"],
+                        })
 
     # --- Simples ---
     simples.sort(key=lambda x: x["edge"], reverse=True)
@@ -742,6 +856,24 @@ def analizar():
             f"💶 Stake sugerido: <b>{kelly_stake(pr, cuota, KELLY_FRACCION * COMBI_FACTOR):.2f}€</b>"
             + bloque_noticias([a["local"], a["visitante"], b["local"], b["visitante"]], 1))
 
+    # --- Otras casas españolas ---
+    simples_otras.sort(key=lambda x: x["edge"], reverse=True)
+    bloques_otras = []
+    for s in simples_otras:
+        if len(bloques_otras) >= 5:
+            break
+        if not es_nuevo(estado, f"O|{s['casa']}|{s['id']}|{s['sel']}|{s['cuota']}"):
+            continue
+        apuestas.append(nueva_apuesta("simple", s["cuota"], s["prob"], s["edge"],
+                                      kelly_stake(s["prob"], s["cuota"]), [s], casa=s["casa"]))
+        bloques_otras.append(
+            f"🏛 <b>{esc(s['casa'].upper())} +{s['edge']:.1f}%</b> · {esc(s['liga'])} · ⏰ {s['fecha']}h\n"
+            f"⚔️ <b>{esc(s['partido'])}</b>\n"
+            f"👉 <b>{esc(s['sel'])}</b> a cuota <b>@{s['cuota']}</b> "
+            f"(cuota justa @{1 / s['prob']:.2f})\n"
+            f"💶 Stake sugerido: <b>{kelly_stake(s['prob'], s['cuota']):.2f}€</b>"
+            + bloque_noticias([s["local"], s["visitante"]], 1))
+
     guardar_estado(estado)
     guardar_json(APUESTAS_PATH, apuestas)
 
@@ -749,15 +881,19 @@ def analizar():
     balance = resumen_balance(apuestas)
     info_clave = f" (clave {_key_idx + 1}/{len(ODDS_API_KEYS)})" if len(ODDS_API_KEYS) > 1 else ""
 
-    if not (bloques_simples or bloques_combis or bloques_cerradas):
+    if not (bloques_simples or bloques_combis or bloques_otras or bloques_cerradas):
         if ENVIAR_RESUMEN:
             texto = ("🤖 <b>RADAR WINAMAX · PRUEBA</b>\n\n"
                      "✅ Telegram funciona. No hay apuestas con valor ahora mismo.\n"
                      f"📊 Partidos analizados con Winamax: <b>{n_analizados}</b>")
             if mejor_global:
                 e_, part, sel, cuota = mejor_global
-                texto += (f"\n🔎 Opción más cercana: <b>{esc(sel)}</b> en {esc(part)} "
+                texto += (f"\n🔎 Más cercana en Winamax: <b>{esc(sel)}</b> en {esc(part)} "
                           f"@{cuota} ({e_:+.1f}%; umbral +{UMBRAL_SIMPLE}%)")
+            if mejor_otra:
+                e_, casa_, part, sel, cuota = mejor_otra
+                texto += (f"\n🏛 Más cercana en otras casas ({esc(casa_)}): <b>{esc(sel)}</b> en {esc(part)} "
+                          f"@{cuota} ({e_:+.1f}%; umbral +{UMBRAL_OTRAS}%)")
             if balance:
                 texto += "\n\n" + balance
             texto += f"\n\n🔋 <i>Créditos restantes: {restantes}{info_clave}</i>"
@@ -766,17 +902,20 @@ def analizar():
             print("Sin novedades; no se envía mensaje.")
         return
 
-    partes = ["🤖 <b>RADAR WINAMAX</b>"]
+    partes = ["🤖 <b>RADAR WINAMAX + ESPAÑA</b>"]
     if bloques_cerradas:
         partes.append("🏁 <b>RESULTADOS DE TUS SUGERENCIAS</b>")
         partes += bloques_cerradas
     if bloques_simples:
-        partes.append("🚨 <b>APUESTAS SIMPLES CON VALOR</b>")
+        partes.append("🚨 <b>APUESTAS SIMPLES EN WINAMAX</b>")
         partes += bloques_simples[:5]
     if bloques_combis:
-        partes.append("🔥 <b>COMBINADAS DOBLES CON VALOR</b>\n"
+        partes.append("🔥 <b>COMBINADAS DOBLES EN WINAMAX</b>\n"
                       "<i>Mismas casa y cuota en las dos patas; más riesgo que una simple.</i>")
         partes += bloques_combis
+    if bloques_otras:
+        partes.append("👀 <b>VALOR EN OTRAS CASAS DE ESPAÑA</b>")
+        partes += bloques_otras
     if balance:
         partes.append(balance)
     partes.append(f"🔋 <i>Créditos restantes: {restantes}{info_clave}</i>")
