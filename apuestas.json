@@ -70,5 +70,140 @@
     "cierre_prob": 0.47487926432397165
    }
   ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793129410.662685,
+  "cuota": 1.79,
+  "prob": 0.6646076530673883,
+  "edge": 18.964769899062507,
+  "stake": 30.0,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "5f16cb74336431221c132f05c0e31d04",
+    "sport": "icehockey_nhl",
+    "partido": "Anaheim Ducks vs Vancouver Canucks",
+    "sel": "Anaheim Ducks",
+    "raw": "Anaheim Ducks",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.79,
+    "prob": 0.6646076530673883,
+    "commence": 1793153400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793129411.16002,
+  "cuota": 2.01,
+  "prob": 0.5365099731043722,
+  "edge": 7.838504593978812,
+  "stake": 19.4,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "288b3a1e5241bd3885295af9aab801ca",
+    "sport": "icehockey_nhl",
+    "partido": "San Jose Sharks vs Buffalo Sabres",
+    "sel": "Más de 6.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 6.5,
+    "cuota": 2.01,
+    "prob": 0.5365099731043722,
+    "commence": 1793155200.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793129411.665045,
+  "cuota": 2.24,
+  "prob": 0.48074380121454163,
+  "edge": 7.686611472057336,
+  "stake": 15.5,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "fc98fb73985d5caecdfffd4cb0f4d3ed",
+    "sport": "icehockey_nhl",
+    "partido": "Utah Mammoth vs Minnesota Wild",
+    "sel": "Más de 6.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 6.5,
+    "cuota": 2.24,
+    "prob": 0.48074380121454163,
+    "commence": 1793149800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793129412.24119,
+  "cuota": 2.0,
+  "prob": 0.5365122470609553,
+  "edge": 7.30244941219107,
+  "stake": 18.26,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "5f16cb74336431221c132f05c0e31d04",
+    "sport": "icehockey_nhl",
+    "partido": "Anaheim Ducks vs Vancouver Canucks",
+    "sel": "Más de 6.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 6.5,
+    "cuota": 2.0,
+    "prob": 0.5365122470609553,
+    "commence": 1793153400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793129412.241224,
+  "cuota": 2.13,
+  "prob": 0.5006951620430117,
+  "edge": 6.648069515161481,
+  "stake": 14.71,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "66690f3994b21af39301701a52df1d66",
+    "sport": "icehockey_nhl",
+    "partido": "Vegas Golden Knights vs Ottawa Senators",
+    "sel": "Más de 6.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 6.5,
+    "cuota": 2.13,
+    "prob": 0.5006951620430117,
+    "commence": 1793153400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
  }
 ]
