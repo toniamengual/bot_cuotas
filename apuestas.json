@@ -135,6 +135,115 @@
     "prob": 0.5045769295209043,
     "commence": 1793214000.0,
     "resultado": null,
+    "cierre_prob": 0.5045769295209043
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793132606.599103,
+  "cuota": 1.46,
+  "prob": 0.7056006540532738,
+  "edge": 3.017695491777972,
+  "stake": 16.4,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tallon Griekspoor vs Brandon Nakashima",
+    "sel": "Brandon Nakashima",
+    "raw": "Brandon Nakashima",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.46,
+    "prob": 0.7056006540532738,
+    "commence": 1793190600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1793132607.178476,
+  "cuota": 1.99,
+  "prob": 0.5150928889725763,
+  "edge": 2.5034849055426855,
+  "stake": 3.16,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tallon Griekspoor vs Brandon Nakashima",
+    "sel": "Brandon Nakashima",
+    "raw": "Brandon Nakashima",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.46,
+    "prob": 0.7056006540532738,
+    "commence": 1793190600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "622faf457a6ffd6d9effd2bc93280bac",
+    "sport": "tennis_atp_swiss_indoors",
+    "partido": "Rémy Bertola vs Denis Shapovalov",
+    "sel": "Denis Shapovalov",
+    "raw": "Denis Shapovalov",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.36,
+    "prob": 0.7300062521394519,
+    "commence": 1793190000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1793132607.678837,
+  "cuota": 4.16,
+  "prob": 0.24579788042769926,
+  "edge": 2.2519182579229025,
+  "stake": 0.89,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tallon Griekspoor vs Brandon Nakashima",
+    "sel": "Brandon Nakashima",
+    "raw": "Brandon Nakashima",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.46,
+    "prob": 0.7056006540532738,
+    "commence": 1793190600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "de8fa64cdc8ed6fe9bd1fc42c6f115c6",
+    "sport": "tennis_atp_swiss_indoors",
+    "partido": "Nuno Borges vs Casper Ruud",
+    "sel": "Nuno Borges",
+    "raw": "Nuno Borges",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.85,
+    "prob": 0.34835268223708477,
+    "commence": 1793192400.0,
+    "resultado": null,
     "cierre_prob": null
    }
   ]
