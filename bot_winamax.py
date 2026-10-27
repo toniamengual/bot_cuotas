@@ -77,7 +77,7 @@ LIGAS = [
     {"key": "soccer_spain_segunda_division", "nombre": "⚽ Segunda División"},
     {"key": "soccer_netherlands_eredivisie", "nombre": "⚽ Eredivisie"},
     {"key": "soccer_portugal_primeira_liga", "nombre": "⚽ Primeira Liga"},
-    {"key": "icehockey_nhl", "nombre": "🏒 NHL"},
+    {"key": "soccer_efl_champ", "nombre": "⚽ Championship"},
 ]
 INCLUIR_TENIS = True         # añade los torneos de tenis activos (al final de la prioridad)
 
@@ -181,36 +181,6 @@ def prob_justa(casas):
     return justas
 
 
-def mejores_cuotas_winamax(casas):
-    """Mejor cuota de cada línea {(mercado, punto): {sel: cuota}} entre las versiones de Winamax."""
-    mejor = {}
-    for c in casas:
-        if CASA_OBJETIVO in (c["key"] + c["title"]).lower():
-            for linea, cu in lineas_casa(c).items():
-                dest = mejor.setdefault(linea, {})
-                for sel, cuota in cu.items():
-                    if sel not in dest or cuota > dest[sel]:
-                        dest[sel] = cuota
-    return mejor
-
-
-def mejores_cuotas_otras_espana(casas):
-    """{(mercado, punto): {sel: (cuota, nombre_casa)}} con la mejor cuota entre las demás casas españolas."""
-    mejor = {}
-    for c in casas:
-        texto = f"{c['key']} {c['title']}".lower()
-        if c["key"] in CASAS_SHARP or CASA_OBJETIVO in texto:
-            continue
-        if not any(k in texto for k in OTRAS_CASAS_ESPANA):
-            continue
-        for linea, cu in lineas_casa(c).items():
-            dest = mejor.setdefault(linea, {})
-            for sel, cuota in cu.items():
-                if sel not in dest or cuota > dest[sel][0]:
-                    dest[sel] = (cuota, c["title"])
-    return mejor
-
-
 def _phi(z):
     return 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
 
@@ -237,7 +207,7 @@ def prob_linea_para_casa(justas, linea, sport_key):
     # Solo interpolamos líneas de medio punto (.5) para evitar empates/nulos en números enteros
     if abs((pt_casa * 2) % 2 - 1) > 1e-3:
         return None
-    candidatas = [( abs(pt_casa - pt_pin), pt_pin, probs )
+    candidatas = [(abs(pt_casa - pt_pin), pt_pin, probs)
                   for (mk, pt_pin), probs in justas.items()
                   if mk == "totals" and pt_pin is not None and abs((pt_pin * 2) % 2 - 1) < 1e-3]
     if not candidatas:
@@ -250,6 +220,44 @@ def prob_linea_para_casa(justas, linea, sport_key):
     z_casa = z_pin + (pt_casa - pt_pin) / sigma
     p_over = max(0.01, min(0.99, 1.0 - _phi(z_casa)))
     return {"Over": p_over, "Under": 1.0 - p_over}
+
+
+def mejores_cuotas_winamax(casas, justas=None, sport_key=""):
+    """Mejor cuota de cada línea {(mercado, punto): {sel: cuota}} entre las versiones de Winamax."""
+    mejor = {}
+    for c in casas:
+        if CASA_OBJETIVO in (c["key"] + c["title"]).lower():
+            for linea, cu in lineas_casa(c).items():
+                if justas is not None:
+                    prob_l = prob_linea_para_casa(justas, linea, sport_key)
+                    if not prob_l or set(cu) != set(prob_l):
+                        continue
+                dest = mejor.setdefault(linea, {})
+                for sel, cuota in cu.items():
+                    if sel not in dest or cuota > dest[sel]:
+                        dest[sel] = cuota
+    return mejor
+
+
+def mejores_cuotas_otras_espana(casas, justas=None, sport_key=""):
+    """{(mercado, punto): {sel: (cuota, nombre_casa)}} con la mejor cuota entre las demás casas españolas."""
+    mejor = {}
+    for c in casas:
+        texto = f"{c['key']} {c['title']}".lower()
+        if c["key"] in CASAS_SHARP or CASA_OBJETIVO in texto:
+            continue
+        if not any(k in texto for k in OTRAS_CASAS_ESPANA):
+            continue
+        for linea, cu in lineas_casa(c).items():
+            if justas is not None:
+                prob_l = prob_linea_para_casa(justas, linea, sport_key)
+                if not prob_l or set(cu) != set(prob_l):
+                    continue
+            dest = mejor.setdefault(linea, {})
+            for sel, cuota in cu.items():
+                if sel not in dest or cuota > dest[sel][0]:
+                    dest[sel] = (cuota, c["title"])
+    return mejor
 
 
 # ==========================================
@@ -710,7 +718,10 @@ def analizar():
     restantes = "Desconocido"
     n_analizados, mejor_global, mejor_otra = 0, None, None   # para el resumen opcional
 
-    apuestas = cargar_json(APUESTAS_PATH, [])
+    apuestas = [
+        b for b in cargar_json(APUESTAS_PATH, [])
+        if not (b.get("estado") == "pendiente" and any(p.get("sport") == "icehockey_nhl" for p in b.get("patas", [])))
+    ]
     cerradas, restantes_scores = liquidar(apuestas, ahora)
     if restantes_scores is not None:
         restantes = restantes_scores
@@ -748,8 +759,8 @@ def analizar():
             justas = prob_justa(casas)
             if not justas:
                 continue
-            cuotas_w = mejores_cuotas_winamax(casas)
-            cuotas_otras = mejores_cuotas_otras_espana(casas)
+            cuotas_w = mejores_cuotas_winamax(casas, justas, dep["key"])
+            cuotas_otras = mejores_cuotas_otras_espana(casas, justas, dep["key"])
             actualizar_cierre(apuestas, p["id"], justas, dep["key"])
 
             fecha = dt.astimezone(ZONA).strftime("%d/%m %H:%M")
