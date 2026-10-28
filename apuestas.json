@@ -312,7 +312,7 @@
     "prob": 0.5151798489138598,
     "commence": 1793246400.0,
     "resultado": null,
-    "cierre_prob": 0.5281869450983296
+    "cierre_prob": 0.5285081292240738
    }
   ]
  },
@@ -407,7 +407,7 @@
     "prob": 0.2709543237744171,
     "commence": 1793268000.0,
     "resultado": null,
-    "cierre_prob": 0.2738957866823306
+    "cierre_prob": 0.27654527156531267
    }
   ]
  },
@@ -475,7 +475,7 @@
     "prob": 0.5974638831898121,
     "commence": 1793229000.0,
     "resultado": null,
-    "cierre_prob": 0.5523366545701441
+    "cierre_prob": 0.5508926369937305
    }
   ]
  },
@@ -570,7 +570,7 @@
     "prob": 0.35671082556401124,
     "commence": 1793390700.0,
     "resultado": null,
-    "cierre_prob": 0.3562371415254225
+    "cierre_prob": 0.3579506385604186
    }
   ]
  },
@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.24495833262788838
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5770883815253669
    }
   ]
  },
@@ -678,7 +678,7 @@
     "prob": 0.559152309989988,
     "commence": 1793332800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5358881538174154
    }
   ]
  },
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5514784006274619
    }
   ]
  },
@@ -731,6 +731,60 @@
     "cuota": 1.91,
     "prob": 0.5345580676069643,
     "commence": 1793215800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793219006.92739,
+  "cuota": 1.97,
+  "prob": 0.5268351011936672,
+  "edge": 3.7865149351524297,
+  "stake": 9.76,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "6e8a41f3aeff105b0e10766515517d5e",
+    "sport": "basketball_nba",
+    "partido": "Los Angeles Clippers vs Los Angeles Lakers",
+    "sel": "Menos de 223.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 223.5,
+    "cuota": 1.97,
+    "prob": 0.5268351011936672,
+    "commence": 1793241600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793219007.899618,
+  "cuota": 3.25,
+  "prob": 0.31727518522816867,
+  "edge": 3.114435199154819,
+  "stake": 3.46,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "75cf0c0e471877a0bfa95d689d0f0325",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Troyes vs Le Mans FC",
+    "sel": "Le Mans FC",
+    "raw": "Le Mans FC",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.25,
+    "prob": 0.31727518522816867,
+    "commence": 1793475900.0,
     "resultado": null,
     "cierre_prob": null
    }
