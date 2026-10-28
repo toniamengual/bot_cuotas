@@ -79,8 +79,8 @@
   "prob": 0.7865823520907286,
   "edge": 1.4691234197039993,
   "stake": 12.66,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 3.67,
   "patas": [
    {
     "id": "98200711ce86d7f98029d605016a7891",
@@ -93,7 +93,7 @@
     "cuota": 1.29,
     "prob": 0.7865823520907286,
     "commence": 1793131200.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -120,7 +120,7 @@
     "cuota": 1.29,
     "prob": 0.7865823520907286,
     "commence": 1793131200.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    },
    {
@@ -135,7 +135,7 @@
     "prob": 0.5045769295209043,
     "commence": 1793214000.0,
     "resultado": null,
-    "cierre_prob": 0.5045769295209043
+    "cierre_prob": 0.48775273544928704
    }
   ]
  },
@@ -162,7 +162,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.660932781424009
    }
   ]
  },
@@ -189,7 +189,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.660932781424009
    },
    {
     "id": "622faf457a6ffd6d9effd2bc93280bac",
@@ -203,7 +203,7 @@
     "prob": 0.7300062521394519,
     "commence": 1793190000.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.7328308269687365
    }
   ]
  },
@@ -230,7 +230,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.660932781424009
    },
    {
     "id": "de8fa64cdc8ed6fe9bd1fc42c6f115c6",
@@ -243,6 +243,115 @@
     "cuota": 2.85,
     "prob": 0.34835268223708477,
     "commence": 1793192400.0,
+    "resultado": null,
+    "cierre_prob": 0.34459835504456643
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793162686.70394,
+  "cuota": 1.84,
+  "prob": 0.5502096056651563,
+  "edge": 1.2385674423887716,
+  "stake": 3.69,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "29cfcc96f42a4c0c626d1b6c93ab212a",
+    "sport": "basketball_euroleague",
+    "partido": "Beşiktaş J.K. vs Olympiacos",
+    "sel": "Olympiacos",
+    "raw": "Olympiacos",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.84,
+    "prob": 0.5502096056651563,
+    "commence": 1793208600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1793162687.492732,
+  "cuota": 3.57,
+  "prob": 0.2834569015175296,
+  "edge": 1.194113841758071,
+  "stake": 0.58,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "29cfcc96f42a4c0c626d1b6c93ab212a",
+    "sport": "basketball_euroleague",
+    "partido": "Beşiktaş J.K. vs Olympiacos",
+    "sel": "Olympiacos",
+    "raw": "Olympiacos",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.84,
+    "prob": 0.5502096056651563,
+    "commence": 1793208600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "0148c3d6327ac9f98ddf4b277bfc8a3e",
+    "sport": "tennis_wta_pan_pacific_open",
+    "partido": "Leylah Fernandez vs Elise Mertens",
+    "sel": "Elise Mertens",
+    "raw": "Elise Mertens",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.94,
+    "prob": 0.5151798489138598,
+    "commence": 1793246400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1793162688.080281,
+  "cuota": 2.45,
+  "prob": 0.4124344707551448,
+  "edge": 1.0464453350104819,
+  "stake": 0.9,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "29cfcc96f42a4c0c626d1b6c93ab212a",
+    "sport": "basketball_euroleague",
+    "partido": "Beşiktaş J.K. vs Olympiacos",
+    "sel": "Olympiacos",
+    "raw": "Olympiacos",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.84,
+    "prob": 0.5502096056651563,
+    "commence": 1793208600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "ad2ec395411c7dd956e92178f00c0c8d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Daniel Merida Aguilar vs Daniil Medvedev",
+    "sel": "Daniil Medvedev",
+    "raw": "Daniil Medvedev",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.33,
+    "prob": 0.7495951842871714,
+    "commence": 1793190600.0,
     "resultado": null,
     "cierre_prob": null
    }
