@@ -135,7 +135,7 @@
     "prob": 0.5045769295209043,
     "commence": 1793214000.0,
     "resultado": null,
-    "cierre_prob": 0.48775273544928704
+    "cierre_prob": 0.48839966282741837
    }
   ]
  },
@@ -162,7 +162,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": 0.660932781424009
+    "cierre_prob": 0.6593503994211685
    }
   ]
  },
@@ -189,7 +189,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": 0.660932781424009
+    "cierre_prob": 0.6593503994211685
    },
    {
     "id": "622faf457a6ffd6d9effd2bc93280bac",
@@ -230,7 +230,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": 0.660932781424009
+    "cierre_prob": 0.6593503994211685
    },
    {
     "id": "de8fa64cdc8ed6fe9bd1fc42c6f115c6",
@@ -244,7 +244,7 @@
     "prob": 0.34835268223708477,
     "commence": 1793192400.0,
     "resultado": null,
-    "cierre_prob": 0.34459835504456643
+    "cierre_prob": 0.34603422959771946
    }
   ]
  },
@@ -271,7 +271,7 @@
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5491190758041674
    }
   ]
  },
@@ -298,7 +298,7 @@
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5491190758041674
    },
    {
     "id": "0148c3d6327ac9f98ddf4b277bfc8a3e",
@@ -312,7 +312,7 @@
     "prob": 0.5151798489138598,
     "commence": 1793246400.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5250885218427356
    }
   ]
  },
@@ -339,7 +339,7 @@
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5491190758041674
    },
    {
     "id": "ad2ec395411c7dd956e92178f00c0c8d",
@@ -352,6 +352,60 @@
     "cuota": 1.33,
     "prob": 0.7495951842871714,
     "commence": 1793190600.0,
+    "resultado": null,
+    "cierre_prob": 0.7596452564152741
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793175805.054816,
+  "cuota": 3.45,
+  "prob": 0.2954068812204396,
+  "edge": 1.9153740210516634,
+  "stake": 1.95,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "a9fac6056a7fb978aceab5182f56271b",
+    "sport": "tennis_wta_pan_pacific_open",
+    "partido": "Alexandra Eala vs Talia Gibson",
+    "sel": "Talia Gibson",
+    "raw": "Talia Gibson",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.45,
+    "prob": 0.2954068812204396,
+    "commence": 1793176800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793175805.559972,
+  "cuota": 3.8,
+  "prob": 0.2709543237744171,
+  "edge": 2.9626430342784893,
+  "stake": 2.65,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "f7fa6060659fec573d7a7df3881aff82",
+    "sport": "tennis_atp_swiss_indoors",
+    "partido": "Valentin Vacherot vs Rafael Jodar",
+    "sel": "Valentin Vacherot",
+    "raw": "Valentin Vacherot",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.8,
+    "prob": 0.2709543237744171,
+    "commence": 1793268000.0,
     "resultado": null,
     "cierre_prob": null
    }
