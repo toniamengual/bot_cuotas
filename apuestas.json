@@ -135,7 +135,7 @@
     "prob": 0.5045769295209043,
     "commence": 1793214000.0,
     "resultado": null,
-    "cierre_prob": 0.48839966282741837
+    "cierre_prob": 0.49287367960531087
    }
   ]
  },
@@ -162,7 +162,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": 0.6593503994211685
+    "cierre_prob": 0.6293705750589408
    }
   ]
  },
@@ -189,7 +189,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": 0.6593503994211685
+    "cierre_prob": 0.6293705750589408
    },
    {
     "id": "622faf457a6ffd6d9effd2bc93280bac",
@@ -230,7 +230,7 @@
     "prob": 0.7056006540532738,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": 0.6593503994211685
+    "cierre_prob": 0.6293705750589408
    },
    {
     "id": "de8fa64cdc8ed6fe9bd1fc42c6f115c6",
@@ -244,7 +244,7 @@
     "prob": 0.34835268223708477,
     "commence": 1793192400.0,
     "resultado": null,
-    "cierre_prob": 0.34603422959771946
+    "cierre_prob": 0.3710072978698317
    }
   ]
  },
@@ -271,7 +271,7 @@
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
     "resultado": null,
-    "cierre_prob": 0.5491190758041674
+    "cierre_prob": 0.5568697830348559
    }
   ]
  },
@@ -298,7 +298,7 @@
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
     "resultado": null,
-    "cierre_prob": 0.5491190758041674
+    "cierre_prob": 0.5568697830348559
    },
    {
     "id": "0148c3d6327ac9f98ddf4b277bfc8a3e",
@@ -312,7 +312,7 @@
     "prob": 0.5151798489138598,
     "commence": 1793246400.0,
     "resultado": null,
-    "cierre_prob": 0.5250885218427356
+    "cierre_prob": 0.5304217029307514
    }
   ]
  },
@@ -339,7 +339,7 @@
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
     "resultado": null,
-    "cierre_prob": 0.5491190758041674
+    "cierre_prob": 0.5568697830348559
    },
    {
     "id": "ad2ec395411c7dd956e92178f00c0c8d",
@@ -353,7 +353,7 @@
     "prob": 0.7495951842871714,
     "commence": 1793190600.0,
     "resultado": null,
-    "cierre_prob": 0.7596452564152741
+    "cierre_prob": 0.7893852233454867
    }
   ]
  },
@@ -365,8 +365,8 @@
   "prob": 0.2954068812204396,
   "edge": 1.9153740210516634,
   "stake": 1.95,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -1.95,
   "patas": [
    {
     "id": "a9fac6056a7fb978aceab5182f56271b",
@@ -379,7 +379,7 @@
     "cuota": 3.45,
     "prob": 0.2954068812204396,
     "commence": 1793176800.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    }
   ]
@@ -406,6 +406,196 @@
     "cuota": 3.8,
     "prob": 0.2709543237744171,
     "commence": 1793268000.0,
+    "resultado": null,
+    "cierre_prob": 0.2757764991286704
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793190204.426752,
+  "cuota": 2.75,
+  "prob": 0.37062942494105927,
+  "edge": 1.9230918587912926,
+  "stake": 2.75,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tallon Griekspoor vs Brandon Nakashima",
+    "sel": "Tallon Griekspoor",
+    "raw": "Tallon Griekspoor",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.75,
+    "prob": 0.37062942494105927,
+    "commence": 1793190600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1793190204.995294,
+  "cuota": 4.62,
+  "prob": 0.22143769544969227,
+  "edge": 2.304215297757839,
+  "stake": 0.8,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tallon Griekspoor vs Brandon Nakashima",
+    "sel": "Tallon Griekspoor",
+    "raw": "Tallon Griekspoor",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.75,
+    "prob": 0.37062942494105927,
+    "commence": 1793190600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "cc7f8bc2a4554b89f2a35abad3a633ef",
+    "sport": "basketball_nba",
+    "partido": "Atlanta Hawks vs Miami Heat",
+    "sel": "Atlanta Hawks",
+    "raw": "Atlanta Hawks",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.68,
+    "prob": 0.5974638831898121,
+    "commence": 1793229000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1793190205.760588,
+  "cuota": 3.44,
+  "prob": 0.2943702783112384,
+  "edge": 1.2633757390660083,
+  "stake": 0.65,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tallon Griekspoor vs Brandon Nakashima",
+    "sel": "Tallon Griekspoor",
+    "raw": "Tallon Griekspoor",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.75,
+    "prob": 0.37062942494105927,
+    "commence": 1793190600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "9f79477cee7d1e998aa4b8a7beec9b28",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tommy Paul vs Luciano Darderi",
+    "sel": "Tommy Paul",
+    "raw": "Tommy Paul",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.25,
+    "prob": 0.7942442194330678,
+    "commence": 1793275200.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793190206.243791,
+  "cuota": 2.8,
+  "prob": 0.37062942494105927,
+  "edge": 3.7762389834965937,
+  "stake": 5.24,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tallon Griekspoor vs Brandon Nakashima",
+    "sel": "Tallon Griekspoor",
+    "raw": "Tallon Griekspoor",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.8,
+    "prob": 0.37062942494105927,
+    "commence": 1793190600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793190206.243826,
+  "cuota": 2.9,
+  "prob": 0.35671082556401124,
+  "edge": 3.446139413563265,
+  "stake": 4.53,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "7932d9a82dcdb164a3e4ef5e03694ee3",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Lille vs RC Lens",
+    "sel": "RC Lens",
+    "raw": "RC Lens",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.9,
+    "prob": 0.35671082556401124,
+    "commence": 1793390700.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "888sport",
+  "ts": 1793190206.865991,
+  "cuota": 1.3,
+  "prob": 0.7893852233454867,
+  "edge": 2.6200790349132808,
+  "stake": 21.83,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "ad2ec395411c7dd956e92178f00c0c8d",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Daniel Merida Aguilar vs Daniil Medvedev",
+    "sel": "Daniil Medvedev",
+    "raw": "Daniil Medvedev",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.3,
+    "prob": 0.7893852233454867,
+    "commence": 1793190600.0,
     "resultado": null,
     "cierre_prob": null
    }
