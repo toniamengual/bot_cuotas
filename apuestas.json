@@ -570,7 +570,7 @@
     "prob": 0.35671082556401124,
     "commence": 1793390700.0,
     "resultado": null,
-    "cierre_prob": 0.35519110912241203
+    "cierre_prob": 0.3512897558483046
    }
   ]
  },
@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.24674210320267087
+    "cierre_prob": 0.2435948524253161
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5735826141785235
+    "cierre_prob": 0.5721253108898967
    }
   ]
  },
@@ -678,7 +678,7 @@
     "prob": 0.559152309989988,
     "commence": 1793332800.0,
     "resultado": null,
-    "cierre_prob": 0.5442324455095734
+    "cierre_prob": 0.5506549712434693
    }
   ]
  },
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.549227172727759
+    "cierre_prob": 0.5510351460676969
    }
   ]
  },
@@ -786,7 +786,7 @@
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.31778173928276304
+    "cierre_prob": 0.32007846002780893
    }
   ]
  },
@@ -840,7 +840,7 @@
     "prob": 0.4218923590329646,
     "commence": 1793347200.0,
     "resultado": null,
-    "cierre_prob": 0.41903956129826475
+    "cierre_prob": 0.41319869128208325
    }
   ]
  },
@@ -867,7 +867,7 @@
     "prob": 0.24402165565605097,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.24674210320267087
+    "cierre_prob": 0.2435948524253161
    }
   ]
  },
@@ -894,7 +894,7 @@
     "prob": 0.277339248760159,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.2774198272170427
+    "cierre_prob": 0.2766416670403413
    }
   ]
  },
@@ -921,7 +921,7 @@
     "prob": 0.7522671528420594,
     "commence": 1793383200.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.7415503321848931
    }
   ]
  },
@@ -948,7 +948,7 @@
     "prob": 0.5455286972329528,
     "commence": 1793386800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5125683817156534
    }
   ]
  },
@@ -975,7 +975,7 @@
     "prob": 0.2377379992285055,
     "commence": 1793541600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.23612182032018433
    }
   ]
  },
@@ -987,8 +987,8 @@
   "prob": 0.25170182325263063,
   "edge": 3.1977475335785543,
   "stake": 2.58,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.58,
   "patas": [
    {
     "id": "6822571863f93fa4654e76e114874060",
@@ -1001,7 +1001,7 @@
     "cuota": 4.1,
     "prob": 0.25170182325263063,
     "commence": 1793292000.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    }
   ]
@@ -1029,7 +1029,7 @@
     "prob": 0.7522671528420594,
     "commence": 1793383200.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.7415503321848931
    }
   ]
  },
@@ -1055,6 +1055,33 @@
     "cuota": 4.1,
     "prob": 0.2487875781725606,
     "commence": 1793388600.0,
+    "resultado": null,
+    "cierre_prob": 0.24736443563826205
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793305407.858031,
+  "cuota": 2.6,
+  "prob": 0.39634921187448185,
+  "edge": 3.0507950873652767,
+  "stake": 4.77,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "db9a80e16dd6db2b7b21b1a082f2095f",
+    "sport": "soccer_efl_champ",
+    "partido": "Sheffield United vs Wrexham AFC",
+    "sel": "Sheffield United",
+    "raw": "Sheffield United",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.6,
+    "prob": 0.39634921187448185,
+    "commence": 1793390400.0,
     "resultado": null,
     "cierre_prob": null
    }
