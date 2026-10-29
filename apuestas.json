@@ -570,7 +570,7 @@
     "prob": 0.35671082556401124,
     "commence": 1793390700.0,
     "resultado": null,
-    "cierre_prob": 0.3560415967467784
+    "cierre_prob": 0.35435250887704206
    }
   ]
  },
@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.24402165565605097
+    "cierre_prob": 0.2475132588110934
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.570939858553285
+    "cierre_prob": 0.5746888526058741
    }
   ]
  },
@@ -678,7 +678,7 @@
     "prob": 0.559152309989988,
     "commence": 1793332800.0,
     "resultado": null,
-    "cierre_prob": 0.5468905817815236
+    "cierre_prob": 0.5455971833541081
    }
   ]
  },
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5478647394762858
+    "cierre_prob": 0.5482558078977928
    }
   ]
  },
@@ -786,7 +786,7 @@
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.3166721141747486
+    "cierre_prob": 0.3184251134747959
    }
   ]
  },
@@ -813,7 +813,7 @@
     "prob": 0.22226347237667307,
     "commence": 1793277000.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.22557157869780978
    }
   ]
  },
@@ -840,7 +840,7 @@
     "prob": 0.4218923590329646,
     "commence": 1793347200.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.4218923590329646
    }
   ]
  },
@@ -866,6 +866,33 @@
     "cuota": 4.25,
     "prob": 0.24402165565605097,
     "commence": 1793457000.0,
+    "resultado": null,
+    "cierre_prob": 0.2475132588110934
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793276608.550633,
+  "cuota": 3.7,
+  "prob": 0.277339248760159,
+  "edge": 2.615522041258833,
+  "stake": 2.42,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "bfd0294b9c79d8d885b0e6fc1dd47c5f",
+    "sport": "soccer_efl_champ",
+    "partido": "Burnley vs Portsmouth",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.7,
+    "prob": 0.277339248760159,
+    "commence": 1793458800.0,
     "resultado": null,
     "cierre_prob": null
    }
