@@ -392,8 +392,8 @@
   "prob": 0.2709543237744171,
   "edge": 2.9626430342784893,
   "stake": 2.65,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 7.42,
   "patas": [
    {
     "id": "f7fa6060659fec573d7a7df3881aff82",
@@ -406,7 +406,7 @@
     "cuota": 3.8,
     "prob": 0.2709543237744171,
     "commence": 1793268000.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.27687338616219365
    }
   ]
@@ -487,8 +487,8 @@
   "prob": 0.2943702783112384,
   "edge": 1.2633757390660083,
   "stake": 0.65,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 1.58,
   "patas": [
    {
     "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
@@ -515,7 +515,7 @@
     "cuota": 1.25,
     "prob": 0.7942442194330678,
     "commence": 1793275200.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.7777365276233269
    }
   ]
@@ -570,7 +570,7 @@
     "prob": 0.35671082556401124,
     "commence": 1793390700.0,
     "resultado": null,
-    "cierre_prob": 0.35435250887704206
+    "cierre_prob": 0.35519110912241203
    }
   ]
  },
@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.2475132588110934
+    "cierre_prob": 0.24674210320267087
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5746888526058741
+    "cierre_prob": 0.5735826141785235
    }
   ]
  },
@@ -678,7 +678,7 @@
     "prob": 0.559152309989988,
     "commence": 1793332800.0,
     "resultado": null,
-    "cierre_prob": 0.5455971833541081
+    "cierre_prob": 0.5442324455095734
    }
   ]
  },
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5482558078977928
+    "cierre_prob": 0.549227172727759
    }
   ]
  },
@@ -786,7 +786,7 @@
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.3184251134747959
+    "cierre_prob": 0.31778173928276304
    }
   ]
  },
@@ -798,8 +798,8 @@
   "prob": 0.22226347237667307,
   "edge": 2.2411972932696145,
   "stake": 1.56,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -1.56,
   "patas": [
    {
     "id": "9f79477cee7d1e998aa4b8a7beec9b28",
@@ -812,7 +812,7 @@
     "cuota": 4.6,
     "prob": 0.22226347237667307,
     "commence": 1793277000.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.22557157869780978
    }
   ]
@@ -840,7 +840,7 @@
     "prob": 0.4218923590329646,
     "commence": 1793347200.0,
     "resultado": null,
-    "cierre_prob": 0.4218923590329646
+    "cierre_prob": 0.41903956129826475
    }
   ]
  },
@@ -867,7 +867,7 @@
     "prob": 0.24402165565605097,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.2475132588110934
+    "cierre_prob": 0.24674210320267087
    }
   ]
  },
@@ -893,6 +893,168 @@
     "cuota": 3.7,
     "prob": 0.277339248760159,
     "commence": 1793458800.0,
+    "resultado": null,
+    "cierre_prob": 0.2774198272170427
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793291006.55917,
+  "cuota": 1.35,
+  "prob": 0.7522671528420594,
+  "edge": 1.5560656336780276,
+  "stake": 11.11,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "20a0d13aebe94761db1aa2447b062a2f",
+    "sport": "basketball_euroleague",
+    "partido": "Žalgiris vs KK Partizan NIS",
+    "sel": "Žalgiris",
+    "raw": "Žalgiris",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.35,
+    "prob": 0.7522671528420594,
+    "commence": 1793383200.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "William Hill",
+  "ts": 1793291007.061738,
+  "cuota": 1.91,
+  "prob": 0.5455286972329528,
+  "edge": 4.195981171493979,
+  "stake": 11.53,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "344a144a9fb9dcff345956fe73e6f2ad",
+    "sport": "basketball_euroleague",
+    "partido": "ASVEL Lyon Villeurbanne vs Saski Baskonia",
+    "sel": "Menos de 176.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 176.5,
+    "cuota": 1.91,
+    "prob": 0.5455286972329528,
+    "commence": 1793386800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793291007.691154,
+  "cuota": 4.35,
+  "prob": 0.2377379992285055,
+  "edge": 3.416029664399889,
+  "stake": 2.55,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "448a1083448ea9dff55bfebf15ff20b4",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Strasbourg vs Auxerre",
+    "sel": "Auxerre",
+    "raw": "Auxerre",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.35,
+    "prob": 0.2377379992285055,
+    "commence": 1793541600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793291008.423056,
+  "cuota": 4.1,
+  "prob": 0.25170182325263063,
+  "edge": 3.1977475335785543,
+  "stake": 2.58,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "6822571863f93fa4654e76e114874060",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Alexander Zverev vs Tallon Griekspoor",
+    "sel": "Tallon Griekspoor",
+    "raw": "Tallon Griekspoor",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.1,
+    "prob": 0.25170182325263063,
+    "commence": 1793292000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793291008.984136,
+  "cuota": 1.36,
+  "prob": 0.7522671528420594,
+  "edge": 2.308332786520073,
+  "stake": 16.03,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "20a0d13aebe94761db1aa2447b062a2f",
+    "sport": "basketball_euroleague",
+    "partido": "Žalgiris vs KK Partizan NIS",
+    "sel": "Žalgiris",
+    "raw": "Žalgiris",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.36,
+    "prob": 0.7522671528420594,
+    "commence": 1793383200.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793291008.984171,
+  "cuota": 4.1,
+  "prob": 0.2487875781725606,
+  "edge": 2.002907050749836,
+  "stake": 1.62,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "b275fe870ec88a9f0054c9220beb2673",
+    "sport": "soccer_germany_bundesliga",
+    "partido": "Elversberg vs FSV Mainz 05",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.1,
+    "prob": 0.2487875781725606,
+    "commence": 1793388600.0,
     "resultado": null,
     "cierre_prob": null
    }
