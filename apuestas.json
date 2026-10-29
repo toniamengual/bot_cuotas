@@ -106,8 +106,8 @@
   "prob": 0.39689130803327066,
   "edge": 1.207283548484006,
   "stake": 0.97,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -0.97,
   "patas": [
    {
     "id": "98200711ce86d7f98029d605016a7891",
@@ -134,7 +134,7 @@
     "cuota": 1.98,
     "prob": 0.5045769295209043,
     "commence": 1793214000.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5198598402500929
    }
   ]
@@ -256,8 +256,8 @@
   "prob": 0.5502096056651563,
   "edge": 1.2385674423887716,
   "stake": 3.69,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 3.1,
   "patas": [
    {
     "id": "29cfcc96f42a4c0c626d1b6c93ab212a",
@@ -270,7 +270,7 @@
     "cuota": 1.84,
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.5572361156354416
    }
   ]
@@ -283,8 +283,8 @@
   "prob": 0.2834569015175296,
   "edge": 1.194113841758071,
   "stake": 0.58,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -0.58,
   "patas": [
    {
     "id": "29cfcc96f42a4c0c626d1b6c93ab212a",
@@ -297,7 +297,7 @@
     "cuota": 1.84,
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.5572361156354416
    },
    {
@@ -311,7 +311,7 @@
     "cuota": 1.94,
     "prob": 0.5151798489138598,
     "commence": 1793246400.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5285081292240738
    }
   ]
@@ -324,8 +324,8 @@
   "prob": 0.4124344707551448,
   "edge": 1.0464453350104819,
   "stake": 0.9,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 1.3,
   "patas": [
    {
     "id": "29cfcc96f42a4c0c626d1b6c93ab212a",
@@ -338,7 +338,7 @@
     "cuota": 1.84,
     "prob": 0.5502096056651563,
     "commence": 1793208600.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.5572361156354416
    },
    {
@@ -407,7 +407,7 @@
     "prob": 0.2709543237744171,
     "commence": 1793268000.0,
     "resultado": null,
-    "cierre_prob": 0.27654527156531267
+    "cierre_prob": 0.27687338616219365
    }
   ]
  },
@@ -446,8 +446,8 @@
   "prob": 0.22143769544969227,
   "edge": 2.304215297757839,
   "stake": 0.8,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -0.8,
   "patas": [
    {
     "id": "01c5f7c5dda8e39a8d33c84b8d9e323d",
@@ -474,7 +474,7 @@
     "cuota": 1.68,
     "prob": 0.5974638831898121,
     "commence": 1793229000.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5508926369937305
    }
   ]
@@ -516,7 +516,7 @@
     "prob": 0.7942442194330678,
     "commence": 1793275200.0,
     "resultado": null,
-    "cierre_prob": 0.8020950785254346
+    "cierre_prob": 0.7777365276233269
    }
   ]
  },
@@ -570,7 +570,7 @@
     "prob": 0.35671082556401124,
     "commence": 1793390700.0,
     "resultado": null,
-    "cierre_prob": 0.3579506385604186
+    "cierre_prob": 0.3560415967467784
    }
   ]
  },
@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.24495833262788838
+    "cierre_prob": 0.24402165565605097
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5770883815253669
+    "cierre_prob": 0.570939858553285
    }
   ]
  },
@@ -678,7 +678,7 @@
     "prob": 0.559152309989988,
     "commence": 1793332800.0,
     "resultado": null,
-    "cierre_prob": 0.5358881538174154
+    "cierre_prob": 0.5468905817815236
    }
   ]
  },
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5514784006274619
+    "cierre_prob": 0.5478647394762858
    }
   ]
  },
@@ -717,8 +717,8 @@
   "prob": 0.5345580676069643,
   "edge": 2.100590912930178,
   "stake": 5.77,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 5.25,
   "patas": [
    {
     "id": "ada0302f82b6f8291cd76ff00568358e",
@@ -731,7 +731,7 @@
     "cuota": 1.91,
     "prob": 0.5345580676069643,
     "commence": 1793215800.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -744,8 +744,8 @@
   "prob": 0.5268351011936672,
   "edge": 3.7865149351524297,
   "stake": 9.76,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 9.47,
   "patas": [
    {
     "id": "6e8a41f3aeff105b0e10766515517d5e",
@@ -758,7 +758,7 @@
     "cuota": 1.97,
     "prob": 0.5268351011936672,
     "commence": 1793241600.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -785,6 +785,87 @@
     "cuota": 3.25,
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
+    "resultado": null,
+    "cierre_prob": 0.3166721141747486
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793262208.138946,
+  "cuota": 4.6,
+  "prob": 0.22226347237667307,
+  "edge": 2.2411972932696145,
+  "stake": 1.56,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "9f79477cee7d1e998aa4b8a7beec9b28",
+    "sport": "tennis_atp_vienna_open",
+    "partido": "Tommy Paul vs Luciano Darderi",
+    "sel": "Luciano Darderi",
+    "raw": "Luciano Darderi",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.6,
+    "prob": 0.22226347237667307,
+    "commence": 1793277000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793262208.743357,
+  "cuota": 2.4,
+  "prob": 0.4218923590329646,
+  "edge": 1.2541661679114968,
+  "stake": 2.24,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "d52af5cb645ef831c4dbab0bbaf48dac",
+    "sport": "tennis_wta_pan_pacific_open",
+    "partido": "Alexandra Eala vs Diana Shnaider",
+    "sel": "Alexandra Eala",
+    "raw": "Alexandra Eala",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.4,
+    "prob": 0.4218923590329646,
+    "commence": 1793347200.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793262209.264086,
+  "cuota": 4.25,
+  "prob": 0.24402165565605097,
+  "edge": 3.7092036538216577,
+  "stake": 2.85,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "3966f2fe1c2f73bfa12e61db83bd0bf9",
+    "sport": "soccer_germany_bundesliga",
+    "partido": "FC Schalke 04 vs RB Leipzig",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.25,
+    "prob": 0.24402165565605097,
+    "commence": 1793457000.0,
     "resultado": null,
     "cierre_prob": null
    }
