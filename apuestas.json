@@ -570,7 +570,7 @@
     "prob": 0.35671082556401124,
     "commence": 1793390700.0,
     "resultado": null,
-    "cierre_prob": 0.3512897558483046
+    "cierre_prob": 0.3745137287703987
    }
   ]
  },
@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.2435948524253161
+    "cierre_prob": 0.24588287963762
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5721253108898967
+    "cierre_prob": 0.5706670793485379
    }
   ]
  },
@@ -663,8 +663,8 @@
   "prob": 0.559152309989988,
   "edge": 2.324872728167815,
   "stake": 7.0,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -7.0,
   "patas": [
    {
     "id": "cc0834cac355e3a96bf64a85ce003e51",
@@ -677,7 +677,7 @@
     "cuota": 1.83,
     "prob": 0.559152309989988,
     "commence": 1793332800.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5506549712434693
    }
   ]
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5510351460676969
+    "cierre_prob": 0.5356151990306586
    }
   ]
  },
@@ -786,7 +786,7 @@
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.32007846002780893
+    "cierre_prob": 0.31778173928276304
    }
   ]
  },
@@ -867,7 +867,7 @@
     "prob": 0.24402165565605097,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.2435948524253161
+    "cierre_prob": 0.24588287963762
    }
   ]
  },
@@ -894,7 +894,7 @@
     "prob": 0.277339248760159,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.2766416670403413
+    "cierre_prob": 0.2771468035942495
    }
   ]
  },
@@ -921,7 +921,7 @@
     "prob": 0.7522671528420594,
     "commence": 1793383200.0,
     "resultado": null,
-    "cierre_prob": 0.7415503321848931
+    "cierre_prob": 0.7268348807587798
    }
   ]
  },
@@ -948,7 +948,7 @@
     "prob": 0.5455286972329528,
     "commence": 1793386800.0,
     "resultado": null,
-    "cierre_prob": 0.5125683817156534
+    "cierre_prob": 0.5071199617922456
    }
   ]
  },
@@ -1029,7 +1029,7 @@
     "prob": 0.7522671528420594,
     "commence": 1793383200.0,
     "resultado": null,
-    "cierre_prob": 0.7415503321848931
+    "cierre_prob": 0.7268348807587798
    }
   ]
  },
@@ -1056,7 +1056,7 @@
     "prob": 0.2487875781725606,
     "commence": 1793388600.0,
     "resultado": null,
-    "cierre_prob": 0.24736443563826205
+    "cierre_prob": 0.24667403428027823
    }
   ]
  },
@@ -1082,6 +1082,223 @@
     "cuota": 2.6,
     "prob": 0.39634921187448185,
     "commence": 1793390400.0,
+    "resultado": null,
+    "cierre_prob": 0.4037718363131569
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793348604.254767,
+  "cuota": 2.15,
+  "prob": 0.47833443231471867,
+  "edge": 2.8419029476645097,
+  "stake": 6.18,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e66be09cbf07f4ca7b22ef19c32bcb30",
+    "sport": "tennis_atp_swiss_indoors",
+    "partido": "Jan-Lennard Struff vs Nuno Borges",
+    "sel": "Nuno Borges",
+    "raw": "Nuno Borges",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.15,
+    "prob": 0.47833443231471867,
+    "commence": 1793383800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1793348604.852991,
+  "cuota": 4.0,
+  "prob": 0.25634846374305637,
+  "edge": 2.539385497222546,
+  "stake": 1.06,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e66be09cbf07f4ca7b22ef19c32bcb30",
+    "sport": "tennis_atp_swiss_indoors",
+    "partido": "Jan-Lennard Struff vs Nuno Borges",
+    "sel": "Nuno Borges",
+    "raw": "Nuno Borges",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.15,
+    "prob": 0.47833443231471867,
+    "commence": 1793383800.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "96a166bbd49782dbd9a61c2fb9069787",
+    "sport": "basketball_nba",
+    "partido": "Philadelphia 76ers vs New York Knicks",
+    "sel": "New York Knicks",
+    "raw": "New York Knicks",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.86,
+    "prob": 0.5359189019752454,
+    "commence": 1793403600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1793348605.766306,
+  "cuota": 3.18,
+  "prob": 0.3207692018455095,
+  "edge": 2.0046061868720155,
+  "stake": 1.15,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e66be09cbf07f4ca7b22ef19c32bcb30",
+    "sport": "tennis_atp_swiss_indoors",
+    "partido": "Jan-Lennard Struff vs Nuno Borges",
+    "sel": "Nuno Borges",
+    "raw": "Nuno Borges",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.15,
+    "prob": 0.47833443231471867,
+    "commence": 1793383800.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "a0f5d89a4fc51e52edd0e70d1e4cbaf2",
+    "sport": "basketball_nba",
+    "partido": "Toronto Raptors vs Orlando Magic",
+    "sel": "Toronto Raptors",
+    "raw": "Toronto Raptors",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.48,
+    "prob": 0.6705960938109101,
+    "commence": 1793403600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793348606.530373,
+  "cuota": 4.0,
+  "prob": 0.2620909958755873,
+  "edge": 4.836398350234927,
+  "stake": 4.03,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "a547720e6b4661d6319c4f11dbdf8e1f",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Nice vs Rennes",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.0,
+    "prob": 0.2620909958755873,
+    "commence": 1793383200.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793348607.109743,
+  "cuota": 3.75,
+  "prob": 0.27654831021631243,
+  "edge": 3.7056163311171675,
+  "stake": 3.37,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "75cf0c0e471877a0bfa95d689d0f0325",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Troyes vs Le Mans FC",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.75,
+    "prob": 0.27654831021631243,
+    "commence": 1793475900.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793348607.61676,
+  "cuota": 2.0,
+  "prob": 0.51079006399043,
+  "edge": 2.1580127980860064,
+  "stake": 5.4,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "7932d9a82dcdb164a3e4ef5e03694ee3",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Lille vs RC Lens",
+    "sel": "Menos de 2.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 2.5,
+    "cuota": 2.0,
+    "prob": 0.51079006399043,
+    "commence": 1793390700.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793348608.209241,
+  "cuota": 4.35,
+  "prob": 0.23483798473724757,
+  "edge": 2.154523360702676,
+  "stake": 1.61,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "b34cc5873de889d2b6d48ed69ff2d74a",
+    "sport": "soccer_efl_champ",
+    "partido": "Southampton vs Queens Park Rangers",
+    "sel": "Queens Park Rangers",
+    "raw": "Queens Park Rangers",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.35,
+    "prob": 0.23483798473724757,
+    "commence": 1793458800.0,
     "resultado": null,
     "cierre_prob": null
    }
