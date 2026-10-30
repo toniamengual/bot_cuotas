@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.23883601175553282
+    "cierre_prob": 0.23947393327995967
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5748499490128761
+    "cierre_prob": 0.5843763283959297
    }
   ]
  },
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5492435767325036
+    "cierre_prob": 0.5544678816003185
    }
   ]
  },
@@ -786,7 +786,7 @@
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.3149729016125002
+    "cierre_prob": 0.3057121637407975
    }
   ]
  },
@@ -867,7 +867,7 @@
     "prob": 0.24402165565605097,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.23883601175553282
+    "cierre_prob": 0.23947393327995967
    }
   ]
  },
@@ -894,7 +894,7 @@
     "prob": 0.277339248760159,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.2872108044583108
+    "cierre_prob": 0.2867727154664386
    }
   ]
  },
@@ -975,7 +975,7 @@
     "prob": 0.2377379992285055,
     "commence": 1793541600.0,
     "resultado": null,
-    "cierre_prob": 0.23475169032586224
+    "cierre_prob": 0.23390975642026063
    }
   ]
  },
@@ -1151,7 +1151,7 @@
     "prob": 0.5359189019752454,
     "commence": 1793403600.0,
     "resultado": null,
-    "cierre_prob": 0.53051855313718
+    "cierre_prob": 0.5939998958784254
    }
   ]
  },
@@ -1192,7 +1192,7 @@
     "prob": 0.6705960938109101,
     "commence": 1793403600.0,
     "resultado": null,
-    "cierre_prob": 0.6590323657121853
+    "cierre_prob": 0.6591846807497269
    }
   ]
  },
@@ -1246,7 +1246,7 @@
     "prob": 0.27654831021631243,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.2763024139416648
+    "cierre_prob": 0.27606748349413
    }
   ]
  },
@@ -1300,7 +1300,7 @@
     "prob": 0.23483798473724757,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.24109870292041244
+    "cierre_prob": 0.25361316141092377
    }
   ]
  },
@@ -1354,7 +1354,7 @@
     "prob": 0.2652352703086225,
     "commence": 1793562300.0,
     "resultado": null,
-    "cierre_prob": 0.26559806191676705
+    "cierre_prob": 0.26662194827767216
    }
   ]
  },
@@ -1408,7 +1408,7 @@
     "prob": 0.2599676345009507,
     "commence": 1793405400.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2593875441845322
    }
   ]
  },
@@ -1434,6 +1434,60 @@
     "cuota": 2.25,
     "prob": 0.45561901127514765,
     "commence": 1793449800.0,
+    "resultado": null,
+    "cierre_prob": 0.44532913729381457
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793391806.212486,
+  "cuota": 3.5,
+  "prob": 0.29682003131276896,
+  "edge": 3.8870109594691282,
+  "stake": 3.89,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "bfd0294b9c79d8d885b0e6fc1dd47c5f",
+    "sport": "soccer_efl_champ",
+    "partido": "Burnley vs Portsmouth",
+    "sel": "Portsmouth",
+    "raw": "Portsmouth",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.5,
+    "prob": 0.29682003131276896,
+    "commence": 1793458800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793391806.854661,
+  "cuota": 2.45,
+  "prob": 0.42190685456792304,
+  "edge": 3.367179369141149,
+  "stake": 5.81,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "36f913b9a56f5a16fa4b8456678022f3",
+    "sport": "soccer_efl_champ",
+    "partido": "Bolton Wanderers vs Bristol City",
+    "sel": "Bristol City",
+    "raw": "Bristol City",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.45,
+    "prob": 0.42190685456792304,
+    "commence": 1793458800.0,
     "resultado": null,
     "cierre_prob": null
    }
