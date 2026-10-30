@@ -570,7 +570,7 @@
     "prob": 0.35671082556401124,
     "commence": 1793390700.0,
     "resultado": null,
-    "cierre_prob": 0.3535504944812423
+    "cierre_prob": 0.34645409309605957
    }
   ]
  },
@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.24634852514577577
+    "cierre_prob": 0.23883601175553282
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5694961644068949
+    "cierre_prob": 0.5748499490128761
    }
   ]
  },
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5371385001773471
+    "cierre_prob": 0.5492435767325036
    }
   ]
  },
@@ -786,7 +786,7 @@
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.3155314453537444
+    "cierre_prob": 0.3149729016125002
    }
   ]
  },
@@ -867,7 +867,7 @@
     "prob": 0.24402165565605097,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.24634852514577577
+    "cierre_prob": 0.23883601175553282
    }
   ]
  },
@@ -894,7 +894,7 @@
     "prob": 0.277339248760159,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.27937619743358577
+    "cierre_prob": 0.2872108044583108
    }
   ]
  },
@@ -921,7 +921,7 @@
     "prob": 0.7522671528420594,
     "commence": 1793383200.0,
     "resultado": null,
-    "cierre_prob": 0.728317741803919
+    "cierre_prob": 0.719536349852263
    }
   ]
  },
@@ -948,7 +948,7 @@
     "prob": 0.5455286972329528,
     "commence": 1793386800.0,
     "resultado": null,
-    "cierre_prob": 0.5113268158321713
+    "cierre_prob": 0.5215852139270637
    }
   ]
  },
@@ -975,7 +975,7 @@
     "prob": 0.2377379992285055,
     "commence": 1793541600.0,
     "resultado": null,
-    "cierre_prob": 0.23659273349958895
+    "cierre_prob": 0.23475169032586224
    }
   ]
  },
@@ -1029,7 +1029,7 @@
     "prob": 0.7522671528420594,
     "commence": 1793383200.0,
     "resultado": null,
-    "cierre_prob": 0.728317741803919
+    "cierre_prob": 0.719536349852263
    }
   ]
  },
@@ -1056,7 +1056,7 @@
     "prob": 0.2487875781725606,
     "commence": 1793388600.0,
     "resultado": null,
-    "cierre_prob": 0.24769492637832372
+    "cierre_prob": 0.25133541369180845
    }
   ]
  },
@@ -1083,7 +1083,7 @@
     "prob": 0.39634921187448185,
     "commence": 1793390400.0,
     "resultado": null,
-    "cierre_prob": 0.41698631732890795
+    "cierre_prob": 0.41865700980421966
    }
   ]
  },
@@ -1110,7 +1110,7 @@
     "prob": 0.47833443231471867,
     "commence": 1793383800.0,
     "resultado": null,
-    "cierre_prob": 0.4703855769658513
+    "cierre_prob": 0.4811436227596964
    }
   ]
  },
@@ -1137,7 +1137,7 @@
     "prob": 0.47833443231471867,
     "commence": 1793383800.0,
     "resultado": null,
-    "cierre_prob": 0.4703855769658513
+    "cierre_prob": 0.4811436227596964
    },
    {
     "id": "96a166bbd49782dbd9a61c2fb9069787",
@@ -1151,7 +1151,7 @@
     "prob": 0.5359189019752454,
     "commence": 1793403600.0,
     "resultado": null,
-    "cierre_prob": 0.5363997057008929
+    "cierre_prob": 0.53051855313718
    }
   ]
  },
@@ -1178,7 +1178,7 @@
     "prob": 0.47833443231471867,
     "commence": 1793383800.0,
     "resultado": null,
-    "cierre_prob": 0.4703855769658513
+    "cierre_prob": 0.4811436227596964
    },
    {
     "id": "a0f5d89a4fc51e52edd0e70d1e4cbaf2",
@@ -1192,7 +1192,7 @@
     "prob": 0.6705960938109101,
     "commence": 1793403600.0,
     "resultado": null,
-    "cierre_prob": 0.6705289952154623
+    "cierre_prob": 0.6590323657121853
    }
   ]
  },
@@ -1219,7 +1219,7 @@
     "prob": 0.2620909958755873,
     "commence": 1793383200.0,
     "resultado": null,
-    "cierre_prob": 0.2674269618605791
+    "cierre_prob": 0.2658538169262228
    }
   ]
  },
@@ -1246,7 +1246,7 @@
     "prob": 0.27654831021631243,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.2768492174013082
+    "cierre_prob": 0.2763024139416648
    }
   ]
  },
@@ -1300,7 +1300,7 @@
     "prob": 0.23483798473724757,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.2364024450163126
+    "cierre_prob": 0.24109870292041244
    }
   ]
  },
@@ -1327,7 +1327,7 @@
     "prob": 0.41698631732890795,
     "commence": 1793390400.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.41865700980421966
    }
   ]
  },
@@ -1353,6 +1353,87 @@
     "cuota": 3.85,
     "prob": 0.2652352703086225,
     "commence": 1793562300.0,
+    "resultado": null,
+    "cierre_prob": 0.26559806191676705
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793377408.021705,
+  "cuota": 2.48,
+  "prob": 0.41865700980421966,
+  "edge": 3.8269384314464805,
+  "stake": 6.46,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "db9a80e16dd6db2b7b21b1a082f2095f",
+    "sport": "soccer_efl_champ",
+    "partido": "Sheffield United vs Wrexham AFC",
+    "sel": "Sheffield United",
+    "raw": "Sheffield United",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.48,
+    "prob": 0.41865700980421966,
+    "commence": 1793390400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793377408.515692,
+  "cuota": 3.98,
+  "prob": 0.2599676345009507,
+  "edge": 3.467118531378377,
+  "stake": 2.91,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "c3a424e24d426af94a693e06a33e3037",
+    "sport": "basketball_nba",
+    "partido": "Miami Heat vs Indiana Pacers",
+    "sel": "Indiana Pacers",
+    "raw": "Indiana Pacers",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.98,
+    "prob": 0.2599676345009507,
+    "commence": 1793405400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793377409.242343,
+  "cuota": 2.25,
+  "prob": 0.45561901127514765,
+  "edge": 2.514277536908227,
+  "stake": 5.03,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "1765ba3479499dda4fa86f4598e8b18a",
+    "sport": "soccer_efl_champ",
+    "partido": "Lincoln City vs Birmingham City",
+    "sel": "Birmingham City",
+    "raw": "Birmingham City",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.25,
+    "prob": 0.45561901127514765,
+    "commence": 1793449800.0,
     "resultado": null,
     "cierre_prob": null
    }
