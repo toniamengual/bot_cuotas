@@ -786,7 +786,7 @@
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.2789457428804822
+    "cierre_prob": 0.2749671506103386
    }
   ]
  },
@@ -975,7 +975,7 @@
     "prob": 0.2377379992285055,
     "commence": 1793541600.0,
     "resultado": null,
-    "cierre_prob": 0.23609032116398532
+    "cierre_prob": 0.23378090658297546
    }
   ]
  },
@@ -1246,7 +1246,7 @@
     "prob": 0.27654831021631243,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.28765797277386185
+    "cierre_prob": 0.28262904624010565
    }
   ]
  },
@@ -1354,7 +1354,7 @@
     "prob": 0.2652352703086225,
     "commence": 1793562300.0,
     "resultado": null,
-    "cierre_prob": 0.2689380158544693
+    "cierre_prob": 0.2715962515471211
    }
   ]
  },
@@ -1420,8 +1420,8 @@
   "prob": 0.45561901127514765,
   "edge": 2.514277536908227,
   "stake": 5.03,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 6.29,
   "patas": [
    {
     "id": "1765ba3479499dda4fa86f4598e8b18a",
@@ -1434,7 +1434,7 @@
     "cuota": 2.25,
     "prob": 0.45561901127514765,
     "commence": 1793449800.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.42629042188211325
    }
   ]
@@ -1597,7 +1597,7 @@
     "prob": 0.2837718935503405,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.28765797277386185
+    "cierre_prob": 0.28262904624010565
    }
   ]
  },
@@ -1624,7 +1624,7 @@
     "prob": 0.33459710381256835,
     "commence": 1793549700.0,
     "resultado": null,
-    "cierre_prob": 0.3342025315744125
+    "cierre_prob": 0.33270889918042273
    }
   ]
  },
@@ -1650,6 +1650,33 @@
     "cuota": 1.65,
     "prob": 0.6191226645554423,
     "commence": 1793458800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793463803.822442,
+  "cuota": 1.68,
+  "prob": 0.6138522987696324,
+  "edge": 3.127186193298237,
+  "stake": 11.5,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "35c20c072dc49b1f1762bd71838ad56b",
+    "sport": "tennis_atp_paris_masters",
+    "partido": "Luca Van Assche vs Mariano Navone",
+    "sel": "Luca Van Assche",
+    "raw": "Luca Van Assche",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.68,
+    "prob": 0.6138522987696324,
+    "commence": 1793613600.0,
     "resultado": null,
     "cierre_prob": null
    }
