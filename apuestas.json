@@ -624,7 +624,7 @@
     "prob": 0.2463021807931228,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.239760197315563
+    "cierre_prob": 0.24812251945874578
    }
   ]
  },
@@ -651,7 +651,7 @@
     "prob": 0.5801635663111444,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5901992033109056
+    "cierre_prob": 0.5881931914133199
    }
   ]
  },
@@ -705,7 +705,7 @@
     "prob": 0.5529169084533153,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.5614322183599537
+    "cierre_prob": 0.5583111553167952
    }
   ]
  },
@@ -786,7 +786,7 @@
     "prob": 0.31727518522816867,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.2801247431560616
+    "cierre_prob": 0.2789457428804822
    }
   ]
  },
@@ -867,7 +867,7 @@
     "prob": 0.24402165565605097,
     "commence": 1793457000.0,
     "resultado": null,
-    "cierre_prob": 0.239760197315563
+    "cierre_prob": 0.24812251945874578
    }
   ]
  },
@@ -894,7 +894,7 @@
     "prob": 0.277339248760159,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.2884595939300147
+    "cierre_prob": 0.2812784183069623
    }
   ]
  },
@@ -975,7 +975,7 @@
     "prob": 0.2377379992285055,
     "commence": 1793541600.0,
     "resultado": null,
-    "cierre_prob": 0.2333421997321188
+    "cierre_prob": 0.23609032116398532
    }
   ]
  },
@@ -1246,7 +1246,7 @@
     "prob": 0.27654831021631243,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": 0.2837718935503405
+    "cierre_prob": 0.28765797277386185
    }
   ]
  },
@@ -1300,7 +1300,7 @@
     "prob": 0.23483798473724757,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.25577794167101947
+    "cierre_prob": 0.2543548563832603
    }
   ]
  },
@@ -1354,7 +1354,7 @@
     "prob": 0.2652352703086225,
     "commence": 1793562300.0,
     "resultado": null,
-    "cierre_prob": 0.2678671194286151
+    "cierre_prob": 0.2689380158544693
    }
   ]
  },
@@ -1435,7 +1435,7 @@
     "prob": 0.45561901127514765,
     "commence": 1793449800.0,
     "resultado": null,
-    "cierre_prob": 0.4447594109722987
+    "cierre_prob": 0.42629042188211325
    }
   ]
  },
@@ -1462,7 +1462,7 @@
     "prob": 0.29682003131276896,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.30227065914324663
+    "cierre_prob": 0.2853956972547932
    }
   ]
  },
@@ -1489,7 +1489,7 @@
     "prob": 0.42190685456792304,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": 0.4250371350709485
+    "cierre_prob": 0.403418770229191
    }
   ]
  },
@@ -1516,7 +1516,7 @@
     "prob": 0.5901992033109056,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5881931914133199
    }
   ]
  },
@@ -1543,7 +1543,7 @@
     "prob": 0.25577794167101947,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2543548563832603
    }
   ]
  },
@@ -1570,7 +1570,7 @@
     "prob": 0.5614322183599537,
     "commence": 1793458800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5583111553167952
    }
   ]
  },
@@ -1597,7 +1597,7 @@
     "prob": 0.2837718935503405,
     "commence": 1793475900.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.28765797277386185
    }
   ]
  },
@@ -1623,6 +1623,33 @@
     "cuota": 3.05,
     "prob": 0.33459710381256835,
     "commence": 1793549700.0,
+    "resultado": null,
+    "cierre_prob": 0.3342025315744125
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793449403.116565,
+  "cuota": 1.65,
+  "prob": 0.6191226645554423,
+  "edge": 2.1552396516479666,
+  "stake": 8.29,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "d1394e49a7258d4a4daeae7a803cae0a",
+    "sport": "soccer_efl_champ",
+    "partido": "Wolverhampton Wanderers vs Cardiff City",
+    "sel": "Wolverhampton Wanderers",
+    "raw": "Wolverhampton Wanderers",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.65,
+    "prob": 0.6191226645554423,
+    "commence": 1793458800.0,
     "resultado": null,
     "cierre_prob": null
    }
