@@ -960,8 +960,8 @@
   "prob": 0.2377379992285055,
   "edge": 3.416029664399889,
   "stake": 2.55,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.55,
   "patas": [
    {
     "id": "448a1083448ea9dff55bfebf15ff20b4",
@@ -974,7 +974,7 @@
     "cuota": 4.35,
     "prob": 0.2377379992285055,
     "commence": 1793541600.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.23161441756927034
    }
   ]
@@ -1609,8 +1609,8 @@
   "prob": 0.33459710381256835,
   "edge": 2.0521166628333365,
   "stake": 2.5,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.5,
   "patas": [
    {
     "id": "cf3a2e2b4a4e9815d1d0be8dcef916da",
@@ -1623,7 +1623,7 @@
     "cuota": 3.05,
     "prob": 0.33459710381256835,
     "commence": 1793549700.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.33270889918042273
    }
   ]
@@ -1717,8 +1717,8 @@
   "prob": 0.23161441756927034,
   "edge": 4.226487906171661,
   "stake": 3.02,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -3.02,
   "patas": [
    {
     "id": "448a1083448ea9dff55bfebf15ff20b4",
@@ -1731,7 +1731,7 @@
     "cuota": 4.5,
     "prob": 0.23161441756927034,
     "commence": 1793541600.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    }
   ]
@@ -1813,7 +1813,61 @@
     "prob": 0.4529368683407859,
     "commence": 1793727900.0,
     "resultado": null,
-    "cierre_prob": 0.443707172863185
+    "cierre_prob": 0.4424598109528399
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793564603.763994,
+  "cuota": 4.1,
+  "prob": 0.2467028997885353,
+  "edge": 1.1481889132994638,
+  "stake": 0.93,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "61b42fd619617a7a2a3770c2444e8a40",
+    "sport": "soccer_uefa_champs_league",
+    "partido": "Atlético Madrid vs Bayern Munich",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.1,
+    "prob": 0.2467028997885353,
+    "commence": 1793736000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793564604.776748,
+  "cuota": 2.16,
+  "prob": 0.4736737266215885,
+  "edge": 2.313524950263135,
+  "stake": 4.99,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "449d718632202f0e5997d2e4b7273483",
+    "sport": "soccer_uefa_champs_league",
+    "partido": "PSV Eindhoven vs Club Brugge",
+    "sel": "PSV Eindhoven",
+    "raw": "PSV Eindhoven",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.16,
+    "prob": 0.4736737266215885,
+    "commence": 1793822400.0,
+    "resultado": null,
+    "cierre_prob": null
    }
   ]
  }
