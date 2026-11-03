@@ -1705,7 +1705,7 @@
     "prob": 0.4555165426960864,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": 0.49654665348436877
+    "cierre_prob": 0.48885188494771875
    }
   ]
  },
@@ -1786,7 +1786,7 @@
     "prob": 0.3571585377391627,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": 0.3557662122243405
+    "cierre_prob": 0.3652173149485405
    }
   ]
  },
@@ -1813,7 +1813,7 @@
     "prob": 0.4529368683407859,
     "commence": 1793727900.0,
     "resultado": null,
-    "cierre_prob": 0.4721356276516031
+    "cierre_prob": 0.4946467903125784
    }
   ]
  },
@@ -1840,7 +1840,7 @@
     "prob": 0.2467028997885353,
     "commence": 1793736000.0,
     "resultado": null,
-    "cierre_prob": 0.25065070457006516
+    "cierre_prob": 0.24803574198453296
    }
   ]
  },
@@ -1867,7 +1867,7 @@
     "prob": 0.4736737266215885,
     "commence": 1793822400.0,
     "resultado": null,
-    "cierre_prob": 0.4725267699296311
+    "cierre_prob": 0.4613868819471932
    }
   ]
  },
@@ -1894,7 +1894,7 @@
     "prob": 0.45707263463725706,
     "commence": 1793908800.0,
     "resultado": null,
-    "cierre_prob": 0.45611335923445867
+    "cierre_prob": 0.45589907016598546
    }
   ]
  },
@@ -1921,7 +1921,7 @@
     "prob": 0.48847248756015754,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": 0.49654665348436877
+    "cierre_prob": 0.48885188494771875
    }
   ]
  },
@@ -1975,7 +1975,7 @@
     "prob": 0.35032537285306137,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": 0.36245645475626215
+    "cierre_prob": 0.36377261559072055
    }
   ]
  },
@@ -2002,7 +2002,7 @@
     "prob": 0.46686564292229144,
     "commence": 1793822400.0,
     "resultado": null,
-    "cierre_prob": 0.4756088758181572
+    "cierre_prob": 0.4475484150526199
    }
   ]
  },
@@ -2029,7 +2029,7 @@
     "prob": 0.32602347884796884,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.29187039018984867
    }
   ]
  },
@@ -2056,7 +2056,7 @@
     "prob": 0.28114275156776936,
     "commence": 1793736000.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2828734580295489
    }
   ]
  },
@@ -2083,7 +2083,7 @@
     "prob": 0.36245645475626215,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.36377261559072055
    }
   ]
  },
@@ -2110,7 +2110,7 @@
     "prob": 0.49654665348436877,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.48885188494771875
    }
   ]
  },
@@ -2136,6 +2136,60 @@
     "cuota": 2.5,
     "prob": 0.4092377069764188,
     "commence": 1793736000.0,
+    "resultado": null,
+    "cierre_prob": 0.3986579034956097
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793723014.128153,
+  "cuota": 2.85,
+  "prob": 0.3652173149485405,
+  "edge": 4.086934760334038,
+  "stake": 5.52,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "9469c1977185a1acd0154cc0a3b93331",
+    "sport": "soccer_efl_champ",
+    "partido": "Blackburn Rovers vs Stoke City",
+    "sel": "Stoke City",
+    "raw": "Stoke City",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.85,
+    "prob": 0.3652173149485405,
+    "commence": 1793735100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793723014.859402,
+  "cuota": 1.82,
+  "prob": 0.5610792806575177,
+  "edge": 2.116429079668225,
+  "stake": 6.45,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e35b42924a5fe785a52709c4d17c14c2",
+    "sport": "soccer_efl_champ",
+    "partido": "Wrexham AFC vs Middlesbrough",
+    "sel": "Middlesbrough",
+    "raw": "Middlesbrough",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.82,
+    "prob": 0.5610792806575177,
+    "commence": 1793821500.0,
     "resultado": null,
     "cierre_prob": null
    }
