@@ -1705,7 +1705,7 @@
     "prob": 0.4555165426960864,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": 0.48847248756015754
+    "cierre_prob": 0.49654665348436877
    }
   ]
  },
@@ -1786,7 +1786,7 @@
     "prob": 0.3571585377391627,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": 0.35351206634978066
+    "cierre_prob": 0.3557662122243405
    }
   ]
  },
@@ -1813,7 +1813,7 @@
     "prob": 0.4529368683407859,
     "commence": 1793727900.0,
     "resultado": null,
-    "cierre_prob": 0.46711301226570695
+    "cierre_prob": 0.4721356276516031
    }
   ]
  },
@@ -1840,7 +1840,7 @@
     "prob": 0.2467028997885353,
     "commence": 1793736000.0,
     "resultado": null,
-    "cierre_prob": 0.24730312563045118
+    "cierre_prob": 0.25065070457006516
    }
   ]
  },
@@ -1867,7 +1867,7 @@
     "prob": 0.4736737266215885,
     "commence": 1793822400.0,
     "resultado": null,
-    "cierre_prob": 0.47244040126663917
+    "cierre_prob": 0.4725267699296311
    }
   ]
  },
@@ -1894,7 +1894,7 @@
     "prob": 0.45707263463725706,
     "commence": 1793908800.0,
     "resultado": null,
-    "cierre_prob": 0.4551727784501409
+    "cierre_prob": 0.45611335923445867
    }
   ]
  },
@@ -1921,7 +1921,7 @@
     "prob": 0.48847248756015754,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.49654665348436877
    }
   ]
  },
@@ -1975,7 +1975,7 @@
     "prob": 0.35032537285306137,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.36245645475626215
    }
   ]
  },
@@ -2001,6 +2001,141 @@
     "cuota": 2.2,
     "prob": 0.46686564292229144,
     "commence": 1793822400.0,
+    "resultado": null,
+    "cierre_prob": 0.4756088758181572
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793708606.614121,
+  "cuota": 3.2,
+  "prob": 0.32602347884796884,
+  "edge": 4.327513231350033,
+  "stake": 4.92,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "ce065628a1f15d5ea4b46f1fae837753",
+    "sport": "soccer_efl_champ",
+    "partido": "Charlton Athletic vs Bolton Wanderers",
+    "sel": "Bolton Wanderers",
+    "raw": "Bolton Wanderers",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.2,
+    "prob": 0.32602347884796884,
+    "commence": 1793735100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793708607.441079,
+  "cuota": 3.7,
+  "prob": 0.28114275156776936,
+  "edge": 4.022818080074675,
+  "stake": 3.72,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e01ab9f5552d493ee5a76483ad15afe9",
+    "sport": "soccer_efl_champ",
+    "partido": "West Bromwich Albion vs Southampton",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.7,
+    "prob": 0.28114275156776936,
+    "commence": 1793736000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793708608.262056,
+  "cuota": 2.85,
+  "prob": 0.36245645475626215,
+  "edge": 3.3000896055347173,
+  "stake": 4.46,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "633a2f32a433aba58b6f088d00fe8b08",
+    "sport": "soccer_efl_champ",
+    "partido": "Watford vs Lincoln City",
+    "sel": "Lincoln City",
+    "raw": "Lincoln City",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.85,
+    "prob": 0.36245645475626215,
+    "commence": 1793735100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793708608.958384,
+  "cuota": 2.07,
+  "prob": 0.49654665348436877,
+  "edge": 2.785157271264338,
+  "stake": 6.51,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "35c9b97dba1a8b5d9d03ad42c54c3839",
+    "sport": "soccer_efl_champ",
+    "partido": "Preston North End vs Sheffield United",
+    "sel": "Sheffield United",
+    "raw": "Sheffield United",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.07,
+    "prob": 0.49654665348436877,
+    "commence": 1793735100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793708609.689767,
+  "cuota": 2.5,
+  "prob": 0.4092377069764188,
+  "edge": 2.3094267441047034,
+  "stake": 3.85,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e01ab9f5552d493ee5a76483ad15afe9",
+    "sport": "soccer_efl_champ",
+    "partido": "West Bromwich Albion vs Southampton",
+    "sel": "West Bromwich Albion",
+    "raw": "West Bromwich Albion",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.5,
+    "prob": 0.4092377069764188,
+    "commence": 1793736000.0,
     "resultado": null,
     "cierre_prob": null
    }
