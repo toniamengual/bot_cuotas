@@ -1705,7 +1705,7 @@
     "prob": 0.4555165426960864,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": 0.4628990393678876
+    "cierre_prob": 0.48847248756015754
    }
   ]
  },
@@ -1786,7 +1786,7 @@
     "prob": 0.3571585377391627,
     "commence": 1793735100.0,
     "resultado": null,
-    "cierre_prob": 0.3513696775040036
+    "cierre_prob": 0.35351206634978066
    }
   ]
  },
@@ -1813,7 +1813,7 @@
     "prob": 0.4529368683407859,
     "commence": 1793727900.0,
     "resultado": null,
-    "cierre_prob": 0.44475647710857474
+    "cierre_prob": 0.46711301226570695
    }
   ]
  },
@@ -1840,7 +1840,7 @@
     "prob": 0.2467028997885353,
     "commence": 1793736000.0,
     "resultado": null,
-    "cierre_prob": 0.24700601969791144
+    "cierre_prob": 0.24730312563045118
    }
   ]
  },
@@ -1867,7 +1867,7 @@
     "prob": 0.4736737266215885,
     "commence": 1793822400.0,
     "resultado": null,
-    "cierre_prob": 0.47045242588686803
+    "cierre_prob": 0.47244040126663917
    }
   ]
  },
@@ -1893,6 +1893,114 @@
     "cuota": 2.28,
     "prob": 0.45707263463725706,
     "commence": 1793908800.0,
+    "resultado": null,
+    "cierre_prob": 0.4551727784501409
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793694204.568601,
+  "cuota": 2.12,
+  "prob": 0.48847248756015754,
+  "edge": 3.556167362753415,
+  "stake": 7.94,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "35c9b97dba1a8b5d9d03ad42c54c3839",
+    "sport": "soccer_efl_champ",
+    "partido": "Preston North End vs Sheffield United",
+    "sel": "Sheffield United",
+    "raw": "Sheffield United",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.12,
+    "prob": 0.48847248756015754,
+    "commence": 1793735100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793694205.300685,
+  "cuota": 1.92,
+  "prob": 0.5386620264703903,
+  "edge": 3.4231090823149346,
+  "stake": 9.3,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "9b8076d3ffa027df6f6cb3189de46706",
+    "sport": "soccer_uefa_champs_league",
+    "partido": "Galatasaray vs VfB Stuttgart",
+    "sel": "Más de 3.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 3.5,
+    "cuota": 1.92,
+    "prob": 0.5386620264703903,
+    "commence": 1793727900.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793694206.123331,
+  "cuota": 2.95,
+  "prob": 0.35032537285306137,
+  "edge": 3.345984991653106,
+  "stake": 4.29,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "633a2f32a433aba58b6f088d00fe8b08",
+    "sport": "soccer_efl_champ",
+    "partido": "Watford vs Lincoln City",
+    "sel": "Lincoln City",
+    "raw": "Lincoln City",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.95,
+    "prob": 0.35032537285306137,
+    "commence": 1793735100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793694206.870973,
+  "cuota": 2.2,
+  "prob": 0.46686564292229144,
+  "edge": 2.7104414429041324,
+  "stake": 5.65,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "7d58b1a0732fa9d2c2fa42d44e636eed",
+    "sport": "soccer_efl_champ",
+    "partido": "Bristol City vs Wolverhampton Wanderers",
+    "sel": "Wolverhampton Wanderers",
+    "raw": "Wolverhampton Wanderers",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.2,
+    "prob": 0.46686564292229144,
+    "commence": 1793822400.0,
     "resultado": null,
     "cierre_prob": null
    }
