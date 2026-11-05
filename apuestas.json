@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2953488494558073
    }
   ]
  },
@@ -2244,6 +2244,33 @@
     "cuota": 3.95,
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
+    "resultado": null,
+    "cierre_prob": 0.2576239970151146
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793910205.431446,
+  "cuota": 3.25,
+  "prob": 0.3147702405176378,
+  "edge": 2.3003281682322907,
+  "stake": 2.56,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
+    "sport": "soccer_france_ligue_one",
+    "partido": "RC Lens vs Marseille",
+    "sel": "Marseille",
+    "raw": "Marseille",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.25,
+    "prob": 0.3147702405176378,
+    "commence": 1794167100.0,
     "resultado": null,
     "cierre_prob": null
    }
