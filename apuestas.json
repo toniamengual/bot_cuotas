@@ -1663,8 +1663,8 @@
   "prob": 0.6138522987696324,
   "edge": 3.127186193298237,
   "stake": 11.5,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "anulada",
+  "beneficio": 0.0,
   "patas": [
    {
     "id": "35c20c072dc49b1f1762bd71838ad56b",
@@ -1677,7 +1677,7 @@
     "cuota": 1.68,
     "prob": 0.6138522987696324,
     "commence": 1793613600.0,
-    "resultado": null,
+    "resultado": "void",
     "cierre_prob": 0.6138522987696324
    }
   ]
@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.2941249194974851
+    "cierre_prob": 0.2926709577851969
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.25835851027435175
+    "cierre_prob": 0.25907556762869244
    }
   ]
  },
@@ -2272,7 +2272,7 @@
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3252860094831934
+    "cierre_prob": 0.32919455808910736
    }
   ]
  },
@@ -2298,6 +2298,87 @@
     "cuota": 4.3,
     "prob": 0.23618773006832394,
     "commence": 1794072600.0,
+    "resultado": null,
+    "cierre_prob": 0.23656724900851178
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793967808.550826,
+  "cuota": 3.7,
+  "prob": 0.27783444139524777,
+  "edge": 2.798743316241681,
+  "stake": 2.59,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "295076c39e49863cb54db085ac3cd340",
+    "sport": "soccer_germany_bundesliga",
+    "partido": "Hamburger SV vs Borussia Monchengladbach",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.7,
+    "prob": 0.27783444139524777,
+    "commence": 1793993400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793967809.314373,
+  "cuota": 1.81,
+  "prob": 0.5655186235584091,
+  "edge": 2.358870864072049,
+  "stake": 7.28,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "a529e5762f18d97981194ec3668dc3d3",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Le Mans FC vs AS Monaco",
+    "sel": "AS Monaco",
+    "raw": "AS Monaco",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.81,
+    "prob": 0.5655186235584091,
+    "commence": 1794154500.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1793967809.836584,
+  "cuota": 3.1,
+  "prob": 0.32919455808910736,
+  "edge": 2.0503130076232834,
+  "stake": 2.44,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
+    "sport": "soccer_france_ligue_one",
+    "partido": "RC Lens vs Marseille",
+    "sel": "Marseille",
+    "raw": "Marseille",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.1,
+    "prob": 0.32919455808910736,
+    "commence": 1794167100.0,
     "resultado": null,
     "cierre_prob": null
    }
