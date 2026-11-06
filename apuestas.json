@@ -1879,8 +1879,8 @@
   "prob": 0.45707263463725706,
   "edge": 4.2125606972946095,
   "stake": 8.23,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -8.23,
   "patas": [
    {
     "id": "5ecf6578ba030a1e99abaa3200319e37",
@@ -1893,7 +1893,7 @@
     "cuota": 2.28,
     "prob": 0.45707263463725706,
     "commence": 1793908800.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.45589907016598546
    }
   ]
@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.2953488494558073
+    "cierre_prob": 0.2941249194974851
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.2576239970151146
+    "cierre_prob": 0.25835851027435175
    }
   ]
  },
@@ -2271,6 +2271,33 @@
     "cuota": 3.25,
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
+    "resultado": null,
+    "cierre_prob": 0.3252860094831934
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1793953405.476863,
+  "cuota": 4.3,
+  "prob": 0.23618773006832394,
+  "edge": 1.560723929379293,
+  "stake": 1.18,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "59c5f635cfe11613c07e9a5520ced5c1",
+    "sport": "soccer_epl",
+    "partido": "Nottingham Forest vs Manchester City",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.3,
+    "prob": 0.23618773006832394,
+    "commence": 1794072600.0,
     "resultado": null,
     "cierre_prob": null
    }
