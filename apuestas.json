@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.29771263092990097
+    "cierre_prob": 0.29608940891444047
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.2661194268491198
+    "cierre_prob": 0.26987937616714364
    }
   ]
  },
@@ -2272,7 +2272,7 @@
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.33300490092464385
+    "cierre_prob": 0.33676517504232206
    }
   ]
  },
@@ -2299,7 +2299,7 @@
     "prob": 0.23618773006832394,
     "commence": 1794072600.0,
     "resultado": null,
-    "cierre_prob": 0.24266255790714383
+    "cierre_prob": 0.23970668411299512
    }
   ]
  },
@@ -2353,7 +2353,7 @@
     "prob": 0.5655186235584091,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5687079789563181
+    "cierre_prob": 0.5695272322897829
    }
   ]
  },
@@ -2380,7 +2380,7 @@
     "prob": 0.32919455808910736,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.33300490092464385
+    "cierre_prob": 0.33676517504232206
    }
   ]
  },
@@ -2406,6 +2406,33 @@
     "cuota": 1.8,
     "prob": 0.5687079789563181,
     "commence": 1794154500.0,
+    "resultado": null,
+    "cierre_prob": 0.5695272322897829
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1793996606.371886,
+  "cuota": 1.31,
+  "prob": 0.7886023923338499,
+  "edge": 3.3069133957343455,
+  "stake": 26.67,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "5b386dfdf6f76705116fbb4120ee8493",
+    "sport": "soccer_spain_la_liga",
+    "partido": "Valencia vs Real Madrid",
+    "sel": "Real Madrid",
+    "raw": "Real Madrid",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.31,
+    "prob": 0.7886023923338499,
+    "commence": 1794081600.0,
     "resultado": null,
     "cierre_prob": null
    }
