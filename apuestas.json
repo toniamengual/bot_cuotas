@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.2931639234254436
+    "cierre_prob": 0.2946220328407465
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.26965585468602493
+    "cierre_prob": 0.26893510340990023
    }
   ]
  },
@@ -2353,7 +2353,7 @@
     "prob": 0.5655186235584091,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5796338899470432
+    "cierre_prob": 0.580289737609356
    }
   ]
  },
@@ -2407,7 +2407,7 @@
     "prob": 0.5687079789563181,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5796338899470432
+    "cierre_prob": 0.580289737609356
    }
   ]
  },
@@ -2461,7 +2461,7 @@
     "prob": 0.26792378779232306,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.26965585468602493
+    "cierre_prob": 0.26893510340990023
    }
   ]
  },
@@ -2541,6 +2541,33 @@
     "cuota": 1.76,
     "prob": 0.584728867453998,
     "commence": 1794074400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794083003.470171,
+  "cuota": 3.8,
+  "prob": 0.26893510340990023,
+  "edge": 2.1953392957620776,
+  "stake": 1.96,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4288fbe018e6e6fb223e389bcf3e57dd",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Rennes vs Lille",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.8,
+    "prob": 0.26893510340990023,
+    "commence": 1794146400.0,
     "resultado": null,
     "cierre_prob": null
    }
