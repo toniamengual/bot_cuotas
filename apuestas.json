@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.2907446062416435
+    "cierre_prob": 0.2931639234254436
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.26868931493729487
+    "cierre_prob": 0.26965585468602493
    }
   ]
  },
@@ -2272,7 +2272,7 @@
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3406524958308718
+    "cierre_prob": 0.3383484395639336
    }
   ]
  },
@@ -2299,7 +2299,7 @@
     "prob": 0.23618773006832394,
     "commence": 1794072600.0,
     "resultado": null,
-    "cierre_prob": 0.238514226955126
+    "cierre_prob": 0.23376929963749649
    }
   ]
  },
@@ -2353,7 +2353,7 @@
     "prob": 0.5655186235584091,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5784975859063508
+    "cierre_prob": 0.5796338899470432
    }
   ]
  },
@@ -2380,7 +2380,7 @@
     "prob": 0.32919455808910736,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3406524958308718
+    "cierre_prob": 0.3383484395639336
    }
   ]
  },
@@ -2407,7 +2407,7 @@
     "prob": 0.5687079789563181,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5784975859063508
+    "cierre_prob": 0.5796338899470432
    }
   ]
  },
@@ -2434,7 +2434,7 @@
     "prob": 0.7886023923338499,
     "commence": 1794081600.0,
     "resultado": null,
-    "cierre_prob": 0.7765313566734617
+    "cierre_prob": 0.7849808665243337
    }
   ]
  },
@@ -2461,7 +2461,7 @@
     "prob": 0.26792378779232306,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.26868931493729487
+    "cierre_prob": 0.26965585468602493
    }
   ]
  },
@@ -2488,7 +2488,7 @@
     "prob": 0.5619434690684376,
     "commence": 1794074400.0,
     "resultado": null,
-    "cierre_prob": 0.5683140336749093
+    "cierre_prob": 0.584728867453998
    }
   ]
  },
@@ -2514,6 +2514,33 @@
     "cuota": 3.0,
     "prob": 0.3406524958308718,
     "commence": 1794167100.0,
+    "resultado": null,
+    "cierre_prob": 0.3383484395639336
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794068605.509513,
+  "cuota": 1.76,
+  "prob": 0.584728867453998,
+  "edge": 2.9122806719036554,
+  "stake": 9.58,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "8553a80cf1ae5cbe3e7a69b76ce8167f",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Auxerre vs Paris FC",
+    "sel": "Paris FC",
+    "raw": "Paris FC",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.76,
+    "prob": 0.584728867453998,
+    "commence": 1794074400.0,
     "resultado": null,
     "cierre_prob": null
    }
