@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.29608940891444047
+    "cierre_prob": 0.2912589759003107
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.26987937616714364
+    "cierre_prob": 0.26792378779232306
    }
   ]
  },
@@ -2272,7 +2272,7 @@
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.33676517504232206
+    "cierre_prob": 0.3418866676115078
    }
   ]
  },
@@ -2299,7 +2299,7 @@
     "prob": 0.23618773006832394,
     "commence": 1794072600.0,
     "resultado": null,
-    "cierre_prob": 0.23970668411299512
+    "cierre_prob": 0.24075688311370444
    }
   ]
  },
@@ -2311,8 +2311,8 @@
   "prob": 0.27783444139524777,
   "edge": 2.798743316241681,
   "stake": 2.59,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.59,
   "patas": [
    {
     "id": "295076c39e49863cb54db085ac3cd340",
@@ -2325,7 +2325,7 @@
     "cuota": 3.7,
     "prob": 0.27783444139524777,
     "commence": 1793993400.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.2765122220038085
    }
   ]
@@ -2353,7 +2353,7 @@
     "prob": 0.5655186235584091,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5695272322897829
+    "cierre_prob": 0.5785029010156812
    }
   ]
  },
@@ -2380,7 +2380,7 @@
     "prob": 0.32919455808910736,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.33676517504232206
+    "cierre_prob": 0.3418866676115078
    }
   ]
  },
@@ -2407,7 +2407,7 @@
     "prob": 0.5687079789563181,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5695272322897829
+    "cierre_prob": 0.5785029010156812
    }
   ]
  },
@@ -2433,6 +2433,60 @@
     "cuota": 1.31,
     "prob": 0.7886023923338499,
     "commence": 1794081600.0,
+    "resultado": null,
+    "cierre_prob": 0.7798401259441291
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794039806.454335,
+  "cuota": 3.85,
+  "prob": 0.26792378779232306,
+  "edge": 3.1506583000443733,
+  "stake": 2.76,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4288fbe018e6e6fb223e389bcf3e57dd",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Rennes vs Lille",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.85,
+    "prob": 0.26792378779232306,
+    "commence": 1794146400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794039807.004453,
+  "cuota": 1.82,
+  "prob": 0.5619434690684376,
+  "edge": 2.2737113704556444,
+  "stake": 6.93,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "8553a80cf1ae5cbe3e7a69b76ce8167f",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Auxerre vs Paris FC",
+    "sel": "Paris FC",
+    "raw": "Paris FC",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.82,
+    "prob": 0.5619434690684376,
+    "commence": 1794074400.0,
     "resultado": null,
     "cierre_prob": null
    }
