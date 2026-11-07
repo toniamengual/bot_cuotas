@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.2912589759003107
+    "cierre_prob": 0.2907446062416435
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.26792378779232306
+    "cierre_prob": 0.26868931493729487
    }
   ]
  },
@@ -2272,7 +2272,7 @@
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3418866676115078
+    "cierre_prob": 0.3406524958308718
    }
   ]
  },
@@ -2299,7 +2299,7 @@
     "prob": 0.23618773006832394,
     "commence": 1794072600.0,
     "resultado": null,
-    "cierre_prob": 0.24075688311370444
+    "cierre_prob": 0.238514226955126
    }
   ]
  },
@@ -2353,7 +2353,7 @@
     "prob": 0.5655186235584091,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5785029010156812
+    "cierre_prob": 0.5784975859063508
    }
   ]
  },
@@ -2380,7 +2380,7 @@
     "prob": 0.32919455808910736,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3418866676115078
+    "cierre_prob": 0.3406524958308718
    }
   ]
  },
@@ -2407,7 +2407,7 @@
     "prob": 0.5687079789563181,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.5785029010156812
+    "cierre_prob": 0.5784975859063508
    }
   ]
  },
@@ -2434,7 +2434,7 @@
     "prob": 0.7886023923338499,
     "commence": 1794081600.0,
     "resultado": null,
-    "cierre_prob": 0.7798401259441291
+    "cierre_prob": 0.7765313566734617
    }
   ]
  },
@@ -2461,7 +2461,7 @@
     "prob": 0.26792378779232306,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.26868931493729487
    }
   ]
  },
@@ -2487,6 +2487,33 @@
     "cuota": 1.82,
     "prob": 0.5619434690684376,
     "commence": 1794074400.0,
+    "resultado": null,
+    "cierre_prob": 0.5683140336749093
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794054206.171343,
+  "cuota": 3.0,
+  "prob": 0.3406524958308718,
+  "edge": 2.195748749261539,
+  "stake": 2.74,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
+    "sport": "soccer_france_ligue_one",
+    "partido": "RC Lens vs Marseille",
+    "sel": "Marseille",
+    "raw": "Marseille",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.0,
+    "prob": 0.3406524958308718,
+    "commence": 1794167100.0,
     "resultado": null,
     "cierre_prob": null
    }
