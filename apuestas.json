@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.3187383302246961
+    "cierre_prob": 0.3224483337831584
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.27498423527155513
+    "cierre_prob": 0.2746107735442719
    }
   ]
  },
@@ -2272,7 +2272,7 @@
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3241140061703921
+    "cierre_prob": 0.3063423848924348
    }
   ]
  },
@@ -2353,7 +2353,7 @@
     "prob": 0.5655186235584091,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.57833835576355
+    "cierre_prob": 0.595381435185854
    }
   ]
  },
@@ -2380,7 +2380,7 @@
     "prob": 0.32919455808910736,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3241140061703921
+    "cierre_prob": 0.3063423848924348
    }
   ]
  },
@@ -2407,7 +2407,7 @@
     "prob": 0.5687079789563181,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.57833835576355
+    "cierre_prob": 0.595381435185854
    }
   ]
  },
@@ -2461,7 +2461,7 @@
     "prob": 0.26792378779232306,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.27498423527155513
+    "cierre_prob": 0.2746107735442719
    }
   ]
  },
@@ -2515,7 +2515,7 @@
     "prob": 0.3406524958308718,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3241140061703921
+    "cierre_prob": 0.3063423848924348
    }
   ]
  },
@@ -2569,7 +2569,7 @@
     "prob": 0.26893510340990023,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.27498423527155513
+    "cierre_prob": 0.2746107735442719
    }
   ]
  },
@@ -2596,7 +2596,7 @@
     "prob": 0.27498423527155513,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2746107735442719
    }
   ]
  },
@@ -2621,6 +2621,87 @@
     "punto": null,
     "cuota": 3.88,
     "prob": 0.2630548742343597,
+    "commence": 1794167100.0,
+    "resultado": null,
+    "cierre_prob": 0.26495491144303884
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794140602.954926,
+  "cuota": 1.73,
+  "prob": 0.595381435185854,
+  "edge": 3.0009882871527394,
+  "stake": 10.28,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "a529e5762f18d97981194ec3668dc3d3",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Le Mans FC vs AS Monaco",
+    "sel": "AS Monaco",
+    "raw": "AS Monaco",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.73,
+    "prob": 0.595381435185854,
+    "commence": 1794154500.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1794140603.517771,
+  "cuota": 4.2,
+  "prob": 0.24296339129423786,
+  "edge": 2.044624343579904,
+  "stake": 1.6,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "c70f9f21f48464daa93973147502e183",
+    "sport": "soccer_germany_bundesliga",
+    "partido": "1. FC Köln vs Bayer Leverkusen",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.2,
+    "prob": 0.24296339129423786,
+    "commence": 1794148200.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794140604.130733,
+  "cuota": 2.38,
+  "prob": 0.42870270366452634,
+  "edge": 2.0312434721572625,
+  "stake": 3.68,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
+    "sport": "soccer_france_ligue_one",
+    "partido": "RC Lens vs Marseille",
+    "sel": "RC Lens",
+    "raw": "RC Lens",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.38,
+    "prob": 0.42870270366452634,
     "commence": 1794167100.0,
     "resultado": null,
     "cierre_prob": null
