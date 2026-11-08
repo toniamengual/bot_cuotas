@@ -2218,7 +2218,7 @@
     "prob": 0.2960412571324508,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.2946220328407465
+    "cierre_prob": 0.3187383302246961
    }
   ]
  },
@@ -2245,7 +2245,7 @@
     "prob": 0.25829468284247625,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.26893510340990023
+    "cierre_prob": 0.27498423527155513
    }
   ]
  },
@@ -2272,7 +2272,7 @@
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3383484395639336
+    "cierre_prob": 0.3241140061703921
    }
   ]
  },
@@ -2284,8 +2284,8 @@
   "prob": 0.23618773006832394,
   "edge": 1.560723929379293,
   "stake": 1.18,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -1.18,
   "patas": [
    {
     "id": "59c5f635cfe11613c07e9a5520ced5c1",
@@ -2298,7 +2298,7 @@
     "cuota": 4.3,
     "prob": 0.23618773006832394,
     "commence": 1794072600.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.23376929963749649
    }
   ]
@@ -2353,7 +2353,7 @@
     "prob": 0.5655186235584091,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.580289737609356
+    "cierre_prob": 0.57833835576355
    }
   ]
  },
@@ -2380,7 +2380,7 @@
     "prob": 0.32919455808910736,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3383484395639336
+    "cierre_prob": 0.3241140061703921
    }
   ]
  },
@@ -2407,7 +2407,7 @@
     "prob": 0.5687079789563181,
     "commence": 1794154500.0,
     "resultado": null,
-    "cierre_prob": 0.580289737609356
+    "cierre_prob": 0.57833835576355
    }
   ]
  },
@@ -2419,8 +2419,8 @@
   "prob": 0.7886023923338499,
   "edge": 3.3069133957343455,
   "stake": 26.67,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 8.27,
   "patas": [
    {
     "id": "5b386dfdf6f76705116fbb4120ee8493",
@@ -2433,7 +2433,7 @@
     "cuota": 1.31,
     "prob": 0.7886023923338499,
     "commence": 1794081600.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.7849808665243337
    }
   ]
@@ -2461,7 +2461,7 @@
     "prob": 0.26792378779232306,
     "commence": 1794146400.0,
     "resultado": null,
-    "cierre_prob": 0.26893510340990023
+    "cierre_prob": 0.27498423527155513
    }
   ]
  },
@@ -2473,8 +2473,8 @@
   "prob": 0.5619434690684376,
   "edge": 2.2737113704556444,
   "stake": 6.93,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 5.68,
   "patas": [
    {
     "id": "8553a80cf1ae5cbe3e7a69b76ce8167f",
@@ -2487,7 +2487,7 @@
     "cuota": 1.82,
     "prob": 0.5619434690684376,
     "commence": 1794074400.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.584728867453998
    }
   ]
@@ -2515,7 +2515,7 @@
     "prob": 0.3406524958308718,
     "commence": 1794167100.0,
     "resultado": null,
-    "cierre_prob": 0.3383484395639336
+    "cierre_prob": 0.3241140061703921
    }
   ]
  },
@@ -2527,8 +2527,8 @@
   "prob": 0.584728867453998,
   "edge": 2.9122806719036554,
   "stake": 9.58,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 7.28,
   "patas": [
    {
     "id": "8553a80cf1ae5cbe3e7a69b76ce8167f",
@@ -2541,7 +2541,7 @@
     "cuota": 1.76,
     "prob": 0.584728867453998,
     "commence": 1794074400.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -2568,6 +2568,60 @@
     "cuota": 3.8,
     "prob": 0.26893510340990023,
     "commence": 1794146400.0,
+    "resultado": null,
+    "cierre_prob": 0.27498423527155513
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794126203.759657,
+  "cuota": 3.75,
+  "prob": 0.27498423527155513,
+  "edge": 3.1190882268331777,
+  "stake": 2.84,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4288fbe018e6e6fb223e389bcf3e57dd",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Rennes vs Lille",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.75,
+    "prob": 0.27498423527155513,
+    "commence": 1794146400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1794126204.452232,
+  "cuota": 3.88,
+  "prob": 0.2630548742343597,
+  "edge": 2.0652912029315518,
+  "stake": 1.79,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
+    "sport": "soccer_france_ligue_one",
+    "partido": "RC Lens vs Marseille",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.88,
+    "prob": 0.2630548742343597,
+    "commence": 1794167100.0,
     "resultado": null,
     "cierre_prob": null
    }
