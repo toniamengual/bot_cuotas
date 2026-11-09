@@ -2257,8 +2257,8 @@
   "prob": 0.3147702405176378,
   "edge": 2.3003281682322907,
   "stake": 2.56,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 5.76,
   "patas": [
    {
     "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
@@ -2271,7 +2271,7 @@
     "cuota": 3.25,
     "prob": 0.3147702405176378,
     "commence": 1794167100.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.31345987573921497
    }
   ]
@@ -2365,8 +2365,8 @@
   "prob": 0.32919455808910736,
   "edge": 2.0503130076232834,
   "stake": 2.44,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 5.12,
   "patas": [
    {
     "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
@@ -2379,7 +2379,7 @@
     "cuota": 3.1,
     "prob": 0.32919455808910736,
     "commence": 1794167100.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.31345987573921497
    }
   ]
@@ -2500,8 +2500,8 @@
   "prob": 0.3406524958308718,
   "edge": 2.195748749261539,
   "stake": 2.74,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 5.48,
   "patas": [
    {
     "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
@@ -2514,7 +2514,7 @@
     "cuota": 3.0,
     "prob": 0.3406524958308718,
     "commence": 1794167100.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.31345987573921497
    }
   ]
@@ -2608,8 +2608,8 @@
   "prob": 0.2630548742343597,
   "edge": 2.0652912029315518,
   "stake": 1.79,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -1.79,
   "patas": [
    {
     "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
@@ -2622,7 +2622,7 @@
     "cuota": 3.88,
     "prob": 0.2630548742343597,
     "commence": 1794167100.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.265889510158381
    }
   ]
@@ -2689,8 +2689,8 @@
   "prob": 0.42870270366452634,
   "edge": 2.0312434721572625,
   "stake": 3.68,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -3.68,
   "patas": [
    {
     "id": "4e917e19b59093a02a0e12bcf9a5ecc4",
@@ -2703,8 +2703,35 @@
     "cuota": 2.38,
     "prob": 0.42870270366452634,
     "commence": 1794167100.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.420650614102404
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794212604.37801,
+  "cuota": 2.17,
+  "prob": 0.4735374852569123,
+  "edge": 2.757634300749956,
+  "stake": 5.89,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "07361a8381206817e27bd2697fad7479",
+    "sport": "basketball_nba",
+    "partido": "Atlanta Hawks vs Los Angeles Lakers",
+    "sel": "Atlanta Hawks",
+    "raw": "Atlanta Hawks",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.17,
+    "prob": 0.4735374852569123,
+    "commence": 1794269400.0,
+    "resultado": null,
+    "cierre_prob": null
    }
   ]
  }
