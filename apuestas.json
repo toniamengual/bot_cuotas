@@ -2731,6 +2731,33 @@
     "prob": 0.4735374852569123,
     "commence": 1794269400.0,
     "resultado": null,
+    "cierre_prob": 0.4734754156482748
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Betsson",
+  "ts": 1794227002.687158,
+  "cuota": 1.86,
+  "prob": 0.5498263457640806,
+  "edge": 2.267700312119003,
+  "stake": 6.59,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "929b863acedecaf614c6312e28a44837",
+    "sport": "basketball_nba",
+    "partido": "Detroit Pistons vs Washington Wizards",
+    "sel": "Menos de 219.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 219.5,
+    "cuota": 1.86,
+    "prob": 0.5498263457640806,
+    "commence": 1794269400.0,
+    "resultado": null,
     "cierre_prob": null
    }
   ]
