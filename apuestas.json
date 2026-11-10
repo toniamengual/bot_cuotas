@@ -2716,8 +2716,8 @@
   "prob": 0.4735374852569123,
   "edge": 2.757634300749956,
   "stake": 5.89,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -5.89,
   "patas": [
    {
     "id": "07361a8381206817e27bd2697fad7479",
@@ -2730,7 +2730,7 @@
     "cuota": 2.17,
     "prob": 0.4735374852569123,
     "commence": 1794269400.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5265910689856214
    }
   ]
@@ -2743,8 +2743,8 @@
   "prob": 0.5498263457640806,
   "edge": 2.267700312119003,
   "stake": 6.59,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -6.59,
   "patas": [
    {
     "id": "929b863acedecaf614c6312e28a44837",
@@ -2757,7 +2757,7 @@
     "cuota": 1.86,
     "prob": 0.5498263457640806,
     "commence": 1794269400.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5
    }
   ]
