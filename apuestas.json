@@ -2785,6 +2785,87 @@
     "prob": 0.5376390468727171,
     "commence": 1794453000.0,
     "resultado": null,
+    "cierre_prob": 0.5341221921733098
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1794414206.362895,
+  "cuota": 1.76,
+  "prob": 0.5739758843596255,
+  "edge": 1.0197556472941072,
+  "stake": 3.35,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "ac858403bd96563aa897a9bb7554f103",
+    "sport": "basketball_euroleague",
+    "partido": "Pallacanestro Olimpia Milano vs Žalgiris",
+    "sel": "Žalgiris",
+    "raw": "Žalgiris",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.76,
+    "prob": 0.5739758843596255,
+    "commence": 1794511800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "888sport",
+  "ts": 1794414206.991315,
+  "cuota": 1.8,
+  "prob": 0.5739758843596255,
+  "edge": 3.3156591847326,
+  "stake": 10.36,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "ac858403bd96563aa897a9bb7554f103",
+    "sport": "basketball_euroleague",
+    "partido": "Pallacanestro Olimpia Milano vs Žalgiris",
+    "sel": "Žalgiris",
+    "raw": "Žalgiris",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.8,
+    "prob": 0.5739758843596255,
+    "commence": 1794511800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "William Hill",
+  "ts": 1794414206.991336,
+  "cuota": 2.6,
+  "prob": 0.39692158155954155,
+  "edge": 3.1996112054808012,
+  "stake": 5.0,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e6a37eea1dddcbd0384c81237e81f47f",
+    "sport": "basketball_nba",
+    "partido": "New Orleans Pelicans vs Brooklyn Nets",
+    "sel": "Brooklyn Nets",
+    "raw": "Brooklyn Nets",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.6,
+    "prob": 0.39692158155954155,
+    "commence": 1794445800.0,
+    "resultado": null,
     "cierre_prob": null
    }
   ]
