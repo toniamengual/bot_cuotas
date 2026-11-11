@@ -2761,5 +2761,32 @@
     "cierre_prob": 0.5
    }
   ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1794399805.831137,
+  "cuota": 1.9,
+  "prob": 0.5376390468727171,
+  "edge": 2.151418905816249,
+  "stake": 5.98,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "d4f288eeb0132970825be17748f2b4f0",
+    "sport": "basketball_nba",
+    "partido": "Portland Trail Blazers vs Oklahoma City Thunder",
+    "sel": "Menos de 226.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 226.5,
+    "cuota": 1.9,
+    "prob": 0.5376390468727171,
+    "commence": 1794453000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
  }
 ]
