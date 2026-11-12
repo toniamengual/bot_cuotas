@@ -2896,5 +2896,32 @@
     "cierre_prob": null
    }
   ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "888sport",
+  "ts": 1794515003.329663,
+  "cuota": 3.1,
+  "prob": 0.33542325868440503,
+  "edge": 3.981210192165574,
+  "stake": 4.74,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "f3f429e773bfb2340ba2bb90f2b9dd1e",
+    "sport": "basketball_nba",
+    "partido": "Phoenix Suns vs Charlotte Hornets",
+    "sel": "Charlotte Hornets",
+    "raw": "Charlotte Hornets",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.1,
+    "prob": 0.33542325868440503,
+    "commence": 1794535800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
  }
 ]
