@@ -2812,7 +2812,7 @@
     "prob": 0.5739758843596255,
     "commence": 1794511800.0,
     "resultado": null,
-    "cierre_prob": 0.5426151607922817
+    "cierre_prob": 0.5373913989848041
    }
   ]
  },
@@ -2839,7 +2839,7 @@
     "prob": 0.5739758843596255,
     "commence": 1794511800.0,
     "resultado": null,
-    "cierre_prob": 0.5426151607922817
+    "cierre_prob": 0.5373913989848041
    }
   ]
  },
@@ -2866,6 +2866,33 @@
     "prob": 0.39692158155954155,
     "commence": 1794445800.0,
     "resultado": "won",
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "888sport",
+  "ts": 1794486206.039053,
+  "cuota": 1.91,
+  "prob": 0.5428366733175347,
+  "edge": 3.6818046036491303,
+  "stake": 10.11,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4fc10c732f775c93a5b233a9985e4e35",
+    "sport": "basketball_euroleague",
+    "partido": "Real Madrid vs KK Crvena zvezda",
+    "sel": "Más de 175.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 175.5,
+    "cuota": 1.91,
+    "prob": 0.5428366733175347,
+    "commence": 1794513600.0,
+    "resultado": null,
     "cierre_prob": null
    }
   ]
