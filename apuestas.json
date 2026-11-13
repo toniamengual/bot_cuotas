@@ -2923,5 +2923,32 @@
     "cierre_prob": null
    }
   ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1794601418.53378,
+  "cuota": 3.45,
+  "prob": 0.29379505849966225,
+  "edge": 1.359295182383491,
+  "stake": 1.39,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "80ffc963f864f3d4fcefa82fd02b7d7b",
+    "sport": "basketball_nba",
+    "partido": "Chicago Bulls vs Atlanta Hawks",
+    "sel": "Chicago Bulls",
+    "raw": "Chicago Bulls",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.45,
+    "prob": 0.29379505849966225,
+    "commence": 1794618600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
  }
 ]
