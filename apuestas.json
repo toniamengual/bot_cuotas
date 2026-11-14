@@ -2974,6 +2974,33 @@
     "prob": 0.2930800876275447,
     "commence": 1794686400.0,
     "resultado": null,
+    "cierre_prob": 0.30170838738355377
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1794659010.916227,
+  "cuota": 4.0,
+  "prob": 0.253616188663973,
+  "edge": 1.4464754655892031,
+  "stake": 1.21,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "570ec7734e1f7d9e813ab0013291f5f5",
+    "sport": "soccer_spain_segunda_division",
+    "partido": "Almería vs Andorra CF",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.0,
+    "prob": 0.253616188663973,
+    "commence": 1794677400.0,
+    "resultado": null,
     "cierre_prob": null
    }
   ]
