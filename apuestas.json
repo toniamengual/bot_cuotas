@@ -2932,8 +2932,8 @@
   "prob": 0.29379505849966225,
   "edge": 1.359295182383491,
   "stake": 1.39,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 3.41,
   "patas": [
    {
     "id": "80ffc963f864f3d4fcefa82fd02b7d7b",
@@ -2946,6 +2946,33 @@
     "cuota": 3.45,
     "prob": 0.29379505849966225,
     "commence": 1794618600.0,
+    "resultado": "won",
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1794644603.703488,
+  "cuota": 3.45,
+  "prob": 0.2930800876275447,
+  "edge": 1.1126302315029424,
+  "stake": 1.14,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "beaf0bb6252d3b1d42a720aa385e9414",
+    "sport": "soccer_spain_segunda_division",
+    "partido": "Oviedo vs Girona FC",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.45,
+    "prob": 0.2930800876275447,
+    "commence": 1794686400.0,
     "resultado": null,
     "cierre_prob": null
    }
