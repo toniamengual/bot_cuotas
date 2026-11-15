@@ -3031,5 +3031,32 @@
     "cierre_prob": null
    }
   ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1794759803.082564,
+  "cuota": 1.33,
+  "prob": 0.7671333317461481,
+  "edge": 2.0287331222377025,
+  "stake": 15.37,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "7ac3bf138012785e65835d1481524d5c",
+    "sport": "tennis_atp_finals",
+    "partido": "Daniil Medvedev vs Flavio Cobolli",
+    "sel": "Daniil Medvedev",
+    "raw": "Daniil Medvedev",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.33,
+    "prob": 0.7671333317461481,
+    "commence": 1794857400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
  }
 ]
