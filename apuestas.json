@@ -3085,5 +3085,32 @@
     "cierre_prob": 0.5427900714304483
    }
   ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1794990204.995946,
+  "cuota": 1.86,
+  "prob": 0.5542032131255613,
+  "edge": 3.0817976413544113,
+  "stake": 8.96,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "990b541d0ada46fce07ce8b502cf425c",
+    "sport": "basketball_nba",
+    "partido": "New Orleans Pelicans vs Detroit Pistons",
+    "sel": "Menos de 229.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 229.5,
+    "cuota": 1.86,
+    "prob": 0.5542032131255613,
+    "commence": 1795050600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
  }
 ]
