@@ -3112,5 +3112,59 @@
     "cierre_prob": 0.5032645758660826
    }
   ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "William Hill",
+  "ts": 1795033409.27511,
+  "cuota": 1.91,
+  "prob": 0.5373145505876796,
+  "edge": 2.6270791622468037,
+  "stake": 7.22,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "0c64e1972e0525f5cf28265902eb43ab",
+    "sport": "basketball_euroleague",
+    "partido": "Pallacanestro Olimpia Milano vs Fenerbahce SK",
+    "sel": "Menos de 166.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 166.5,
+    "cuota": 1.91,
+    "prob": 0.5373145505876796,
+    "commence": 1795116600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795033409.753806,
+  "cuota": 3.5,
+  "prob": 0.29168115983315895,
+  "edge": 2.088405941605642,
+  "stake": 2.09,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "d2113ca19873218496f8b2fe6c7e7c41",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Lille vs Lyon",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.5,
+    "prob": 0.29168115983315895,
+    "commence": 1795290300.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
  }
 ]
