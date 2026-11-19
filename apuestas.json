@@ -3163,7 +3163,7 @@
     "prob": 0.29168115983315895,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.29009867564854286
+    "cierre_prob": 0.2880763384172377
    }
   ]
  },
@@ -3243,6 +3243,33 @@
     "cuota": 2.0,
     "prob": 0.5445292745253192,
     "commence": 1795202100.0,
+    "resultado": null,
+    "cierre_prob": 0.547812578157036
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795119803.25022,
+  "cuota": 3.1,
+  "prob": 0.3314550956164881,
+  "edge": 2.7510796411113203,
+  "stake": 3.28,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "8e6ee05b6ac28dc2357f72b9f5a0643e",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Lorient vs Rennes",
+    "sel": "Lorient",
+    "raw": "Lorient",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.1,
+    "prob": 0.3314550956164881,
+    "commence": 1795364100.0,
     "resultado": null,
     "cierre_prob": null
    }
