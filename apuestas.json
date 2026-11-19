@@ -3136,7 +3136,7 @@
     "prob": 0.5373145505876796,
     "commence": 1795116600.0,
     "resultado": null,
-    "cierre_prob": 0.5180969873270863
+    "cierre_prob": 0.5345762980949166
    }
   ]
  },
@@ -3163,7 +3163,7 @@
     "prob": 0.29168115983315895,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.28965373985051446
+    "cierre_prob": 0.29009867564854286
    }
   ]
  },
@@ -3190,7 +3190,7 @@
     "prob": 0.5447891581655502,
     "commence": 1795118400.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5168250856677405
    }
   ]
  },
@@ -3216,6 +3216,33 @@
     "cuota": 1.88,
     "prob": 0.544067500977736,
     "commence": 1795137000.0,
+    "resultado": null,
+    "cierre_prob": 0.5114135648299677
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "William Hill",
+  "ts": 1795105404.203381,
+  "cuota": 2.0,
+  "prob": 0.5445292745253192,
+  "edge": 8.905854905063837,
+  "stake": 22.26,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "b9e7c3066f4c22b555b3ceef964c0e9c",
+    "sport": "basketball_euroleague",
+    "partido": "Olympiacos vs Real Madrid",
+    "sel": "Más de 173.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 173.5,
+    "cuota": 2.0,
+    "prob": 0.5445292745253192,
+    "commence": 1795202100.0,
     "resultado": null,
     "cierre_prob": null
    }
