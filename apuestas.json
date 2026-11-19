@@ -3136,7 +3136,7 @@
     "prob": 0.5373145505876796,
     "commence": 1795116600.0,
     "resultado": null,
-    "cierre_prob": 0.5291858743228269
+    "cierre_prob": 0.5180969873270863
    }
   ]
  },
@@ -3163,7 +3163,61 @@
     "prob": 0.29168115983315895,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.2902655946670505
+    "cierre_prob": 0.28965373985051446
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795091007.252505,
+  "cuota": 1.88,
+  "prob": 0.5447891581655502,
+  "edge": 2.420361735123433,
+  "stake": 6.88,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "c65d74c382bec5dc7dacdb62b641728b",
+    "sport": "basketball_euroleague",
+    "partido": "Valencia Basket vs Virtus Segafredo Bologna",
+    "sel": "Más de 185.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 185.5,
+    "cuota": 1.88,
+    "prob": 0.5447891581655502,
+    "commence": 1795118400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795091007.82765,
+  "cuota": 1.88,
+  "prob": 0.544067500977736,
+  "edge": 2.284690183814364,
+  "stake": 6.49,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "006df00e5e48650d849d1bb4cd81565d",
+    "sport": "basketball_nba",
+    "partido": "Milwaukee Bucks vs Portland Trail Blazers",
+    "sel": "Menos de 229.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 229.5,
+    "cuota": 1.88,
+    "prob": 0.544067500977736,
+    "commence": 1795137000.0,
+    "resultado": null,
+    "cierre_prob": null
    }
   ]
  }
