@@ -3040,8 +3040,8 @@
   "prob": 0.7671333317461481,
   "edge": 2.0287331222377025,
   "stake": 15.37,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "anulada",
+  "beneficio": 0.0,
   "patas": [
    {
     "id": "7ac3bf138012785e65835d1481524d5c",
@@ -3054,7 +3054,7 @@
     "cuota": 1.33,
     "prob": 0.7671333317461481,
     "commence": 1794857400.0,
-    "resultado": null,
+    "resultado": "void",
     "cierre_prob": 0.7705248681657448
    }
   ]
@@ -3163,7 +3163,7 @@
     "prob": 0.29168115983315895,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.2883152474379116
+    "cierre_prob": 0.29050150288497456
    }
   ]
  },
@@ -3271,7 +3271,7 @@
     "prob": 0.3314550956164881,
     "commence": 1795364100.0,
     "resultado": null,
-    "cierre_prob": 0.326713738206413
+    "cierre_prob": 0.3272377883871249
    }
   ]
  },
@@ -3298,7 +3298,7 @@
     "prob": 0.24962549373078163,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.2592842922898572
+    "cierre_prob": 0.26003394038378785
    }
   ]
  },
@@ -3406,7 +3406,7 @@
     "prob": 0.6964979639581532,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.6868463021843871
+    "cierre_prob": 0.6901868793937367
    }
   ]
  },
@@ -3461,6 +3461,87 @@
     "commence": 1795203900.0,
     "resultado": null,
     "cierre_prob": 0.42959562850126953
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795206205.04704,
+  "cuota": 3.95,
+  "prob": 0.26003394038378785,
+  "edge": 2.713406451596212,
+  "stake": 2.3,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "13ac2151b9f6893cedb7f509e64eb070",
+    "sport": "soccer_france_ligue_one",
+    "partido": "RC Lens vs Toulouse",
+    "sel": "Toulouse",
+    "raw": "Toulouse",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.95,
+    "prob": 0.26003394038378785,
+    "commence": 1795290300.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795206205.928694,
+  "cuota": 4.9,
+  "prob": 0.20941690520262743,
+  "edge": 2.614283549287455,
+  "stake": 1.68,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4c08b213ed416e8f41e038f42a42b962",
+    "sport": "soccer_epl",
+    "partido": "Liverpool vs Manchester United",
+    "sel": "Manchester United",
+    "raw": "Manchester United",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.9,
+    "prob": 0.20941690520262743,
+    "commence": 1795365000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795206206.902088,
+  "cuota": 3.72,
+  "prob": 0.2752742719764886,
+  "edge": 2.4020291752537837,
+  "stake": 2.21,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42",
+    "sport": "soccer_epl",
+    "partido": "Brentford vs Everton",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.72,
+    "prob": 0.2752742719764886,
+    "commence": 1795464000.0,
+    "resultado": null,
+    "cierre_prob": null
    }
   ]
  }
