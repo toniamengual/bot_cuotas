@@ -3121,8 +3121,8 @@
   "prob": 0.5373145505876796,
   "edge": 2.6270791622468037,
   "stake": 7.22,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 6.57,
   "patas": [
    {
     "id": "0c64e1972e0525f5cf28265902eb43ab",
@@ -3135,7 +3135,7 @@
     "cuota": 1.91,
     "prob": 0.5373145505876796,
     "commence": 1795116600.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.5345762980949166
    }
   ]
@@ -3163,7 +3163,7 @@
     "prob": 0.29168115983315895,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.2880763384172377
+    "cierre_prob": 0.2880764428299195
    }
   ]
  },
@@ -3175,8 +3175,8 @@
   "prob": 0.5447891581655502,
   "edge": 2.420361735123433,
   "stake": 6.88,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -6.88,
   "patas": [
    {
     "id": "c65d74c382bec5dc7dacdb62b641728b",
@@ -3189,7 +3189,7 @@
     "cuota": 1.88,
     "prob": 0.5447891581655502,
     "commence": 1795118400.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5168250856677405
    }
   ]
@@ -3202,8 +3202,8 @@
   "prob": 0.544067500977736,
   "edge": 2.284690183814364,
   "stake": 6.49,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -6.49,
   "patas": [
    {
     "id": "006df00e5e48650d849d1bb4cd81565d",
@@ -3216,7 +3216,7 @@
     "cuota": 1.88,
     "prob": 0.544067500977736,
     "commence": 1795137000.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5114135648299677
    }
   ]
@@ -3244,7 +3244,7 @@
     "prob": 0.5445292745253192,
     "commence": 1795202100.0,
     "resultado": null,
-    "cierre_prob": 0.547812578157036
+    "cierre_prob": 0.5318368123363795
    }
   ]
  },
@@ -3270,6 +3270,60 @@
     "cuota": 3.1,
     "prob": 0.3314550956164881,
     "commence": 1795364100.0,
+    "resultado": null,
+    "cierre_prob": 0.3313076585893076
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795163003.016773,
+  "cuota": 4.1,
+  "prob": 0.24962549373078163,
+  "edge": 2.3464524296204603,
+  "stake": 1.89,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "13ac2151b9f6893cedb7f509e64eb070",
+    "sport": "soccer_france_ligue_one",
+    "partido": "RC Lens vs Toulouse",
+    "sel": "Toulouse",
+    "raw": "Toulouse",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.1,
+    "prob": 0.24962549373078163,
+    "commence": 1795290300.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "William Hill",
+  "ts": 1795163003.583866,
+  "cuota": 1.91,
+  "prob": 0.5345762980949166,
+  "edge": 2.1040729361290644,
+  "stake": 5.78,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "b9e7c3066f4c22b555b3ceef964c0e9c",
+    "sport": "basketball_euroleague",
+    "partido": "Olympiacos vs Real Madrid",
+    "sel": "Menos de 175.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 175.5,
+    "cuota": 1.91,
+    "prob": 0.5345762980949166,
+    "commence": 1795202100.0,
     "resultado": null,
     "cierre_prob": null
    }
