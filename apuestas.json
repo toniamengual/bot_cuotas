@@ -3163,7 +3163,7 @@
     "prob": 0.29168115983315895,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.2880764428299195
+    "cierre_prob": 0.2862298416060328
    }
   ]
  },
@@ -3244,7 +3244,7 @@
     "prob": 0.5445292745253192,
     "commence": 1795202100.0,
     "resultado": null,
-    "cierre_prob": 0.5318368123363795
+    "cierre_prob": 0.5577193699006031
    }
   ]
  },
@@ -3271,7 +3271,7 @@
     "prob": 0.3314550956164881,
     "commence": 1795364100.0,
     "resultado": null,
-    "cierre_prob": 0.3313076585893076
+    "cierre_prob": 0.3306936101350426
    }
   ]
  },
@@ -3298,7 +3298,7 @@
     "prob": 0.24962549373078163,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2520045033822095
    }
   ]
  },
@@ -3324,6 +3324,141 @@
     "cuota": 1.91,
     "prob": 0.5345762980949166,
     "commence": 1795202100.0,
+    "resultado": null,
+    "cierre_prob": 0.5085674933719119
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1795177406.067657,
+  "cuota": 3.9,
+  "prob": 0.26563710273015956,
+  "edge": 3.598470064762216,
+  "stake": 3.1,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "1a5b5e46f5c64363a212730f36e943e0",
+    "sport": "basketball_euroleague",
+    "partido": "Anadolu Efes vs ASVEL Lyon Villeurbanne",
+    "sel": "ASVEL Lyon Villeurbanne",
+    "raw": "ASVEL Lyon Villeurbanne",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.9,
+    "prob": 0.26563710273015956,
+    "commence": 1795195800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "888sport",
+  "ts": 1795177406.60049,
+  "cuota": 4.0,
+  "prob": 0.26563710273015956,
+  "edge": 6.254841092063823,
+  "stake": 5.21,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "1a5b5e46f5c64363a212730f36e943e0",
+    "sport": "basketball_euroleague",
+    "partido": "Anadolu Efes vs ASVEL Lyon Villeurbanne",
+    "sel": "ASVEL Lyon Villeurbanne",
+    "raw": "ASVEL Lyon Villeurbanne",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.0,
+    "prob": 0.26563710273015956,
+    "commence": 1795195800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795177406.600525,
+  "cuota": 1.47,
+  "prob": 0.6964979639581532,
+  "edge": 2.385200701848511,
+  "stake": 12.69,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "9130b46991ab991f808daf307f004469",
+    "sport": "soccer_france_ligue_one",
+    "partido": "AS Monaco vs Auxerre",
+    "sel": "AS Monaco",
+    "raw": "AS Monaco",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.47,
+    "prob": 0.6964979639581532,
+    "commence": 1795290300.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795177407.126968,
+  "cuota": 3.62,
+  "prob": 0.2827171723304353,
+  "edge": 2.343616383617575,
+  "stake": 2.24,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "5dcc9d2b0da87770a4f49e924275be39",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Troyes vs Le Havre",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.62,
+    "prob": 0.2827171723304353,
+    "commence": 1795203900.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795177407.725133,
+  "cuota": 2.3,
+  "prob": 0.44425363630352444,
+  "edge": 2.1783363498106167,
+  "stake": 4.19,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "5dcc9d2b0da87770a4f49e924275be39",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Troyes vs Le Havre",
+    "sel": "Troyes",
+    "raw": "Troyes",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.3,
+    "prob": 0.44425363630352444,
+    "commence": 1795203900.0,
     "resultado": null,
     "cierre_prob": null
    }
