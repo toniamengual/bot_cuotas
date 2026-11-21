@@ -3163,7 +3163,7 @@
     "prob": 0.29168115983315895,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.2917169022839492
+    "cierre_prob": 0.29544200718855895
    }
   ]
  },
@@ -3271,7 +3271,7 @@
     "prob": 0.3314550956164881,
     "commence": 1795364100.0,
     "resultado": null,
-    "cierre_prob": 0.32932200112345755
+    "cierre_prob": 0.32750210166361066
    }
   ]
  },
@@ -3298,7 +3298,7 @@
     "prob": 0.24962549373078163,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.281700669964502
+    "cierre_prob": 0.28667782402195796
    }
   ]
  },
@@ -3406,7 +3406,7 @@
     "prob": 0.6964979639581532,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.6807997814817834
+    "cierre_prob": 0.6942825313384977
    }
   ]
  },
@@ -3487,7 +3487,7 @@
     "prob": 0.26003394038378785,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": 0.281700669964502
+    "cierre_prob": 0.28667782402195796
    }
   ]
  },
@@ -3514,7 +3514,7 @@
     "prob": 0.20941690520262743,
     "commence": 1795365000.0,
     "resultado": null,
-    "cierre_prob": 0.21053591704092703
+    "cierre_prob": 0.21258152839043765
    }
   ]
  },
@@ -3541,7 +3541,7 @@
     "prob": 0.2752742719764886,
     "commence": 1795464000.0,
     "resultado": null,
-    "cierre_prob": 0.2744017074440516
+    "cierre_prob": 0.2752882918670444
    }
   ]
  },
@@ -3568,7 +3568,7 @@
     "prob": 0.281700669964502,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.28667782402195796
    }
   ]
  },
@@ -3595,7 +3595,7 @@
     "prob": 0.4374966846153201,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.4299336001583517
    }
   ]
  },
@@ -3622,7 +3622,7 @@
     "prob": 0.2917169022839492,
     "commence": 1795290300.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.29544200718855895
    }
   ]
  },
@@ -3646,6 +3646,33 @@
     "mercado": "h2h",
     "punto": null,
     "cuota": 1.62,
+    "prob": 0.6300832110100999,
+    "commence": 1795377600.0,
+    "resultado": null,
+    "cierre_prob": 0.6300832110100999
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795263803.406074,
+  "cuota": 1.63,
+  "prob": 0.6300832110100999,
+  "edge": 2.70356339464628,
+  "stake": 10.73,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "7a62fe738bd20cfff6027c52fec05d51",
+    "sport": "soccer_spain_la_liga",
+    "partido": "Getafe vs Atlético Madrid",
+    "sel": "Atlético Madrid",
+    "raw": "Atlético Madrid",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.63,
     "prob": 0.6300832110100999,
     "commence": 1795377600.0,
     "resultado": null,
