@@ -3514,7 +3514,7 @@
     "prob": 0.20941690520262743,
     "commence": 1795365000.0,
     "resultado": null,
-    "cierre_prob": 0.2116722119255107
+    "cierre_prob": 0.21038702847658777
    }
   ]
  },
@@ -3649,7 +3649,7 @@
     "prob": 0.6300832110100999,
     "commence": 1795377600.0,
     "resultado": null,
-    "cierre_prob": 0.6296765904506803
+    "cierre_prob": 0.6318785096604645
    }
   ]
  },
@@ -3676,7 +3676,34 @@
     "prob": 0.6300832110100999,
     "commence": 1795377600.0,
     "resultado": null,
-    "cierre_prob": 0.6296765904506803
+    "cierre_prob": 0.6318785096604645
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795292604.363992,
+  "cuota": 3.48,
+  "prob": 0.293452999388719,
+  "edge": 2.121643787274219,
+  "stake": 2.14,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "76d4698a8417f32cb059f14a469939f3",
+    "sport": "soccer_italy_serie_a",
+    "partido": "Sassuolo vs Genoa",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.48,
+    "prob": 0.293452999388719,
+    "commence": 1795356000.0,
+    "resultado": null,
+    "cierre_prob": null
    }
   ]
  }
