@@ -3148,8 +3148,8 @@
   "prob": 0.29168115983315895,
   "edge": 2.088405941605642,
   "stake": 2.09,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.09,
   "patas": [
    {
     "id": "d2113ca19873218496f8b2fe6c7e7c41",
@@ -3162,7 +3162,7 @@
     "cuota": 3.5,
     "prob": 0.29168115983315895,
     "commence": 1795290300.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.2958487900633949
    }
   ]
@@ -3271,7 +3271,7 @@
     "prob": 0.3314550956164881,
     "commence": 1795364100.0,
     "resultado": null,
-    "cierre_prob": 0.3255218080252549
+    "cierre_prob": 0.3125414743767533
    }
   ]
  },
@@ -3283,8 +3283,8 @@
   "prob": 0.24962549373078163,
   "edge": 2.3464524296204603,
   "stake": 1.89,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -1.89,
   "patas": [
    {
     "id": "13ac2151b9f6893cedb7f509e64eb070",
@@ -3297,7 +3297,7 @@
     "cuota": 4.1,
     "prob": 0.24962549373078163,
     "commence": 1795290300.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.2931894858039602
    }
   ]
@@ -3391,8 +3391,8 @@
   "prob": 0.6964979639581532,
   "edge": 2.385200701848511,
   "stake": 12.69,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -12.69,
   "patas": [
    {
     "id": "9130b46991ab991f808daf307f004469",
@@ -3405,7 +3405,7 @@
     "cuota": 1.47,
     "prob": 0.6964979639581532,
     "commence": 1795290300.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.6893044786109377
    }
   ]
@@ -3472,8 +3472,8 @@
   "prob": 0.26003394038378785,
   "edge": 2.713406451596212,
   "stake": 2.3,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.3,
   "patas": [
    {
     "id": "13ac2151b9f6893cedb7f509e64eb070",
@@ -3486,7 +3486,7 @@
     "cuota": 3.95,
     "prob": 0.26003394038378785,
     "commence": 1795290300.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.2931894858039602
    }
   ]
@@ -3514,7 +3514,7 @@
     "prob": 0.20941690520262743,
     "commence": 1795365000.0,
     "resultado": null,
-    "cierre_prob": 0.21038702847658777
+    "cierre_prob": 0.2046152480541791
    }
   ]
  },
@@ -3541,7 +3541,7 @@
     "prob": 0.2752742719764886,
     "commence": 1795464000.0,
     "resultado": null,
-    "cierre_prob": 0.2761616679004596
+    "cierre_prob": 0.2744139439868394
    }
   ]
  },
@@ -3553,8 +3553,8 @@
   "prob": 0.281700669964502,
   "edge": 5.637751236688238,
   "stake": 5.13,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -5.13,
   "patas": [
    {
     "id": "13ac2151b9f6893cedb7f509e64eb070",
@@ -3567,7 +3567,7 @@
     "cuota": 3.75,
     "prob": 0.281700669964502,
     "commence": 1795290300.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.2931894858039602
    }
   ]
@@ -3580,8 +3580,8 @@
   "prob": 0.4374966846153201,
   "edge": 2.8117208846002217,
   "stake": 5.21,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -5.21,
   "patas": [
    {
     "id": "4d6dd3defbbe20fa24b719f9fcdbf280",
@@ -3594,7 +3594,7 @@
     "cuota": 2.35,
     "prob": 0.4374966846153201,
     "commence": 1795290300.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.4282897505462254
    }
   ]
@@ -3607,8 +3607,8 @@
   "prob": 0.2917169022839492,
   "edge": 2.1009157993822303,
   "stake": 2.1,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.1,
   "patas": [
    {
     "id": "d2113ca19873218496f8b2fe6c7e7c41",
@@ -3621,7 +3621,7 @@
     "cuota": 3.5,
     "prob": 0.2917169022839492,
     "commence": 1795290300.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.2958487900633949
    }
   ]
@@ -3649,7 +3649,7 @@
     "prob": 0.6300832110100999,
     "commence": 1795377600.0,
     "resultado": null,
-    "cierre_prob": 0.6318785096604645
+    "cierre_prob": 0.6400403198341591
    }
   ]
  },
@@ -3676,7 +3676,7 @@
     "prob": 0.6300832110100999,
     "commence": 1795377600.0,
     "resultado": null,
-    "cierre_prob": 0.6318785096604645
+    "cierre_prob": 0.6400403198341591
    }
   ]
  },
@@ -3701,6 +3701,87 @@
     "punto": null,
     "cuota": 3.48,
     "prob": 0.293452999388719,
+    "commence": 1795356000.0,
+    "resultado": null,
+    "cierre_prob": 0.2979826309598513
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1795335809.811827,
+  "cuota": 3.4,
+  "prob": 0.2979826309598513,
+  "edge": 1.3140945263494297,
+  "stake": 1.37,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "76d4698a8417f32cb059f14a469939f3",
+    "sport": "soccer_italy_serie_a",
+    "partido": "Sassuolo vs Genoa",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.4,
+    "prob": 0.2979826309598513,
+    "commence": 1795356000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795335810.447869,
+  "cuota": 3.55,
+  "prob": 0.29310845459279805,
+  "edge": 4.053501380443314,
+  "stake": 3.97,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "8e6ee05b6ac28dc2357f72b9f5a0643e",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Lorient vs Rennes",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.55,
+    "prob": 0.29310845459279805,
+    "commence": 1795364100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795335810.972982,
+  "cuota": 3.45,
+  "prob": 0.2979826309598513,
+  "edge": 2.8040076811487014,
+  "stake": 2.86,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "76d4698a8417f32cb059f14a469939f3",
+    "sport": "soccer_italy_serie_a",
+    "partido": "Sassuolo vs Genoa",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.45,
+    "prob": 0.2979826309598513,
     "commence": 1795356000.0,
     "resultado": null,
     "cierre_prob": null
