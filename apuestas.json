@@ -3271,7 +3271,7 @@
     "prob": 0.3314550956164881,
     "commence": 1795364100.0,
     "resultado": null,
-    "cierre_prob": 0.3125414743767533
+    "cierre_prob": 0.296106969657783
    }
   ]
  },
@@ -3514,7 +3514,7 @@
     "prob": 0.20941690520262743,
     "commence": 1795365000.0,
     "resultado": null,
-    "cierre_prob": 0.2046152480541791
+    "cierre_prob": 0.20931685054561497
    }
   ]
  },
@@ -3541,7 +3541,7 @@
     "prob": 0.2752742719764886,
     "commence": 1795464000.0,
     "resultado": null,
-    "cierre_prob": 0.2744139439868394
+    "cierre_prob": 0.27616183939455546
    }
   ]
  },
@@ -3649,7 +3649,7 @@
     "prob": 0.6300832110100999,
     "commence": 1795377600.0,
     "resultado": null,
-    "cierre_prob": 0.6400403198341591
+    "cierre_prob": 0.6314936656951818
    }
   ]
  },
@@ -3676,7 +3676,7 @@
     "prob": 0.6300832110100999,
     "commence": 1795377600.0,
     "resultado": null,
-    "cierre_prob": 0.6400403198341591
+    "cierre_prob": 0.6314936656951818
    }
   ]
  },
@@ -3703,7 +3703,7 @@
     "prob": 0.293452999388719,
     "commence": 1795356000.0,
     "resultado": null,
-    "cierre_prob": 0.2979826309598513
+    "cierre_prob": 0.29734826532478215
    }
   ]
  },
@@ -3730,7 +3730,7 @@
     "prob": 0.2979826309598513,
     "commence": 1795356000.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.29734826532478215
    }
   ]
  },
@@ -3757,7 +3757,7 @@
     "prob": 0.29310845459279805,
     "commence": 1795364100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2970265845630726
    }
   ]
  },
@@ -3783,6 +3783,60 @@
     "cuota": 3.45,
     "prob": 0.2979826309598513,
     "commence": 1795356000.0,
+    "resultado": null,
+    "cierre_prob": 0.29734826532478215
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795350207.745013,
+  "cuota": 3.45,
+  "prob": 0.2970265845630726,
+  "edge": 2.4741716742600506,
+  "stake": 2.52,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "8e6ee05b6ac28dc2357f72b9f5a0643e",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Lorient vs Rennes",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.45,
+    "prob": 0.2970265845630726,
+    "commence": 1795364100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795350208.283054,
+  "cuota": 2.07,
+  "prob": 0.4940560665246186,
+  "edge": 2.2696057705960504,
+  "stake": 5.3,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e422af92d1fc06c0a330838c1c2f2e08",
+    "sport": "soccer_uefa_champs_league",
+    "partido": "Galatasaray vs Aston Villa",
+    "sel": "Más de 3.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 3.5,
+    "cuota": 2.07,
+    "prob": 0.4940560665246186,
+    "commence": 1795542300.0,
     "resultado": null,
     "cierre_prob": null
    }
