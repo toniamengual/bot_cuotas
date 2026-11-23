@@ -3541,7 +3541,7 @@
     "prob": 0.2752742719764886,
     "commence": 1795464000.0,
     "resultado": null,
-    "cierre_prob": 0.2738588077015296
+    "cierre_prob": 0.2788414191346953
    }
   ]
  },
@@ -3838,7 +3838,7 @@
     "prob": 0.4940560665246186,
     "commence": 1795542300.0,
     "resultado": null,
-    "cierre_prob": 0.5216425694409709
+    "cierre_prob": 0.488166898244657
    }
   ]
  },
@@ -3865,6 +3865,33 @@
     "prob": 0.549343942808692,
     "commence": 1795392600.0,
     "resultado": "won",
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1795451003.583671,
+  "cuota": 2.4,
+  "prob": 0.42602411564037457,
+  "edge": 2.2457877536898874,
+  "stake": 4.01,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "6bcef0e5f7b2a021b7e07514cdfa6493",
+    "sport": "basketball_euroleague",
+    "partido": "FC Bayern München vs Maccabi Tel Aviv",
+    "sel": "Maccabi Tel Aviv",
+    "raw": "Maccabi Tel Aviv",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.4,
+    "prob": 0.42602411564037457,
+    "commence": 1795546800.0,
+    "resultado": null,
     "cierre_prob": null
    }
   ]
