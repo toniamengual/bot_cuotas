@@ -3892,7 +3892,7 @@
     "prob": 0.42602411564037457,
     "commence": 1795546800.0,
     "resultado": null,
-    "cierre_prob": 0.39153381370654133
+    "cierre_prob": 0.41616414089289105
    }
   ]
  },
@@ -3919,7 +3919,7 @@
     "prob": 0.3613435583735509,
     "commence": 1795549500.0,
     "resultado": null,
-    "cierre_prob": 0.35160356523564534
+    "cierre_prob": 0.3729232613075654
    }
   ]
  },
@@ -3946,7 +3946,7 @@
     "prob": 0.43240546366753146,
     "commence": 1795636800.0,
     "resultado": null,
-    "cierre_prob": 0.4350665921508605
+    "cierre_prob": 0.43950776390765983
    }
   ]
  },
@@ -3999,6 +3999,87 @@
     "cuota": 1.83,
     "prob": 0.5586036469837505,
     "commence": 1795549500.0,
+    "resultado": null,
+    "cierre_prob": 0.5552353605378868
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795523004.511214,
+  "cuota": 2.75,
+  "prob": 0.3729232613075654,
+  "edge": 2.5538968595804956,
+  "stake": 3.65,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "6d21b6408d1f1c42def270b7f1ae5b21",
+    "sport": "soccer_efl_champ",
+    "partido": "Charlton Athletic vs Lincoln City",
+    "sel": "Lincoln City",
+    "raw": "Lincoln City",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.75,
+    "prob": 0.3729232613075654,
+    "commence": 1795549500.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795523005.247941,
+  "cuota": 1.9,
+  "prob": 0.5389835790229999,
+  "edge": 2.406880014369972,
+  "stake": 6.69,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "3e065ed32915a4afefae3a851f6df12a",
+    "sport": "basketball_euroleague",
+    "partido": "Beşiktaş J.K. vs Paris Basketball",
+    "sel": "Menos de 185.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 185.5,
+    "cuota": 1.9,
+    "prob": 0.5389835790229999,
+    "commence": 1795539600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795523005.712964,
+  "cuota": 2.33,
+  "prob": 0.43950776390765983,
+  "edge": 2.4053089904847447,
+  "stake": 4.52,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "77dfddf6dea97d5ecb5e2463b29fe67e",
+    "sport": "soccer_efl_champ",
+    "partido": "Stoke City vs Millwall",
+    "sel": "Stoke City",
+    "raw": "Stoke City",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.33,
+    "prob": 0.43950776390765983,
+    "commence": 1795636800.0,
     "resultado": null,
     "cierre_prob": null
    }
