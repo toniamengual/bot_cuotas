@@ -3526,8 +3526,8 @@
   "prob": 0.2752742719764886,
   "edge": 2.4020291752537837,
   "stake": 2.21,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.21,
   "patas": [
    {
     "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42",
@@ -3540,7 +3540,7 @@
     "cuota": 3.72,
     "prob": 0.2752742719764886,
     "commence": 1795464000.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.2788414191346953
    }
   ]
@@ -3892,7 +3892,7 @@
     "prob": 0.42602411564037457,
     "commence": 1795546800.0,
     "resultado": null,
-    "cierre_prob": 0.3879948131566493
+    "cierre_prob": 0.39153381370654133
    }
   ]
  },
@@ -3919,7 +3919,7 @@
     "prob": 0.3613435583735509,
     "commence": 1795549500.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.35160356523564534
    }
   ]
  },
@@ -3946,7 +3946,7 @@
     "prob": 0.43240546366753146,
     "commence": 1795636800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.4350665921508605
    }
   ]
  },
@@ -3958,8 +3958,8 @@
   "prob": 0.5347402289524592,
   "edge": 2.1353837299197043,
   "stake": 5.87,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -5.87,
   "patas": [
    {
     "id": "a72a1703f7a92b80768255d1d977a761",
@@ -3972,6 +3972,33 @@
     "cuota": 1.91,
     "prob": 0.5347402289524592,
     "commence": 1795480800.0,
+    "resultado": "lost",
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Betsson",
+  "ts": 1795508607.708142,
+  "cuota": 1.83,
+  "prob": 0.5586036469837505,
+  "edge": 2.224467398026353,
+  "stake": 6.7,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "1707b8c728b9116472624aa8178ebfce",
+    "sport": "basketball_euroleague",
+    "partido": "ASVEL Lyon Villeurbanne vs Pallacanestro Olimpia Milano",
+    "sel": "Más de 173.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 173.5,
+    "cuota": 1.83,
+    "prob": 0.5586036469837505,
+    "commence": 1795549500.0,
     "resultado": null,
     "cierre_prob": null
    }
