@@ -4270,7 +4270,7 @@
     "prob": 0.28017476984983186,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.2815100836073423
+    "cierre_prob": 0.2808444907699013
    }
   ]
  },
@@ -4297,7 +4297,7 @@
     "prob": 0.5349027758997025,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.5341288350110522
+    "cierre_prob": 0.5349027758997025
    }
   ]
  },
@@ -4324,7 +4324,7 @@
     "prob": 0.2934474129078164,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.290636234709902
+    "cierre_prob": 0.29150316231203294
    }
   ]
  },
@@ -4378,7 +4378,7 @@
     "prob": 0.28029226049024136,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.28029226049024136
+    "cierre_prob": 0.27978521468427897
    }
   ]
  },
@@ -4404,6 +4404,210 @@
     "cuota": 3.5,
     "prob": 0.3048221319876877,
     "commence": 1795634100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1795638216.52725,
+  "cuota": 2.0,
+  "prob": 0.5264947487331997,
+  "edge": 5.298949746639936,
+  "stake": 13.25,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4f6d199bb67cf3a517a3880fd2f00b26",
+    "sport": "basketball_nba",
+    "partido": "Philadelphia 76ers vs Miami Heat",
+    "sel": "Miami Heat",
+    "raw": "Miami Heat",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.0,
+    "prob": 0.5264947487331997,
+    "commence": 1795644600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1795638217.411622,
+  "cuota": 3.68,
+  "prob": 0.2874065579775825,
+  "edge": 5.765613335750364,
+  "stake": 2.69,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4f6d199bb67cf3a517a3880fd2f00b26",
+    "sport": "basketball_nba",
+    "partido": "Philadelphia 76ers vs Miami Heat",
+    "sel": "Miami Heat",
+    "raw": "Miami Heat",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.0,
+    "prob": 0.5264947487331997,
+    "commence": 1795644600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "07421d1675d6bc51bb5fa91f84a09eb3",
+    "sport": "basketball_nba",
+    "partido": "Oklahoma City Thunder vs Minnesota Timberwolves",
+    "sel": "Oklahoma City Thunder",
+    "raw": "Oklahoma City Thunder",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.84,
+    "prob": 0.5458868462964012,
+    "commence": 1795653600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1795638218.146767,
+  "cuota": 3.68,
+  "prob": 0.28541189763598857,
+  "edge": 5.0315783300437955,
+  "stake": 2.35,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4f6d199bb67cf3a517a3880fd2f00b26",
+    "sport": "basketball_nba",
+    "partido": "Philadelphia 76ers vs Miami Heat",
+    "sel": "Miami Heat",
+    "raw": "Miami Heat",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.0,
+    "prob": 0.5264947487331997,
+    "commence": 1795644600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "f08629281f1510f47d91cc408f86a2a8",
+    "sport": "basketball_nba",
+    "partido": "New York Knicks vs Cleveland Cavaliers",
+    "sel": "New York Knicks",
+    "raw": "New York Knicks",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.84,
+    "prob": 0.5420982798455614,
+    "commence": 1795653600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "doble",
+  "casa": "Winamax",
+  "ts": 1795638218.751244,
+  "cuota": 3.28,
+  "prob": 0.31829910776397835,
+  "edge": 4.402107346584883,
+  "stake": 2.41,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "4f6d199bb67cf3a517a3880fd2f00b26",
+    "sport": "basketball_nba",
+    "partido": "Philadelphia 76ers vs Miami Heat",
+    "sel": "Miami Heat",
+    "raw": "Miami Heat",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.0,
+    "prob": 0.5264947487331997,
+    "commence": 1795644600.0,
+    "resultado": null,
+    "cierre_prob": null
+   },
+   {
+    "id": "87ce247fb83685389ca8ffb21be6cd3e",
+    "sport": "basketball_nba",
+    "partido": "Charlotte Hornets vs Chicago Bulls",
+    "sel": "Charlotte Hornets",
+    "raw": "Charlotte Hornets",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.64,
+    "prob": 0.6045627397611061,
+    "commence": 1795651800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "William Hill",
+  "ts": 1795638219.453973,
+  "cuota": 1.91,
+  "prob": 0.5451772412187613,
+  "edge": 4.128853072783412,
+  "stake": 11.34,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "aaa86a483888836242da663a46957894",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Le Mans FC vs Lille",
+    "sel": "Menos de 2.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 2.5,
+    "cuota": 1.91,
+    "prob": 0.5451772412187613,
+    "commence": 1795895100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795638220.100113,
+  "cuota": 4.05,
+  "prob": 0.25257771844343363,
+  "edge": 2.2939759695906226,
+  "stake": 1.88,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "5d838190a8f5932d7fcfbcc26bacdd9c",
+    "sport": "soccer_germany_bundesliga",
+    "partido": "VfB Stuttgart vs Eintracht Frankfurt",
+    "sel": "Eintracht Frankfurt",
+    "raw": "Eintracht Frankfurt",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 4.05,
+    "prob": 0.25257771844343363,
+    "commence": 1795887000.0,
     "resultado": null,
     "cierre_prob": null
    }
