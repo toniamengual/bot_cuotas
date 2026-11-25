@@ -4108,7 +4108,7 @@
     "prob": 0.5290954130386166,
     "commence": 1795635900.0,
     "resultado": null,
-    "cierre_prob": 0.5013655794477709
+    "cierre_prob": 0.4993036194671046
    }
   ]
  },
@@ -4270,7 +4270,7 @@
     "prob": 0.28017476984983186,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2815100836073423
    }
   ]
  },
@@ -4297,7 +4297,7 @@
     "prob": 0.5349027758997025,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5349027758997025
    }
   ]
  },
@@ -4324,7 +4324,7 @@
     "prob": 0.2934474129078164,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2910696985109675
    }
   ]
  },
@@ -4350,6 +4350,33 @@
     "cuota": 1.91,
     "prob": 0.5345674038550957,
     "commence": 1795635900.0,
+    "resultado": null,
+    "cierre_prob": 0.532512734638623
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795609412.270665,
+  "cuota": 3.64,
+  "prob": 0.28029226049024136,
+  "edge": 2.0263828184478694,
+  "stake": 1.92,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "40d95e660c301c2d8a5a7a6317017b65",
+    "sport": "soccer_epl",
+    "partido": "Nottingham Forest vs Chelsea",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.64,
+    "prob": 0.28029226049024136,
+    "commence": 1795809600.0,
     "resultado": null,
     "cierre_prob": null
    }
