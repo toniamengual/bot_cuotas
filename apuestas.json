@@ -3823,8 +3823,8 @@
   "prob": 0.4940560665246186,
   "edge": 2.2696057705960504,
   "stake": 5.3,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -5.3,
   "patas": [
    {
     "id": "e422af92d1fc06c0a330838c1c2f2e08",
@@ -3837,7 +3837,7 @@
     "cuota": 2.07,
     "prob": 0.4940560665246186,
     "commence": 1795542300.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.48650753417561676
    }
   ]
@@ -3877,8 +3877,8 @@
   "prob": 0.42602411564037457,
   "edge": 2.2457877536898874,
   "stake": 4.01,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 5.61,
   "patas": [
    {
     "id": "6bcef0e5f7b2a021b7e07514cdfa6493",
@@ -3891,7 +3891,7 @@
     "cuota": 2.4,
     "prob": 0.42602411564037457,
     "commence": 1795546800.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.41246599200362555
    }
   ]
@@ -3904,8 +3904,8 @@
   "prob": 0.3613435583735509,
   "edge": 2.9829141364620115,
   "stake": 4.03,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -4.03,
   "patas": [
    {
     "id": "6d21b6408d1f1c42def270b7f1ae5b21",
@@ -3918,7 +3918,7 @@
     "cuota": 2.85,
     "prob": 0.3613435583735509,
     "commence": 1795549500.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.378496729643279
    }
   ]
@@ -3985,8 +3985,8 @@
   "prob": 0.5586036469837505,
   "edge": 2.224467398026353,
   "stake": 6.7,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 5.56,
   "patas": [
    {
     "id": "1707b8c728b9116472624aa8178ebfce",
@@ -3999,7 +3999,7 @@
     "cuota": 1.83,
     "prob": 0.5586036469837505,
     "commence": 1795549500.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.5702473136773798
    }
   ]
@@ -4012,8 +4012,8 @@
   "prob": 0.3729232613075654,
   "edge": 2.5538968595804956,
   "stake": 3.65,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -3.65,
   "patas": [
    {
     "id": "6d21b6408d1f1c42def270b7f1ae5b21",
@@ -4026,7 +4026,7 @@
     "cuota": 2.75,
     "prob": 0.3729232613075654,
     "commence": 1795549500.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.378496729643279
    }
   ]
@@ -4108,7 +4108,7 @@
     "prob": 0.5290954130386166,
     "commence": 1795635900.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5013655794477709
    }
   ]
  },
@@ -4147,8 +4147,8 @@
   "prob": 0.6946935863926532,
   "edge": 2.8146507861126713,
   "stake": 14.66,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 7.04,
   "patas": [
    {
     "id": "e239a6d57b2cf15091f673c2448fbf4f",
@@ -4161,7 +4161,7 @@
     "cuota": 1.48,
     "prob": 0.6946935863926532,
     "commence": 1795549500.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -4174,8 +4174,8 @@
   "prob": 0.766069219432457,
   "edge": 2.65327540394924,
   "stake": 19.51,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 6.63,
   "patas": [
    {
     "id": "018856cb75135463eb1972d978339023",
@@ -4188,7 +4188,7 @@
     "cuota": 1.34,
     "prob": 0.766069219432457,
     "commence": 1795550400.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -4216,6 +4216,141 @@
     "prob": 0.5352610935424008,
     "commence": 1795543200.0,
     "resultado": "lost",
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "888sport",
+  "ts": 1795595006.823035,
+  "cuota": 1.91,
+  "prob": 0.5373145505876796,
+  "edge": 2.6270791622468037,
+  "stake": 7.22,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "c9a675960fa0ad6070fe3e6b378809a0",
+    "sport": "basketball_euroleague",
+    "partido": "Saski Baskonia vs Anadolu Efes",
+    "sel": "Menos de 175.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 175.5,
+    "cuota": 1.91,
+    "prob": 0.5373145505876796,
+    "commence": 1795635000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795595007.48074,
+  "cuota": 3.65,
+  "prob": 0.28017476984983186,
+  "edge": 2.2637909951886304,
+  "stake": 2.14,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "02ff879cf54f6d1fec2664efee0431db",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Brest vs Paris FC",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.65,
+    "prob": 0.28017476984983186,
+    "commence": 1795808700.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "William Hill",
+  "ts": 1795595008.118397,
+  "cuota": 1.91,
+  "prob": 0.5349027758997025,
+  "edge": 2.166430196843172,
+  "stake": 5.95,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e9a663f13e7503c0ac20a54804338b60",
+    "sport": "soccer_italy_serie_a",
+    "partido": "Venezia vs Bologna",
+    "sel": "Menos de 2.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 2.5,
+    "cuota": 1.91,
+    "prob": 0.5349027758997025,
+    "commence": 1795808700.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795595008.883306,
+  "cuota": 3.48,
+  "prob": 0.2934474129078164,
+  "edge": 2.119699691920096,
+  "stake": 2.14,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e9a663f13e7503c0ac20a54804338b60",
+    "sport": "soccer_italy_serie_a",
+    "partido": "Venezia vs Bologna",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.48,
+    "prob": 0.2934474129078164,
+    "commence": 1795808700.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "William Hill",
+  "ts": 1795595008.883332,
+  "cuota": 1.91,
+  "prob": 0.5345674038550957,
+  "edge": 2.1023741363232817,
+  "stake": 5.78,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "b9ad9b132e4fd83592ee6cb62ea5cd46",
+    "sport": "basketball_euroleague",
+    "partido": "Real Madrid vs Žalgiris",
+    "sel": "Menos de 180.5",
+    "raw": "Under",
+    "mercado": "totals",
+    "punto": 180.5,
+    "cuota": 1.91,
+    "prob": 0.5345674038550957,
+    "commence": 1795635900.0,
+    "resultado": null,
     "cierre_prob": null
    }
   ]
