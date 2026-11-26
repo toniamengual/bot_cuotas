@@ -4270,7 +4270,7 @@
     "prob": 0.28017476984983186,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.2821268044885524
+    "cierre_prob": 0.28076589110954076
    }
   ]
  },
@@ -4324,7 +4324,7 @@
     "prob": 0.2934474129078164,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.2955210490925619
+    "cierre_prob": 0.2935708807825937
    }
   ]
  },
@@ -4378,7 +4378,7 @@
     "prob": 0.28029226049024136,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.2820763500380227
+    "cierre_prob": 0.2843270892395287
    }
   ]
  },
@@ -4609,7 +4609,7 @@
     "prob": 0.25257771844343363,
     "commence": 1795887000.0,
     "resultado": null,
-    "cierre_prob": 0.2459231961632964
+    "cierre_prob": 0.24731476895488258
    }
   ]
  },
@@ -4636,7 +4636,7 @@
     "prob": 0.28505673646347474,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.2821268044885524
+    "cierre_prob": 0.28076589110954076
    }
   ]
  },
@@ -4717,7 +4717,7 @@
     "prob": 0.8165996389574468,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.816494388368616
+    "cierre_prob": 0.8169362176466595
    }
   ]
  },
@@ -4744,7 +4744,7 @@
     "prob": 0.2820763500380227,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2843270892395287
    }
   ]
  },
@@ -4771,7 +4771,7 @@
     "prob": 0.4759957786166942,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.47600841341538264
    }
   ]
  },
@@ -4797,6 +4797,60 @@
     "cuota": 3.46,
     "prob": 0.2955210490925619,
     "commence": 1795808700.0,
+    "resultado": null,
+    "cierre_prob": 0.2935708807825937
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795724603.658353,
+  "cuota": 3.76,
+  "prob": 0.2843270892395287,
+  "edge": 6.9069855540627945,
+  "stake": 6.26,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "40d95e660c301c2d8a5a7a6317017b65",
+    "sport": "soccer_epl",
+    "partido": "Nottingham Forest vs Chelsea",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.76,
+    "prob": 0.2843270892395287,
+    "commence": 1795809600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795724604.486576,
+  "cuota": 3.65,
+  "prob": 0.2864312955013586,
+  "edge": 4.547422857995875,
+  "stake": 4.29,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "ca8aa566e27e1d05b47e8151b2066f9a",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Lyon vs AS Monaco",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.65,
+    "prob": 0.2864312955013586,
+    "commence": 1795981500.0,
     "resultado": null,
     "cierre_prob": null
    }
