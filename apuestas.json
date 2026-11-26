@@ -3931,8 +3931,8 @@
   "prob": 0.43240546366753146,
   "edge": 2.9125003528724935,
   "stake": 5.28,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 7.29,
   "patas": [
    {
     "id": "77dfddf6dea97d5ecb5e2463b29fe67e",
@@ -3945,7 +3945,7 @@
     "cuota": 2.38,
     "prob": 0.43240546366753146,
     "commence": 1795636800.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.42297933983859376
    }
   ]
@@ -4066,8 +4066,8 @@
   "prob": 0.43950776390765983,
   "edge": 2.4053089904847447,
   "stake": 4.52,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 6.01,
   "patas": [
    {
     "id": "77dfddf6dea97d5ecb5e2463b29fe67e",
@@ -4080,7 +4080,7 @@
     "cuota": 2.33,
     "prob": 0.43950776390765983,
     "commence": 1795636800.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": 0.42297933983859376
    }
   ]
@@ -4093,8 +4093,8 @@
   "prob": 0.5290954130386166,
   "edge": 5.819082607723325,
   "stake": 14.55,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -14.55,
   "patas": [
    {
     "id": "b9ad9b132e4fd83592ee6cb62ea5cd46",
@@ -4107,7 +4107,7 @@
     "cuota": 2.0,
     "prob": 0.5290954130386166,
     "commence": 1795635900.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.4958761375976173
    }
   ]
@@ -4120,8 +4120,8 @@
   "prob": 0.405564864314389,
   "edge": 3.419040400169182,
   "stake": 5.51,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 8.54,
   "patas": [
    {
     "id": "61d1126751ba67227ac2819624e98342",
@@ -4134,7 +4134,7 @@
     "cuota": 2.55,
     "prob": 0.405564864314389,
     "commence": 1795635900.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -4228,8 +4228,8 @@
   "prob": 0.5373145505876796,
   "edge": 2.6270791622468037,
   "stake": 7.22,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "ganada",
+  "beneficio": 6.57,
   "patas": [
    {
     "id": "c9a675960fa0ad6070fe3e6b378809a0",
@@ -4242,7 +4242,7 @@
     "cuota": 1.91,
     "prob": 0.5373145505876796,
     "commence": 1795635000.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -4270,7 +4270,7 @@
     "prob": 0.28017476984983186,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.2808444907699013
+    "cierre_prob": 0.28505673646347474
    }
   ]
  },
@@ -4324,7 +4324,7 @@
     "prob": 0.2934474129078164,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.29150316231203294
+    "cierre_prob": 0.2956692828974248
    }
   ]
  },
@@ -4336,8 +4336,8 @@
   "prob": 0.5345674038550957,
   "edge": 2.1023741363232817,
   "stake": 5.78,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -5.78,
   "patas": [
    {
     "id": "b9ad9b132e4fd83592ee6cb62ea5cd46",
@@ -4350,7 +4350,7 @@
     "cuota": 1.91,
     "prob": 0.5345674038550957,
     "commence": 1795635900.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": 0.5290954130386166
    }
   ]
@@ -4378,7 +4378,7 @@
     "prob": 0.28029226049024136,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.27978521468427897
+    "cierre_prob": 0.2824878283128
    }
   ]
  },
@@ -4390,8 +4390,8 @@
   "prob": 0.3048221319876877,
   "edge": 6.6877461956907025,
   "stake": 6.69,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -6.69,
   "patas": [
    {
     "id": "a1ee21718811e522957cf904fb3ec31f",
@@ -4404,7 +4404,7 @@
     "cuota": 3.5,
     "prob": 0.3048221319876877,
     "commence": 1795634100.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    }
   ]
@@ -4417,8 +4417,8 @@
   "prob": 0.5264947487331997,
   "edge": 5.298949746639936,
   "stake": 13.25,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -13.25,
   "patas": [
    {
     "id": "4f6d199bb67cf3a517a3880fd2f00b26",
@@ -4431,7 +4431,7 @@
     "cuota": 2.0,
     "prob": 0.5264947487331997,
     "commence": 1795644600.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    }
   ]
@@ -4444,8 +4444,8 @@
   "prob": 0.2874065579775825,
   "edge": 5.765613335750364,
   "stake": 2.69,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.69,
   "patas": [
    {
     "id": "4f6d199bb67cf3a517a3880fd2f00b26",
@@ -4458,7 +4458,7 @@
     "cuota": 2.0,
     "prob": 0.5264947487331997,
     "commence": 1795644600.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    },
    {
@@ -4472,7 +4472,7 @@
     "cuota": 1.84,
     "prob": 0.5458868462964012,
     "commence": 1795653600.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    }
   ]
@@ -4485,8 +4485,8 @@
   "prob": 0.28541189763598857,
   "edge": 5.0315783300437955,
   "stake": 2.35,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.35,
   "patas": [
    {
     "id": "4f6d199bb67cf3a517a3880fd2f00b26",
@@ -4499,7 +4499,7 @@
     "cuota": 2.0,
     "prob": 0.5264947487331997,
     "commence": 1795644600.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    },
    {
@@ -4513,7 +4513,7 @@
     "cuota": 1.84,
     "prob": 0.5420982798455614,
     "commence": 1795653600.0,
-    "resultado": null,
+    "resultado": "won",
     "cierre_prob": null
    }
   ]
@@ -4526,8 +4526,8 @@
   "prob": 0.31829910776397835,
   "edge": 4.402107346584883,
   "stake": 2.41,
-  "estado": "pendiente",
-  "beneficio": null,
+  "estado": "perdida",
+  "beneficio": -2.41,
   "patas": [
    {
     "id": "4f6d199bb67cf3a517a3880fd2f00b26",
@@ -4540,7 +4540,7 @@
     "cuota": 2.0,
     "prob": 0.5264947487331997,
     "commence": 1795644600.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    },
    {
@@ -4554,7 +4554,7 @@
     "cuota": 1.64,
     "prob": 0.6045627397611061,
     "commence": 1795651800.0,
-    "resultado": null,
+    "resultado": "lost",
     "cierre_prob": null
    }
   ]
@@ -4582,7 +4582,7 @@
     "prob": 0.5451772412187613,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5451772412187613
    }
   ]
  },
@@ -4608,6 +4608,114 @@
     "cuota": 4.05,
     "prob": 0.25257771844343363,
     "commence": 1795887000.0,
+    "resultado": null,
+    "cierre_prob": 0.2466735255059969
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795681404.975927,
+  "cuota": 3.62,
+  "prob": 0.28505673646347474,
+  "edge": 3.190538599777848,
+  "stake": 3.04,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "02ff879cf54f6d1fec2664efee0431db",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Brest vs Paris FC",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.62,
+    "prob": 0.28505673646347474,
+    "commence": 1795808700.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795681405.543106,
+  "cuota": 2.44,
+  "prob": 0.42023773990835633,
+  "edge": 2.538008537638947,
+  "stake": 4.41,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "31ebd41354699af625fa3372932206f0",
+    "sport": "soccer_uefa_europa_league",
+    "partido": "Olympiakos Piraeus vs AC Milan",
+    "sel": "AC Milan",
+    "raw": "AC Milan",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.44,
+    "prob": 0.42023773990835633,
+    "commence": 1795715100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795681406.240225,
+  "cuota": 3.8,
+  "prob": 0.26979715504073964,
+  "edge": 2.522918915481065,
+  "stake": 2.25,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "f96c1137c9d3f7e2e691275a2988fa1d",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Le Havre vs Strasbourg",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.8,
+    "prob": 0.26979715504073964,
+    "commence": 1795895100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795681406.964826,
+  "cuota": 1.25,
+  "prob": 0.8165996389574468,
+  "edge": 2.074954869680856,
+  "stake": 20.75,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "12002f6f804a122db48271ff05be03c0",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Paris Saint Germain vs Lorient",
+    "sel": "Paris Saint Germain",
+    "raw": "Paris Saint Germain",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.25,
+    "prob": 0.8165996389574468,
+    "commence": 1795895100.0,
     "resultado": null,
     "cierre_prob": null
    }
