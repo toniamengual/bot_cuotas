@@ -4270,7 +4270,7 @@
     "prob": 0.28017476984983186,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.2819270252686995
+    "cierre_prob": 0.2821268044885524
    }
   ]
  },
@@ -4324,7 +4324,7 @@
     "prob": 0.2934474129078164,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.29596565840487116
+    "cierre_prob": 0.2955210490925619
    }
   ]
  },
@@ -4378,7 +4378,7 @@
     "prob": 0.28029226049024136,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.2820856949570274
+    "cierre_prob": 0.2820763500380227
    }
   ]
  },
@@ -4609,7 +4609,7 @@
     "prob": 0.25257771844343363,
     "commence": 1795887000.0,
     "resultado": null,
-    "cierre_prob": 0.2473633256299077
+    "cierre_prob": 0.2459231961632964
    }
   ]
  },
@@ -4636,7 +4636,7 @@
     "prob": 0.28505673646347474,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.2819270252686995
+    "cierre_prob": 0.2821268044885524
    }
   ]
  },
@@ -4663,7 +4663,7 @@
     "prob": 0.42023773990835633,
     "commence": 1795715100.0,
     "resultado": null,
-    "cierre_prob": 0.3729965214513915
+    "cierre_prob": 0.3900828379148587
    }
   ]
  },
@@ -4718,6 +4718,87 @@
     "commence": 1795895100.0,
     "resultado": null,
     "cierre_prob": 0.816494388368616
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795710205.394648,
+  "cuota": 3.65,
+  "prob": 0.2820763500380227,
+  "edge": 2.957867763878297,
+  "stake": 2.79,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "40d95e660c301c2d8a5a7a6317017b65",
+    "sport": "soccer_epl",
+    "partido": "Nottingham Forest vs Chelsea",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.65,
+    "prob": 0.2820763500380227,
+    "commence": 1795809600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795710206.455073,
+  "cuota": 2.15,
+  "prob": 0.4759957786166942,
+  "edge": 2.339092402589249,
+  "stake": 5.08,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "80c92a163a81b69fef76530221e2edd0",
+    "sport": "soccer_spain_la_liga",
+    "partido": "Levante vs Real Racing Club de Santander",
+    "sel": "Levante",
+    "raw": "Levante",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.15,
+    "prob": 0.4759957786166942,
+    "commence": 1795809600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795710207.349732,
+  "cuota": 3.46,
+  "prob": 0.2955210490925619,
+  "edge": 2.2502829860264084,
+  "stake": 2.29,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e9a663f13e7503c0ac20a54804338b60",
+    "sport": "soccer_italy_serie_a",
+    "partido": "Venezia vs Bologna",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.46,
+    "prob": 0.2955210490925619,
+    "commence": 1795808700.0,
+    "resultado": null,
+    "cierre_prob": null
    }
   ]
  }
