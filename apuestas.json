@@ -4270,7 +4270,7 @@
     "prob": 0.28017476984983186,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.28505673646347474
+    "cierre_prob": 0.2819270252686995
    }
   ]
  },
@@ -4324,7 +4324,7 @@
     "prob": 0.2934474129078164,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.2956692828974248
+    "cierre_prob": 0.29596565840487116
    }
   ]
  },
@@ -4378,7 +4378,7 @@
     "prob": 0.28029226049024136,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.2824878283128
+    "cierre_prob": 0.2820856949570274
    }
   ]
  },
@@ -4609,7 +4609,7 @@
     "prob": 0.25257771844343363,
     "commence": 1795887000.0,
     "resultado": null,
-    "cierre_prob": 0.2466735255059969
+    "cierre_prob": 0.2473633256299077
    }
   ]
  },
@@ -4636,7 +4636,7 @@
     "prob": 0.28505673646347474,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2819270252686995
    }
   ]
  },
@@ -4663,7 +4663,7 @@
     "prob": 0.42023773990835633,
     "commence": 1795715100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.3729965214513915
    }
   ]
  },
@@ -4690,7 +4690,7 @@
     "prob": 0.26979715504073964,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2685314823864809
    }
   ]
  },
@@ -4717,7 +4717,7 @@
     "prob": 0.8165996389574468,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.816494388368616
    }
   ]
  }
