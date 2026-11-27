@@ -4270,7 +4270,7 @@
     "prob": 0.28017476984983186,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.27993341895175955
+    "cierre_prob": 0.2824722505713837
    }
   ]
  },
@@ -4324,7 +4324,7 @@
     "prob": 0.2934474129078164,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.30244087838318207
+    "cierre_prob": 0.30091900838417424
    }
   ]
  },
@@ -4378,7 +4378,7 @@
     "prob": 0.28029226049024136,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.27992160822007023
+    "cierre_prob": 0.2803729771060189
    }
   ]
  },
@@ -4609,7 +4609,7 @@
     "prob": 0.25257771844343363,
     "commence": 1795887000.0,
     "resultado": null,
-    "cierre_prob": 0.2648484761522245
+    "cierre_prob": 0.26245166586402563
    }
   ]
  },
@@ -4636,7 +4636,7 @@
     "prob": 0.28505673646347474,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.27993341895175955
+    "cierre_prob": 0.2824722505713837
    }
   ]
  },
@@ -4690,7 +4690,7 @@
     "prob": 0.26979715504073964,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.27235722992602374
+    "cierre_prob": 0.2723271795389117
    }
   ]
  },
@@ -4717,7 +4717,7 @@
     "prob": 0.8165996389574468,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.8170166578651127
+    "cierre_prob": 0.820176871978573
    }
   ]
  },
@@ -4744,7 +4744,7 @@
     "prob": 0.2820763500380227,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.27992160822007023
+    "cierre_prob": 0.2803729771060189
    }
   ]
  },
@@ -4771,7 +4771,7 @@
     "prob": 0.4759957786166942,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.470682328523933
+    "cierre_prob": 0.49406229300578314
    }
   ]
  },
@@ -4798,7 +4798,7 @@
     "prob": 0.2955210490925619,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.30244087838318207
+    "cierre_prob": 0.30091900838417424
    }
   ]
  },
@@ -4825,7 +4825,7 @@
     "prob": 0.2843270892395287,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.27992160822007023
+    "cierre_prob": 0.2803729771060189
    }
   ]
  },
@@ -4852,7 +4852,7 @@
     "prob": 0.2864312955013586,
     "commence": 1795981500.0,
     "resultado": null,
-    "cierre_prob": 0.2864312955013586
+    "cierre_prob": 0.28670768227144827
    }
   ]
  },
@@ -4879,7 +4879,7 @@
     "prob": 0.2846398987778758,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.27992160822007023
+    "cierre_prob": 0.2803729771060189
    }
   ]
  },
@@ -4906,7 +4906,7 @@
     "prob": 0.3050675986070989,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.30244087838318207
+    "cierre_prob": 0.30091900838417424
    }
   ]
  },
@@ -4933,7 +4933,7 @@
     "prob": 0.259336683592694,
     "commence": 1795960800.0,
     "resultado": null,
-    "cierre_prob": 0.2599538294606317
+    "cierre_prob": 0.261615664127972
    }
   ]
  },
@@ -4960,7 +4960,7 @@
     "prob": 0.2461394058879774,
     "commence": 1795960800.0,
     "resultado": null,
-    "cierre_prob": 0.24770738226837508
+    "cierre_prob": 0.24608784351513646
    }
   ]
  },
@@ -4987,7 +4987,7 @@
     "prob": 0.2864312955013586,
     "commence": 1795981500.0,
     "resultado": null,
-    "cierre_prob": 0.2864312955013586
+    "cierre_prob": 0.28670768227144827
    }
   ]
  },
@@ -5014,7 +5014,7 @@
     "prob": 0.27992160822007023,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2803729771060189
    }
   ]
  },
@@ -5041,7 +5041,7 @@
     "prob": 0.30244087838318207,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.30091900838417424
    }
   ]
  },
@@ -5068,7 +5068,7 @@
     "prob": 0.514828530590066,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.517999050191254
    }
   ]
  },
@@ -5095,7 +5095,7 @@
     "prob": 0.4544121244008356,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.45139383172621383
    }
   ]
  },
@@ -5120,6 +5120,168 @@
     "punto": null,
     "cuota": 3.75,
     "prob": 0.27235722992602374,
+    "commence": 1795895100.0,
+    "resultado": null,
+    "cierre_prob": 0.2723271795389117
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Winamax",
+  "ts": 1795796605.125099,
+  "cuota": 1.66,
+  "prob": 0.6113917082107889,
+  "edge": 1.4910235629909563,
+  "stake": 5.65,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "5b64071f3e3bf67b0fdea8d1ac81d0ec",
+    "sport": "basketball_nba",
+    "partido": "Indiana Pacers vs Philadelphia 76ers",
+    "sel": "Philadelphia 76ers",
+    "raw": "Philadelphia 76ers",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.66,
+    "prob": 0.6113917082107889,
+    "commence": 1795826400.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795796605.856159,
+  "cuota": 3.22,
+  "prob": 0.32577281523179047,
+  "edge": 4.898846504636545,
+  "stake": 5.52,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "13d9ca3bcb664829c603755d31401002",
+    "sport": "basketball_nba",
+    "partido": "San Antonio Spurs vs Los Angeles Lakers",
+    "sel": "Los Angeles Lakers",
+    "raw": "Los Angeles Lakers",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.22,
+    "prob": 0.32577281523179047,
+    "commence": 1795833600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795796606.702378,
+  "cuota": 2.66,
+  "prob": 0.3936164812227407,
+  "edge": 4.701984005249016,
+  "stake": 7.08,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "3c522e32c3035d7dc3e1734903b84654",
+    "sport": "basketball_nba",
+    "partido": "New York Knicks vs Miami Heat",
+    "sel": "Miami Heat",
+    "raw": "Miami Heat",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.66,
+    "prob": 0.3936164812227407,
+    "commence": 1795824600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795796607.525866,
+  "cuota": 3.7,
+  "prob": 0.2803729771060189,
+  "edge": 3.7380015292269864,
+  "stake": 3.46,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "40d95e660c301c2d8a5a7a6317017b65",
+    "sport": "soccer_epl",
+    "partido": "Nottingham Forest vs Chelsea",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.7,
+    "prob": 0.2803729771060189,
+    "commence": 1795809600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795796608.479315,
+  "cuota": 3.96,
+  "prob": 0.25884623919061966,
+  "edge": 2.5031107194853908,
+  "stake": 2.11,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "d20ede55e54ed7b55fdc36ca373727c0",
+    "sport": "soccer_epl",
+    "partido": "Arsenal vs Manchester City",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.96,
+    "prob": 0.25884623919061966,
+    "commence": 1795969800.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795796609.285333,
+  "cuota": 3.75,
+  "prob": 0.2723271795389117,
+  "edge": 2.122692327091902,
+  "stake": 1.93,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "f96c1137c9d3f7e2e691275a2988fa1d",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Le Havre vs Strasbourg",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.75,
+    "prob": 0.2723271795389117,
     "commence": 1795895100.0,
     "resultado": null,
     "cierre_prob": null
