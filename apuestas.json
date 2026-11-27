@@ -4270,7 +4270,7 @@
     "prob": 0.28017476984983186,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.28174610918327503
+    "cierre_prob": 0.27993341895175955
    }
   ]
  },
@@ -4324,7 +4324,7 @@
     "prob": 0.2934474129078164,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.3050675986070989
+    "cierre_prob": 0.30244087838318207
    }
   ]
  },
@@ -4378,7 +4378,7 @@
     "prob": 0.28029226049024136,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.2846398987778758
+    "cierre_prob": 0.27992160822007023
    }
   ]
  },
@@ -4609,7 +4609,7 @@
     "prob": 0.25257771844343363,
     "commence": 1795887000.0,
     "resultado": null,
-    "cierre_prob": 0.2673376636323916
+    "cierre_prob": 0.2648484761522245
    }
   ]
  },
@@ -4636,7 +4636,7 @@
     "prob": 0.28505673646347474,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.28174610918327503
+    "cierre_prob": 0.27993341895175955
    }
   ]
  },
@@ -4690,7 +4690,7 @@
     "prob": 0.26979715504073964,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.2710875853568214
+    "cierre_prob": 0.27235722992602374
    }
   ]
  },
@@ -4717,7 +4717,7 @@
     "prob": 0.8165996389574468,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.8190184503452818
+    "cierre_prob": 0.8170166578651127
    }
   ]
  },
@@ -4744,7 +4744,7 @@
     "prob": 0.2820763500380227,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.2846398987778758
+    "cierre_prob": 0.27992160822007023
    }
   ]
  },
@@ -4771,7 +4771,7 @@
     "prob": 0.4759957786166942,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.47893408781333674
+    "cierre_prob": 0.470682328523933
    }
   ]
  },
@@ -4798,7 +4798,7 @@
     "prob": 0.2955210490925619,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": 0.3050675986070989
+    "cierre_prob": 0.30244087838318207
    }
   ]
  },
@@ -4825,7 +4825,7 @@
     "prob": 0.2843270892395287,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": 0.2846398987778758
+    "cierre_prob": 0.27992160822007023
    }
   ]
  },
@@ -4879,7 +4879,7 @@
     "prob": 0.2846398987778758,
     "commence": 1795809600.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.27992160822007023
    }
   ]
  },
@@ -4906,7 +4906,7 @@
     "prob": 0.3050675986070989,
     "commence": 1795808700.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.30244087838318207
    }
   ]
  },
@@ -4933,7 +4933,7 @@
     "prob": 0.259336683592694,
     "commence": 1795960800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.2599538294606317
    }
   ]
  },
@@ -4960,7 +4960,7 @@
     "prob": 0.2461394058879774,
     "commence": 1795960800.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.24770738226837508
    }
   ]
  },
@@ -4986,6 +4986,141 @@
     "cuota": 3.6,
     "prob": 0.2864312955013586,
     "commence": 1795981500.0,
+    "resultado": null,
+    "cierre_prob": 0.2864312955013586
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795782208.013429,
+  "cuota": 3.68,
+  "prob": 0.27992160822007023,
+  "edge": 3.011151824985858,
+  "stake": 2.81,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "40d95e660c301c2d8a5a7a6317017b65",
+    "sport": "soccer_epl",
+    "partido": "Nottingham Forest vs Chelsea",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.68,
+    "prob": 0.27992160822007023,
+    "commence": 1795809600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795782209.02058,
+  "cuota": 3.4,
+  "prob": 0.30244087838318207,
+  "edge": 2.8298986502818924,
+  "stake": 2.95,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "e9a663f13e7503c0ac20a54804338b60",
+    "sport": "soccer_italy_serie_a",
+    "partido": "Venezia vs Bologna",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.4,
+    "prob": 0.30244087838318207,
+    "commence": 1795808700.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795782209.668581,
+  "cuota": 1.99,
+  "prob": 0.514828530590066,
+  "edge": 2.450877587423128,
+  "stake": 6.19,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "40d95e660c301c2d8a5a7a6317017b65",
+    "sport": "soccer_epl",
+    "partido": "Nottingham Forest vs Chelsea",
+    "sel": "Más de 2.5",
+    "raw": "Over",
+    "mercado": "totals",
+    "punto": 2.5,
+    "cuota": 1.99,
+    "prob": 0.514828530590066,
+    "commence": 1795809600.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795782209.668608,
+  "cuota": 2.25,
+  "prob": 0.4544121244008356,
+  "edge": 2.2427279901880093,
+  "stake": 4.49,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "02ff879cf54f6d1fec2664efee0431db",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Brest vs Paris FC",
+    "sel": "Paris FC",
+    "raw": "Paris FC",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.25,
+    "prob": 0.4544121244008356,
+    "commence": 1795808700.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795782210.404478,
+  "cuota": 3.75,
+  "prob": 0.27235722992602374,
+  "edge": 2.1339612222589066,
+  "stake": 1.94,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "f96c1137c9d3f7e2e691275a2988fa1d",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Le Havre vs Strasbourg",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.75,
+    "prob": 0.27235722992602374,
+    "commence": 1795895100.0,
     "resultado": null,
     "cierre_prob": null
    }
