@@ -4582,7 +4582,7 @@
     "prob": 0.5451772412187613,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.5451772412187613
+    "cierre_prob": 0.5145612213121185
    }
   ]
  },
@@ -4609,7 +4609,7 @@
     "prob": 0.25257771844343363,
     "commence": 1795887000.0,
     "resultado": null,
-    "cierre_prob": 0.24944462092911468
+    "cierre_prob": 0.2484333856478369
    }
   ]
  },
@@ -4690,7 +4690,7 @@
     "prob": 0.26979715504073964,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.27316154444055696
+    "cierre_prob": 0.2745241075513539
    }
   ]
  },
@@ -4717,7 +4717,7 @@
     "prob": 0.8165996389574468,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.827575646107005
+    "cierre_prob": 0.8255194114164959
    }
   ]
  },
@@ -4852,7 +4852,7 @@
     "prob": 0.2864312955013586,
     "commence": 1795981500.0,
     "resultado": null,
-    "cierre_prob": 0.28716141475860796
+    "cierre_prob": 0.28742719072980194
    }
   ]
  },
@@ -4933,7 +4933,7 @@
     "prob": 0.259336683592694,
     "commence": 1795960800.0,
     "resultado": null,
-    "cierre_prob": 0.26570577329609624
+    "cierre_prob": 0.2618959882546259
    }
   ]
  },
@@ -4960,7 +4960,7 @@
     "prob": 0.2461394058879774,
     "commence": 1795960800.0,
     "resultado": null,
-    "cierre_prob": 0.25037124394190113
+    "cierre_prob": 0.2524668286669409
    }
   ]
  },
@@ -4987,7 +4987,7 @@
     "prob": 0.2864312955013586,
     "commence": 1795981500.0,
     "resultado": null,
-    "cierre_prob": 0.28716141475860796
+    "cierre_prob": 0.28742719072980194
    }
   ]
  },
@@ -5122,7 +5122,7 @@
     "prob": 0.27235722992602374,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.27316154444055696
+    "cierre_prob": 0.2745241075513539
    }
   ]
  },
@@ -5257,7 +5257,7 @@
     "prob": 0.25884623919061966,
     "commence": 1795969800.0,
     "resultado": null,
-    "cierre_prob": 0.2630555490538706
+    "cierre_prob": 0.26118145979215296
    }
   ]
  },
@@ -5284,7 +5284,7 @@
     "prob": 0.2723271795389117,
     "commence": 1795895100.0,
     "resultado": null,
-    "cierre_prob": 0.27316154444055696
+    "cierre_prob": 0.2745241075513539
    }
   ]
  },
@@ -5338,7 +5338,7 @@
     "prob": 0.3961133968867205,
     "commence": 1795968900.0,
     "resultado": null,
-    "cierre_prob": 0.406064362736101
+    "cierre_prob": 0.4086731832090903
    }
   ]
  },
@@ -5365,7 +5365,7 @@
     "prob": 0.2529013068066688,
     "commence": 1795887000.0,
     "resultado": null,
-    "cierre_prob": 0.25395823511596255
+    "cierre_prob": 0.25844472044992134
    }
   ]
  },
@@ -5392,7 +5392,7 @@
     "prob": 0.6405030536403448,
     "commence": 1795869000.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.638137661286533
    }
   ]
  },
@@ -5419,7 +5419,7 @@
     "prob": 0.26262695771972405,
     "commence": 1795869000.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.25009146594006443
    }
   ]
  },
@@ -5446,7 +5446,7 @@
     "prob": 0.406064362736101,
     "commence": 1795968900.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.4086731832090903
    }
   ]
  },
@@ -5473,7 +5473,7 @@
     "prob": 0.5875987272677373,
     "commence": 1795878000.0,
     "resultado": null,
-    "cierre_prob": null
+    "cierre_prob": 0.5750725986405575
    }
   ]
  },
@@ -5499,6 +5499,141 @@
     "cuota": 2.08,
     "prob": 0.4924403234565826,
     "commence": 1795878000.0,
+    "resultado": null,
+    "cierre_prob": 0.4841103798784831
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795868606.85566,
+  "cuota": 3.82,
+  "prob": 0.27018753280077296,
+  "edge": 3.2116375298952615,
+  "stake": 2.85,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "3876ad367184af2f8fc04a544fc894aa",
+    "sport": "soccer_italy_serie_a",
+    "partido": "Como vs Juventus",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.82,
+    "prob": 0.27018753280077296,
+    "commence": 1795981500.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795868607.81427,
+  "cuota": 2.08,
+  "prob": 0.49553867066496493,
+  "edge": 3.0720434983127154,
+  "stake": 7.11,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "aaa86a483888836242da663a46957894",
+    "sport": "soccer_france_ligue_one",
+    "partido": "Le Mans FC vs Lille",
+    "sel": "Lille",
+    "raw": "Lille",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.08,
+    "prob": 0.49553867066496493,
+    "commence": 1795895100.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Codere (IT)",
+  "ts": 1795868608.536534,
+  "cuota": 2.12,
+  "prob": 0.48323922519772194,
+  "edge": 2.4467157419170604,
+  "stake": 5.46,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "a1d96ec37a8b7022ef39a7755a655243",
+    "sport": "soccer_efl_champ",
+    "partido": "Blackburn Rovers vs Charlton Athletic",
+    "sel": "Blackburn Rovers",
+    "raw": "Blackburn Rovers",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 2.12,
+    "prob": 0.48323922519772194,
+    "commence": 1795869000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "LeoVegas (SE)",
+  "ts": 1795868608.935975,
+  "cuota": 1.78,
+  "prob": 0.5750725986405575,
+  "edge": 2.3629225580192426,
+  "stake": 7.57,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "c836236766f7859e3c1d61caa581abe1",
+    "sport": "soccer_efl_champ",
+    "partido": "West Ham United vs Stoke City",
+    "sel": "West Ham United",
+    "raw": "West Ham United",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 1.78,
+    "prob": 0.5750725986405575,
+    "commence": 1795878000.0,
+    "resultado": null,
+    "cierre_prob": null
+   }
+  ]
+ },
+ {
+  "tipo": "simple",
+  "casa": "Marathon Bet",
+  "ts": 1795868609.431244,
+  "cuota": 3.96,
+  "prob": 0.25844472044992134,
+  "edge": 2.3441092981688394,
+  "stake": 1.98,
+  "estado": "pendiente",
+  "beneficio": null,
+  "patas": [
+   {
+    "id": "9d23f6ad21946dd258869ebc22236cf0",
+    "sport": "soccer_epl",
+    "partido": "Ipswich Town vs Aston Villa",
+    "sel": "Empate",
+    "raw": "Draw",
+    "mercado": "h2h",
+    "punto": null,
+    "cuota": 3.96,
+    "prob": 0.25844472044992134,
+    "commence": 1795887000.0,
     "resultado": null,
     "cierre_prob": null
    }
